@@ -1,0 +1,16 @@
+.btn {
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  border: none;
+  font-family: 'Poppins';
+  font-weight: 500;
+  outline: none;
+  &-primary {
+    background-color: $color-white;
+    border-radius: 5rem;
+  }
+
+  &-sec {
+    background-color: $color-white;
+  }
+}
