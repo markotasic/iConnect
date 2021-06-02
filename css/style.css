@@ -120,7 +120,7 @@ body {
   width: 20rem;
 }
 
-#profile {
+.profile {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -138,11 +138,11 @@ body {
   height: 170px;
 }
 
-.profile__circle-img {
-  width: 20px;
-  height: 20px;
-  -webkit-border-radius: 100%;
-          border-radius: 100%;
+.profile-image {
+  width: 10rem;
+  height: 10rem;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
 }
 
 .btn {
