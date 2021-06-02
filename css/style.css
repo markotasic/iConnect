@@ -143,10 +143,12 @@ body {
 
 .btn-sec {
   background-color: #f4f4f4;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
 }
 
 .main {
-  width: 110rem;
+  width: 100%;
   padding: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
@@ -176,16 +178,26 @@ body {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 70rem;
+  width: 70%;
+  min-width: 350px;
   background-color: #d5b69d;
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
   padding: 3rem;
 }
 
-.main__post-img {
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
-  height: 5rem;
-  width: 5rem;
+.main__post-msg {
+  border-bottom: 2px solid black;
+  width: 100%;
+  min-width: 20rem;
+  background-color: #d5b69d;
+  border: none;
+  -webkit-border-radius: 5rem;
+          border-radius: 5rem;
+  padding: 0.5rem;
+  padding-right: 3rem;
+  font-size: 1.6rem;
+  outline: none;
+  font-family: 'Poppins';
+  font-weight: 500;
 }
