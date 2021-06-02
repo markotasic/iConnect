@@ -1,5 +1,5 @@
 .main {
-  width: 110rem;
+  width: 100%;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -9,15 +9,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 70rem;
+    width: 70%;
+    min-width: 350px;
     background-color: $color-tertiary-light;
     border-radius: 1rem;
     padding: 3rem;
 
-    &-img {
-      border-radius: 50%;
-      height: 5rem;
-      width: 5rem;
+    &-msg {
+      border-bottom: 2px solid black;
+      width: 100%;
+      min-width: 20rem;
+      background-color: $color-tertiary-light;
+      border: none;
+      border-radius: 5rem;
+      padding: 0.5rem;
+      padding-right: 3rem;
+      font-size: 1.6rem;
+      outline: none;
+      font-family: 'Poppins';
+      font-weight: 500;
     }
   }
 }
