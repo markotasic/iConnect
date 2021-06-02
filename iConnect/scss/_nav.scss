@@ -1,0 +1,46 @@
+.nav {
+  background-color: $color-primary-light;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+
+  &__search {
+    display: flex;
+    align-items: center;
+    &-icon {
+      margin-right: -4.8rem;
+      z-index: 16;
+      padding: 1.1rem 1.5rem;
+    }
+  }
+
+  &__input {
+    width: 53rem;
+    background-color: $color-white;
+    border: none;
+    border-radius: 5rem;
+    padding: 0.5rem;
+    padding-left: 5rem;
+    padding-right: 3rem;
+    font-size: 1.6rem;
+    outline: none;
+    font-family: 'Poppins';
+    font-weight: 300;
+  }
+
+  &__custom {
+    display: flex;
+    align-items: center;
+
+    &-color {
+      height: 3rem;
+      width: 3rem;
+      fill: black;
+    }
+
+    button {
+      margin-right: 2rem;
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <img src="img/logo2.png" alt="ree" height="40px" />
+        <div class="nav__search">
+          <img class="nav__search-icon" src="img/search.png" alt="search" />
+
+          <input class="nav__input" type="text" placeholder="Search feed" />
+        </div>
+
+        <div class="nav__custom">
+          <button class="btn btn-primary">Log out</button>
+          <svg class="nav__custom-color">
+            <use xlink:href="img/sprite.svg#icon-wb_sunny"></use>
+          </svg>
+        </div>
+      </nav>
+      <section id="sidebar-section">
+        <div class="content">
+          <div class="sidebar">
+            <div id="profile"></div>
+          </div>
+          <main class="main">
+            <div class="main__post">
+              <img class="main__post-img" src="img/user.png" alt="img" />
+              <h2 class="main__post-msg">What's Happening?</h2>
+              <button class="btn btn-sec">Post</button>
+            </div>
+          </main>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
