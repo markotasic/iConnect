@@ -1,11 +1,14 @@
-$color-primary-light: #e7cbb4;
-$color-primary-dark: #28282c;
-$color-sec-light: #f0f2f5;
-$color-sec-dark: #18191a;
-$color-tertiary-light: #d5b69d;
-$color-tertiary-dark: #534f4f;
+$color-primary: #e7cbb4;
+$color-sec: #f0f2f5;
+$color-tertiary: #d5b69d;
 
 $color-white: #f4f4f4;
+
+.darkmode {
+  $color-primary: #28282c;
+  $color-sec: #18191a;
+  $color-tertiary: #534f4f;
+}
 
 * {
   padding: 0;
@@ -26,11 +29,11 @@ html {
 }
 
 body {
-  background-color: $color-sec-light;
+  background-color: $color-sec;
 }
 
 .container {
-  background-color: $color-sec-light;
+  background-color: $color-sec;
   max-width: 130rem;
   margin: 0 auto;
   display: grid;
