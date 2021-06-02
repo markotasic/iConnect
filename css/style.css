@@ -168,7 +168,6 @@ body {
 
 .main {
   width: 100%;
-  padding: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -203,6 +202,7 @@ body {
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
   padding: 3rem;
+  margin-top: 5rem;
 }
 
 .main__post-msg {
@@ -219,4 +219,13 @@ body {
   outline: none;
   font-family: 'Poppins';
   font-weight: 500;
+}
+
+.main__content {
+  padding: 2rem;
+  background-color: #d5b69d;
+  width: 70%;
+  margin-top: 5rem;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
 }

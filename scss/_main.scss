@@ -1,6 +1,5 @@
 .main {
   width: 100%;
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +13,7 @@
     background-color: $color-tertiary-light;
     border-radius: 1rem;
     padding: 3rem;
+    margin-top: 5rem;
 
     &-msg {
       border-bottom: 2px solid black;
@@ -29,5 +29,12 @@
       font-family: 'Poppins';
       font-weight: 500;
     }
+  }
+  &__content {
+    padding: 2rem;
+    background-color: $color-tertiary-light;
+    width: 70%;
+    margin-top: 5rem;
+    border-radius: 1rem;
   }
 }
