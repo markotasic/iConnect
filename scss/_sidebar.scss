@@ -12,15 +12,24 @@
   height: 170px;
   border-bottom-left-radius: $border-raius;
   &-image {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
     border-radius: 50%;
   }
+
+  &-name {
+    margin-top: 1rem;
+  }
+}
+
+.contacts {
+  border-right: 0.3em solid $color-primary;
+  margin-left: 2rem;
+  padding-top: 0.5rem;
 }
 
 .users {
   display: flex;
-  justify-content: space-evenly;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - (170px + 60px));
@@ -32,6 +41,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    margin-top: 3rem;
     &-img {
       width: 6rem;
       height: 6rem;

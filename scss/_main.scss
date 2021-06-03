@@ -56,9 +56,9 @@
     }
 
     &-post {
-      max-width: 100%;
       max-height: 500px;
       border-radius: $border-raius;
+      max-width: 600px;
     }
 
     &-react {
@@ -67,7 +67,9 @@
       margin-top: 1rem;
 
       &--text {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+        font-weight: 500;
+        color: black;
       }
 
       .like {
@@ -84,13 +86,15 @@
       &--like {
         height: 3rem;
         width: 3rem;
-        margin: 0 2rem;
+        margin: 0 1rem;
+        fill: $color-four;
       }
 
       &--comment {
         height: 3rem;
         width: 3rem;
-        margin: 0 2rem;
+        margin: 0 1rem;
+        fill: $color-four;
       }
     }
   }

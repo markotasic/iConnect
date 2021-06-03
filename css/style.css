@@ -154,10 +154,20 @@ body {
 }
 
 .profile-image {
-  width: 10rem;
-  height: 10rem;
+  width: 8rem;
+  height: 8rem;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+}
+
+.profile-name {
+  margin-top: 1rem;
+}
+
+.contacts {
+  border-right: 0.3em solid #e7cbb4;
+  margin-left: 2rem;
+  padding-top: 0.5rem;
 }
 
 .users {
@@ -165,10 +175,6 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -200,6 +206,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  margin-top: 3rem;
 }
 
 .users__profile-img {
@@ -338,10 +345,10 @@ body {
 }
 
 .main__content-post {
-  max-width: 100%;
   max-height: 500px;
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
+  max-width: 600px;
 }
 
 .main__content-react {
@@ -357,7 +364,9 @@ body {
 }
 
 .main__content-react--text {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: black;
 }
 
 .main__content-react .like {
@@ -386,11 +395,13 @@ body {
 .main__content-react--like {
   height: 3rem;
   width: 3rem;
-  margin: 0 2rem;
+  margin: 0 1rem;
+  fill: #161616;
 }
 
 .main__content-react--comment {
   height: 3rem;
   width: 3rem;
-  margin: 0 2rem;
+  margin: 0 1rem;
+  fill: #161616;
 }
