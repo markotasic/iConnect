@@ -11,7 +11,7 @@
     width: 70%;
     min-width: 350px;
     background-color: $color-tertiary;
-    border-radius: 1rem;
+    border-radius: $border-raius;
     padding: 3rem;
     margin-top: 5rem;
 
@@ -33,8 +33,65 @@
   &__content {
     padding: 2rem;
     background-color: $color-primary;
-    width: 70%;
+    width: fit-content;
     margin-top: 5rem;
-    border-radius: 1rem;
+    border-radius: $border-raius;
+
+    &-poster {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &--img {
+        height: 4.5rem;
+        border-radius: 50%;
+      }
+
+      &--name {
+        margin-left: 2rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+      }
+    }
+
+    &-post {
+      max-width: 100%;
+      max-height: 500px;
+      border-radius: $border-raius;
+    }
+
+    &-react {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+
+      &--text {
+        font-size: 1.2rem;
+      }
+
+      .like {
+        display: flex;
+        align-items: center;
+        width: 50%;
+      }
+
+      .comment {
+        display: flex;
+        align-items: center;
+      }
+
+      &--like {
+        height: 3rem;
+        width: 3rem;
+        margin: 0 2rem;
+      }
+
+      &--comment {
+        height: 3rem;
+        width: 3rem;
+        margin: 0 2rem;
+      }
+    }
   }
 }

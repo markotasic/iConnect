@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
+  border-bottom-right-radius: $border-raius;
 
   &__search {
     display: flex;
@@ -12,6 +13,9 @@
       margin-right: -4.8rem;
       z-index: 16;
       padding: 1.1rem 1.5rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 
@@ -37,6 +41,9 @@
       height: 3rem;
       width: 3rem;
       fill: black;
+      &:hover {
+        cursor: pointer;
+      }
     }
 
     button {

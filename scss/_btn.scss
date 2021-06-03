@@ -5,6 +5,10 @@
   font-family: 'Poppins';
   font-weight: 500;
   outline: none;
+  &:hover {
+    cursor: pointer;
+  }
+
   &-primary {
     background-color: $color-white;
     border-radius: 5rem;
@@ -12,6 +16,6 @@
 
   &-sec {
     background-color: $color-white;
-    border-radius: 1rem;
+    border-radius: $border-raius;
   }
 }
