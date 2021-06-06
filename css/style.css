@@ -450,6 +450,35 @@ body {
   margin: 0 auto;
 }
 
+.login__container-register {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+}
+
+.login__container-register .login__container-mail {
+  margin-top: 3rem;
+}
+
+.login__container-register .login__container-password-2 {
+  margin-top: 3rem;
+}
+
 #background {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -500,22 +529,23 @@ body {
   outline: none;
   font-family: 'Poppins';
   font-weight: 300;
+  color: white;
 }
 
 .input-login::-webkit-input-placeholder {
-  color: white;
+  color: #c7c7c7;
 }
 
 .input-login:-ms-input-placeholder {
-  color: white;
+  color: #c7c7c7;
 }
 
 .input-login::-ms-input-placeholder {
-  color: white;
+  color: #c7c7c7;
 }
 
 .input-login::placeholder {
-  color: white;
+  color: #c7c7c7;
 }
 
 .login__left {
