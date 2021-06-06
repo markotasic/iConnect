@@ -3,6 +3,25 @@
   height: 100%;
   display: flex;
   width: 50%;
+  position: relative;
+  &-portfolio {
+    height: 4rem;
+    width: 4rem;
+    fill: white;
+  }
+
+  &-github {
+    height: 4rem;
+    width: 4rem;
+    fill: white;
+  }
+
+  &-email {
+    height: 4.5rem;
+    width: 4.5rem;
+    fill: white;
+  }
+
   &-mail {
   }
   &-password {
@@ -74,4 +93,42 @@
 
 .login__left {
   width: 50%;
+}
+
+.contact {
+  position: absolute;
+  text-align: center;
+  flex-direction: column;
+  left: 2rem;
+  bottom: 2rem;
+  display: flex;
+  width: 40%;
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+.contact-2 {
+  position: absolute;
+  text-align: center;
+  flex-direction: column;
+  right: 2rem;
+  bottom: 2rem;
+  display: flex;
+  width: 40%;
+  &__icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+
+.name {
+  font-size: 1.7rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: white;
 }
