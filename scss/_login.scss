@@ -56,7 +56,13 @@
 #background {
   align-items: center;
   display: flex;
-  background-color: #0c4e63;
+  background: rgb(12, 78, 99);
+  background: linear-gradient(
+    261deg,
+    rgba(12, 78, 99, 1) 0%,
+    rgba(69, 165, 195, 1) 100%,
+    rgba(12, 78, 99, 1) 100%
+  );
   width: 100vw;
   height: 100vh;
 }
