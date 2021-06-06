@@ -16,6 +16,7 @@ html {
   font-size: 62.5%;
   font-family: 'Poppins';
   font-weight: 300;
+  color: #1a1a1a;
 }
 
 body {
@@ -113,7 +114,7 @@ body {
 .nav__custom-color {
   height: 3rem;
   width: 3rem;
-  fill: black;
+  fill: #1a1a1a;
 }
 
 .nav__custom-color:hover {
@@ -166,7 +167,7 @@ body {
 
 .contacts {
   border-right: 0.3em solid #e7cbb4;
-  margin-left: 2rem;
+  padding: 0 5rem;
   padding-top: 0.5rem;
 }
 
@@ -293,7 +294,6 @@ body {
 }
 
 .main__post-msg {
-  border-bottom: 2px solid black;
   width: 100%;
   min-width: 20rem;
   background-color: #d5b69d;
@@ -366,7 +366,6 @@ body {
 .main__content-react--text {
   font-size: 1.3rem;
   font-weight: 500;
-  color: black;
 }
 
 .main__content-react .like {
@@ -396,12 +395,12 @@ body {
   height: 3rem;
   width: 3rem;
   margin: 0 1rem;
-  fill: #161616;
+  fill: #1a1a1a;
 }
 
 .main__content-react--comment {
   height: 3rem;
   width: 3rem;
   margin: 0 1rem;
-  fill: #161616;
+  fill: #1a1a1a;
 }

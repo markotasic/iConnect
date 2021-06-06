@@ -2,16 +2,19 @@ $color-primary: #e7cbb4;
 $color-sec: #f0f2f5;
 $color-tertiary: #d5b69d;
 $color-four: #161616;
+$text-color: #1a1a1a;
 
 $color-white: #f4f4f4;
 $color-black: #161616;
 
 $border-raius: 1rem;
+
 .darkmode {
   $color-primary: #28282c;
   $color-sec: #18191a;
   $color-tertiary: #534f4f;
   $color-four: #18bcda;
+  $text-color: #f4f4f4;
 }
 
 * {
@@ -30,6 +33,7 @@ html {
   font-size: 62.5%;
   font-family: 'Poppins';
   font-weight: 300;
+  color: $text-color;
 }
 
 body {
