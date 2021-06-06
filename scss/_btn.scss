@@ -18,4 +18,12 @@
     background-color: $color-white;
     border-radius: $border-raius;
   }
+
+  &-submit {
+    color: #0a3c4c;
+    width: 33rem;
+    margin-top: 2em;
+    border-radius: 5rem;
+    padding: 1.2rem 1rem;
+  }
 }

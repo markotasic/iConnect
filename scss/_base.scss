@@ -9,6 +9,10 @@ $color-black: #161616;
 
 $border-raius: 1rem;
 
+.hidden {
+  display: none;
+}
+
 .darkmode {
   $color-primary: #28282c;
   $color-sec: #18191a;
@@ -46,7 +50,8 @@ body {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 6rem calc(100vh - 6rem);
+  grid-template-rows: 6rem;
+  display: none;
 }
 
 .content {

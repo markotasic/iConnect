@@ -1,0 +1,60 @@
+.login__container {
+  background-color: #014051e3;
+  height: 100%;
+  display: flex;
+  width: 50%;
+  &-mail {
+  }
+  &-password {
+    margin-top: 3rem;
+  }
+  &-form {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+}
+
+#background {
+  align-items: center;
+  display: flex;
+  background-color: #0c4e63;
+  width: 100vw;
+  height: 100vh;
+}
+
+#login {
+  display: flex;
+  background-image: url('/img/city.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140rem;
+  height: 70rem;
+  margin: 0 auto;
+  box-shadow: 0px 5px 15px 3px #000000e3;
+}
+
+.input-login {
+  width: 33rem;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  outline: none;
+  font-family: 'Poppins';
+  font-weight: 300;
+
+  &::placeholder {
+    color: white;
+  }
+}
+
+.login__left {
+  width: 50%;
+}
