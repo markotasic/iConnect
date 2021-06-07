@@ -585,11 +585,7 @@ body {
   color: #c7c7c7;
 }
 
-.login {
-  width: 50%;
-  height: 100%;
-}
-
+.login,
 .register {
   width: 50%;
   height: 100%;
@@ -599,38 +595,7 @@ body {
   width: 50%;
 }
 
-.contact {
-  position: absolute;
-  text-align: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  left: 2rem;
-  bottom: 2rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  width: 40%;
-}
-
-.contact__icons {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
+.contact,
 .contact-2 {
   position: absolute;
   text-align: center;
@@ -639,8 +604,6 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  right: 2rem;
-  bottom: 2rem;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -648,6 +611,7 @@ body {
   width: 40%;
 }
 
+.contact__icons,
 .contact-2__icons {
   display: -webkit-box;
   display: -webkit-flex;
@@ -661,6 +625,16 @@ body {
   -webkit-justify-content: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
+}
+
+.contact {
+  left: 2rem;
+  bottom: 2rem;
+}
+
+.contact-2 {
+  right: 2rem;
+  bottom: 2rem;
 }
 
 .name {

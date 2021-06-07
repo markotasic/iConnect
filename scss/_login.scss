@@ -102,25 +102,21 @@
   }
 }
 
-.login {
-  width: 50%;
-  height: 100%;
-}
-
+.login,
 .register {
   width: 50%;
   height: 100%;
 }
+
 .login__left {
   width: 50%;
 }
 
-.contact {
+.contact,
+.contact-2 {
   position: absolute;
   text-align: center;
   flex-direction: column;
-  left: 2rem;
-  bottom: 2rem;
   display: flex;
   width: 40%;
 
@@ -131,19 +127,13 @@
   }
 }
 
+.contact {
+  left: 2rem;
+  bottom: 2rem;
+}
 .contact-2 {
-  position: absolute;
-  text-align: center;
-  flex-direction: column;
   right: 2rem;
   bottom: 2rem;
-  display: flex;
-  width: 40%;
-  &__icons {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
 }
 
 .name {
