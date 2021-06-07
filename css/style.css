@@ -130,7 +130,6 @@ body {
 
 .sidebar {
   width: 20rem;
-  display: none;
 }
 
 .profile {
@@ -686,5 +685,18 @@ strong {
   }
   #login {
     height: 100%;
+  }
+}
+
+@media only screen and (max-width: 56.25em) {
+  .sidebar {
+    width: 10rem;
+  }
+}
+
+@media only screen and (max-width: 81.25) {
+  .profile {
+    -webkit-border-radius: 0;
+            border-radius: 0;
   }
 }

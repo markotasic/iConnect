@@ -35,3 +35,15 @@
     height: 100%;
   }
 }
+
+@media only screen and (max-width: $bp-medium) {
+  .sidebar {
+    width: 10rem;
+  }
+}
+
+@media only screen and (max-width: $bp-huge) {
+  .profile {
+    border-radius: 0;
+  }
+}
