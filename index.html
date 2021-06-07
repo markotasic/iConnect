@@ -4,16 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>iConnect</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
     <script src="script.js" defer></script>
   </head>
   <body class="body">
-    <div class="main-page hidden">
+    <div class="main-page">
       <div class="container">
         <nav class="nav">
           <img src="img/logo2.png" alt="ree" height="40px" />
@@ -148,9 +148,15 @@
                     src="/img/Screenshot_4.png"
                     alt="Profile-pic"
                   />
-                  <div class="main__content-poster--name">Zlatko Radenkovic</div>
+                  <div class="main__content-poster--name">
+                    Zlatko Radenkovic
+                  </div>
                 </div>
-                <img class="main__content-post" src="img/post2.jpg" alt="post" />
+                <img
+                  class="main__content-post"
+                  src="img/post2.jpg"
+                  alt="post"
+                />
                 <div class="main__content-react">
                   <div class="like">
                     <svg class="main__content-react--like">
@@ -172,8 +178,7 @@
       </div>
     </div>
 
-
-    <div class="form">
+    <!-- <div class="form">
       <section id="background">
         <section id="login">
           <div class="login__left"></div>
@@ -194,7 +199,7 @@
                     placeholder="password"
                   />
                   <button class="btn btn-submit">Log In</button>
-                  <a href="" class="link-to-register"><p>Don't have an account yet? Create one here!</p></a>
+                  <a href="" class="link-to-register"><p>Don't have an account yet? <strong>Sign up</strong> here!</p></a>
                   <div class="contact">
                     <h2 class="name">Marko Tasic</h2>
                     <div class="contact__icons">
@@ -272,7 +277,7 @@
                   placeholder="confirm password"
                 />
                 <button class="btn btn-submit">Register</button>
-                <a href="" class="link-to-login"><p>Alredey have an account? Log in here!</p></a>
+                <a href="" class="link-to-login"><p>Already have an account? <strong>Log in</strong> here!</p></a>
                 <div class="contact">
                   <h2 class="name">Marko Tasic</h2>
                   <div class="contact__icons">
@@ -323,7 +328,7 @@
           </div>
         </section>
       </section>
-    </div>
+    </div> -->
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
@@ -338,13 +343,13 @@
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       var firebaseConfig = {
-        apiKey: "AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0",
-        authDomain: "iconnect-88fcc.firebaseapp.com",
-        projectId: "iconnect-88fcc",
-        storageBucket: "iconnect-88fcc.appspot.com",
-        messagingSenderId: "107244892732",
-        appId: "1:107244892732:web:4e52ac34afcdbf40e6c939",
-        measurementId: "G-6JP6297P57"
+        apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
+        authDomain: 'iconnect-88fcc.firebaseapp.com',
+        projectId: 'iconnect-88fcc',
+        storageBucket: 'iconnect-88fcc.appspot.com',
+        messagingSenderId: '107244892732',
+        appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
+        measurementId: 'G-6JP6297P57',
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
@@ -362,18 +367,13 @@
       //   var errorMessage = error.message;
       // });
 
-      firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user)
-      } else {
-        // No user is signed in.
-      }
-    });
-
-
-
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          console.log(user);
+        } else {
+          // No user is signed in.
+        }
+      });
     </script>
-
-    
   </body>
 </html>
