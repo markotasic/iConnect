@@ -1,9 +1,10 @@
 .login__container {
-  background-color: #014051e3;
+  background-color: #014051ea;
   height: 100%;
   display: flex;
-  width: 50%;
+  width: 100%;
   position: relative;
+  border-radius: 0.8rem;
   &-portfolio {
     height: 4rem;
     width: 4rem;
@@ -34,42 +35,44 @@
     flex-direction: column;
     margin: 0 auto;
   }
+}
 
-  &-register {
+.login__container-register {
+  background-color: #014051ea;
+  height: 100%;
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  &--form {
     display: flex;
-    display: none;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     margin: 0 auto;
+  }
 
-    .login__container-mail {
-      margin-top: 3rem;
-    }
+  .login__container-mail {
+    margin-top: 3rem;
+  }
 
-    .login__container-password-2 {
-      margin-top: 3rem;
-    }
+  .login__container-password-2 {
+    margin-top: 3rem;
   }
 }
 
 #background {
   align-items: center;
   display: flex;
-  background: rgb(12, 78, 99);
-  background: linear-gradient(
-    261deg,
-    rgba(12, 78, 99, 1) 0%,
-    rgba(69, 165, 195, 1) 100%,
-    rgba(12, 78, 99, 1) 100%
-  );
+  position: relative;
+  background-color: #0c4e63;
   width: 100vw;
   height: 100vh;
 }
 
 #login {
   display: flex;
-  background-image: url('/img/city.jpg');
+  background-image: url('/img/forest.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -78,7 +81,8 @@
   width: 140rem;
   height: 70rem;
   margin: 0 auto;
-  box-shadow: 0px 5px 15px 3px #000000e3;
+  box-shadow: 0px 5px 15px 3px #00000080;
+  border-radius: 1rem;
 }
 
 .input-login {
@@ -98,6 +102,15 @@
   }
 }
 
+.login {
+  width: 50%;
+  height: 100%;
+}
+
+.register {
+  width: 50%;
+  height: 100%;
+}
 .login__left {
   width: 50%;
 }
@@ -140,7 +153,8 @@
   color: white;
 }
 
-.link-to-register {
+.link-to-register,
+.link-to-login {
   margin-top: 2rem;
   font-size: 1.2rem;
   color: white;
