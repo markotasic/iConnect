@@ -128,6 +128,13 @@ body {
   margin-right: 2rem;
 }
 
+.nav__search-2 {
+  height: 3rem;
+  width: 3rem;
+  fill: #1a1a1a;
+  margin-right: 2rem;
+}
+
 .sidebar {
   width: 20rem;
 }
@@ -232,6 +239,12 @@ body {
   margin-bottom: 5em;
 }
 
+.nav__settings {
+  height: 3rem;
+  width: 3rem;
+  fill: #1a1a1a;
+}
+
 .btn {
   padding: 0.5rem 2rem;
   font-size: 1.6rem;
@@ -307,13 +320,11 @@ body {
 
 .main__post-msg {
   width: 100%;
-  min-width: 20rem;
   background-color: #d5b69d;
   border: none;
   -webkit-border-radius: 5rem;
           border-radius: 5rem;
   padding: 0.5rem;
-  padding-right: 3rem;
   font-size: 1.6rem;
   outline: none;
   font-family: 'Poppins';
@@ -373,6 +384,7 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .main__content-react--text {
@@ -690,12 +702,48 @@ strong {
 
 @media only screen and (max-width: 56.25em) {
   .sidebar {
-    width: 10rem;
+    display: none;
+  }
+  .nav__custom {
+    display: none;
+  }
+  .nav__custom-small {
+    display: block;
+  }
+  .nav__search-ree {
+    display: none;
+  }
+  .main__content {
+    width: 95%;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main__content-post {
+    max-width: 100%;
+  }
+  .main__post {
+    width: 95%;
+    min-width: 95%;
+  }
+  .main__post-msg {
+    min-width: none;
   }
 }
 
-@media only screen and (max-width: 81.25) {
-  .profile {
+@media only screen and (max-width: 81.25em) {
+  .profile,
+  .nav {
     -webkit-border-radius: 0;
             border-radius: 0;
   }

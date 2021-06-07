@@ -38,12 +38,45 @@
 
 @media only screen and (max-width: $bp-medium) {
   .sidebar {
-    width: 10rem;
+    display: none;
+  }
+
+  .nav__custom {
+    display: none;
+  }
+
+  .nav__custom-small {
+    display: block;
+  }
+
+  .nav__search-ree {
+    display: none;
+  }
+
+  .main__content {
+    width: 95%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    &-post {
+      max-width: 100%;
+    }
+  }
+
+  .main__post {
+    width: 95%;
+    min-width: 95%;
+
+    &-msg {
+      min-width: none;
+    }
   }
 }
 
 @media only screen and (max-width: $bp-huge) {
-  .profile {
+  .profile,
+  .nav {
     border-radius: 0;
   }
 }

@@ -17,12 +17,10 @@
 
     &-msg {
       width: 100%;
-      min-width: 20rem;
       background-color: $color-tertiary;
       border: none;
       border-radius: 5rem;
       padding: 0.5rem;
-      padding-right: 3rem;
       font-size: 1.6rem;
       outline: none;
       font-family: 'Poppins';
@@ -64,6 +62,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 1rem;
+      width: 100%;
 
       &--text {
         font-size: 1.3rem;
