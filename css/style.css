@@ -130,6 +130,7 @@ body {
 
 .sidebar {
   width: 20rem;
+  display: none;
 }
 
 .profile {
@@ -426,8 +427,10 @@ body {
   display: flex;
   width: 100%;
   position: relative;
-  -webkit-border-radius: 0.8rem;
-          border-radius: 0.8rem;
+  -webkit-border-top-right-radius: 0.8rem;
+          border-top-right-radius: 0.8rem;
+  -webkit-border-bottom-right-radius: 0.8rem;
+          border-bottom-right-radius: 0.8rem;
 }
 
 .login__container-portfolio {
@@ -650,8 +653,38 @@ body {
   font-size: 1.2rem;
   color: white;
   text-decoration: none;
+  margin-bottom: 10rem;
 }
 
 strong {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .login__container-email, .login__container-portfolio, .login__container-github {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+  .name {
+    font-size: 1.2rem;
+  }
+  .input-login {
+    width: 25rem;
+  }
+  .btn-submit {
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: 76.0625em) {
+  .login,
+  .register {
+    width: 100%;
+  }
+  .login__left {
+    display: none;
+  }
+  #login {
+    height: 100%;
+  }
 }

@@ -4,7 +4,8 @@
   display: flex;
   width: 100%;
   position: relative;
-  border-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
   &-portfolio {
     height: 4rem;
     width: 4rem;
@@ -23,8 +24,6 @@
     fill: white;
   }
 
-  &-mail {
-  }
   &-password {
     margin-top: 3rem;
   }
@@ -149,6 +148,7 @@
   font-size: 1.2rem;
   color: white;
   text-decoration: none;
+  margin-bottom: 10rem;
 }
 strong {
   text-decoration: underline;

@@ -1,0 +1,37 @@
+@media only screen and (max-width: $bp-small) {
+  .login__container {
+    &-email,
+    &-portfolio,
+    &-github {
+      height: 2.5rem;
+      width: 2.5rem;
+    }
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .input-login {
+    width: 25rem;
+  }
+
+  .btn-submit {
+    width: 25rem;
+  }
+}
+
+@media only screen and (max-width: $bp-largest) {
+  .login,
+  .register {
+    width: 100%;
+  }
+
+  .login__left {
+    display: none;
+  }
+
+  #login {
+    height: 100%;
+  }
+}
