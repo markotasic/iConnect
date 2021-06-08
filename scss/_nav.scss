@@ -68,6 +68,7 @@
 
   .nav__input-2 {
     background-color: var(--color-white);
+    padding-left: 2rem;
   }
 
   .nav__search-2:hover {
@@ -95,5 +96,35 @@
   fill: var(--text-color);
   &:hover {
     cursor: pointer;
+  }
+}
+
+.custom-select {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: white;
+  padding: 1rem 0;
+  border-radius: $border-raius;
+  margin-top: 1rem;
+  margin-left: -6rem;
+  .select {
+    color: black;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    &:hover {
+      background-color: #fff;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      right: 1.1rem;
+      top: -0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background-color: white;
+      transform: translateX(-50%) rotate(45deg);
+      z-index: 2;
+    }
   }
 }
