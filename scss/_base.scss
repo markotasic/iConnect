@@ -1,14 +1,26 @@
-$color-primary: #e7cbb4;
-$color-sec: #f0f2f5;
-$color-tertiary: #d5b69d;
-$color-four: #161616;
-$text-color: #1a1a1a;
+// $color-primary: #e7cbb4;
+// $color-sec: #f0f2f5;
+// $color-tertiary: #d5b69d;
+// $color-four: #161616;
+// $text-color: #1a1a1a;
 
-$color-white: #f4f4f4;
-$color-black: #161616;
+:root {
+  --color-primary: #e7cbb4;
+  --color-sec: #f0f2f5;
+  --color-tertiary: #d5b69d;
+  --text-color: #1a1a1a;
+  --color-white: #eeeeee;
+}
+
+.darkmode {
+  --color-primary: #28282c;
+  --color-sec: #18191a;
+  --color-tertiary: #534f4f;
+  --text-color: #eeeeee;
+  --color-white: #eeeeee;
+}
 
 $border-raius: 1rem;
-
 $bp-huge: 81.25em; // 1300px
 $bp-largest: 76.0625em; // 1200px
 $bp-large: 68.75em; // 1100px
@@ -18,14 +30,6 @@ $bp-smallest: 31.25em; // 500px
 
 .hidden {
   display: none;
-}
-
-.darkmode {
-  $color-primary: #28282c;
-  $color-sec: #18191a;
-  $color-tertiary: #534f4f;
-  $color-four: #18bcda;
-  $text-color: #f4f4f4;
 }
 
 * {
@@ -44,15 +48,15 @@ html {
   font-size: 62.5%;
   font-family: 'Poppins';
   font-weight: 300;
-  color: $text-color;
+  color: var(--text-color);
 }
 
 body {
-  background-color: $color-sec;
+  background-color: var(--color-sec);
 }
 
 .container {
-  background-color: $color-sec;
+  background-color: var(--color-sec);
   max-width: 130rem;
   margin: 0 auto;
   display: grid;

@@ -10,14 +10,14 @@
     justify-content: space-between;
     width: 70%;
     min-width: 350px;
-    background-color: $color-tertiary;
+    background-color: var(--color-tertiary);
     border-radius: $border-raius;
     padding: 3rem;
     margin-top: 5rem;
 
     &-msg {
       width: 100%;
-      background-color: $color-tertiary;
+      background-color: var(--color-tertiary);
       border: none;
       border-radius: 5rem;
       padding: 0.5rem;
@@ -29,7 +29,7 @@
   }
   &__content {
     padding: 2rem;
-    background-color: $color-primary;
+    background-color: var(--color-primary);
     width: fit-content;
     margin-top: 5rem;
     border-radius: $border-raius;
@@ -49,6 +49,7 @@
         margin-left: 2rem;
         font-size: 1.4rem;
         font-weight: 500;
+        color: var(--text-color);
       }
     }
 
@@ -67,6 +68,7 @@
       &--text {
         font-size: 1.3rem;
         font-weight: 500;
+        color: var(--text-color);
       }
 
       .like {
@@ -84,14 +86,14 @@
         height: 3rem;
         width: 3rem;
         margin: 0 1rem;
-        fill: $text-color;
+        fill: var(--text-color);
       }
 
       &--comment {
         height: 3rem;
         width: 3rem;
         margin: 0 1rem;
-        fill: $text-color;
+        fill: var(--text-color);
       }
     }
   }

@@ -7,7 +7,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   width: 100%;
   height: 170px;
   border-bottom-left-radius: $border-raius;
@@ -19,13 +19,17 @@
 
   &-name {
     margin-top: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
   }
 }
 
 .contacts {
-  border-right: 0.3em solid $color-primary;
+  border-right: 0.3em solid var(--color-primary);
   padding: 0 5rem;
   padding-top: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 .users {
@@ -33,8 +37,8 @@
   flex-direction: column;
   width: 100%;
   height: calc(100vh - (170px + 60px));
-  background-color: $color-sec;
-  border-right: 0.4em solid $color-primary;
+  background-color: var(--color-sec);
+  border-right: 0.4em solid var(--color-primary);
   &__profile {
     display: flex;
     align-items: center;
@@ -59,10 +63,4 @@
   border-radius: 100%;
   margin-left: 3.2em;
   margin-bottom: 5em;
-}
-
-.nav__settings {
-  height: 3rem;
-  width: 3rem;
-  fill: $text-color;
 }

@@ -1,5 +1,5 @@
 .nav {
-  background-color: $color-primary;
+  background-color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,7 +21,7 @@
 
   &__input {
     width: 53rem;
-    background-color: $color-white;
+    background-color: var(--color-white);
     border: none;
     border-radius: 5rem;
     padding: 0.5rem;
@@ -40,7 +40,7 @@
     &-color {
       height: 3rem;
       width: 3rem;
-      fill: $text-color;
+      fill: var(--text-color);
       &:hover {
         cursor: pointer;
       }
@@ -55,6 +55,18 @@
 .nav__search-2 {
   height: 3rem;
   width: 3rem;
-  fill: $text-color;
+  fill: var(--text-color);
   margin-right: 2rem;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.nav__settings {
+  height: 3rem;
+  width: 3rem;
+  fill: var(--text-color);
+  &:hover {
+    cursor: pointer;
+  }
 }

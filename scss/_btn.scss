@@ -10,12 +10,12 @@
   }
 
   &-primary {
-    background-color: $color-white;
+    background-color: var(--color-white);
     border-radius: 5rem;
   }
 
   &-sec {
-    background-color: $color-white;
+    background-color: var(--color-white);
     border-radius: $border-raius;
   }
 

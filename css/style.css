@@ -1,3 +1,19 @@
+:root {
+  --color-primary: #e7cbb4;
+  --color-sec: #f0f2f5;
+  --color-tertiary: #d5b69d;
+  --text-color: #1a1a1a;
+  --color-white: #eeeeee;
+}
+
+.darkmode {
+  --color-primary: #28282c;
+  --color-sec: #18191a;
+  --color-tertiary: #534f4f;
+  --text-color: #eeeeee;
+  --color-white: #eeeeee;
+}
+
 .hidden {
   display: none;
 }
@@ -20,15 +36,15 @@ html {
   font-size: 62.5%;
   font-family: 'Poppins';
   font-weight: 300;
-  color: #1a1a1a;
+  color: var(--text-color);
 }
 
 body {
-  background-color: #f0f2f5;
+  background-color: var(--color-sec);
 }
 
 .container {
-  background-color: #f0f2f5;
+  background-color: var(--color-sec);
   max-width: 130rem;
   margin: 0 auto;
   display: -ms-grid;
@@ -49,7 +65,7 @@ body {
 }
 
 .nav {
-  background-color: #e7cbb4;
+  background-color: var(--color-primary);
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -90,7 +106,7 @@ body {
 
 .nav__input {
   width: 53rem;
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   border: none;
   -webkit-border-radius: 5rem;
           border-radius: 5rem;
@@ -117,7 +133,7 @@ body {
 .nav__custom-color {
   height: 3rem;
   width: 3rem;
-  fill: #1a1a1a;
+  fill: var(--text-color);
 }
 
 .nav__custom-color:hover {
@@ -131,8 +147,22 @@ body {
 .nav__search-2 {
   height: 3rem;
   width: 3rem;
-  fill: #1a1a1a;
+  fill: var(--text-color);
   margin-right: 2rem;
+}
+
+.nav__search-2:hover {
+  cursor: pointer;
+}
+
+.nav__settings {
+  height: 3rem;
+  width: 3rem;
+  fill: var(--text-color);
+}
+
+.nav__settings:hover {
+  cursor: pointer;
 }
 
 .sidebar {
@@ -157,7 +187,7 @@ body {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #e7cbb4;
+  background-color: var(--color-primary);
   width: 100%;
   height: 170px;
   -webkit-border-bottom-left-radius: 1rem;
@@ -173,12 +203,16 @@ body {
 
 .profile-name {
   margin-top: 1rem;
+  color: var(--text-color);
+  font-weight: 500;
 }
 
 .contacts {
-  border-right: 0.3em solid #e7cbb4;
+  border-right: 0.3em solid var(--color-primary);
   padding: 0 5rem;
   padding-top: 0.5rem;
+  font-weight: 500;
+  color: var(--text-color);
 }
 
 .users {
@@ -194,8 +228,8 @@ body {
   width: 100%;
   height: -webkit-calc(100vh - (170px + 60px));
   height: calc(100vh - (170px + 60px));
-  background-color: #f0f2f5;
-  border-right: 0.4em solid #e7cbb4;
+  background-color: var(--color-sec);
+  border-right: 0.4em solid var(--color-primary);
 }
 
 .users__profile {
@@ -239,12 +273,6 @@ body {
   margin-bottom: 5em;
 }
 
-.nav__settings {
-  height: 3rem;
-  width: 3rem;
-  fill: #1a1a1a;
-}
-
 .btn {
   padding: 0.5rem 2rem;
   font-size: 1.6rem;
@@ -259,13 +287,13 @@ body {
 }
 
 .btn-primary {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   -webkit-border-radius: 5rem;
           border-radius: 5rem;
 }
 
 .btn-sec {
-  background-color: #f4f4f4;
+  background-color: var(--color-white);
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
 }
@@ -311,7 +339,7 @@ body {
           justify-content: space-between;
   width: 70%;
   min-width: 350px;
-  background-color: #d5b69d;
+  background-color: var(--color-tertiary);
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
   padding: 3rem;
@@ -320,7 +348,7 @@ body {
 
 .main__post-msg {
   width: 100%;
-  background-color: #d5b69d;
+  background-color: var(--color-tertiary);
   border: none;
   -webkit-border-radius: 5rem;
           border-radius: 5rem;
@@ -333,7 +361,7 @@ body {
 
 .main__content {
   padding: 2rem;
-  background-color: #e7cbb4;
+  background-color: var(--color-primary);
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
@@ -365,6 +393,7 @@ body {
   margin-left: 2rem;
   font-size: 1.4rem;
   font-weight: 500;
+  color: var(--text-color);
 }
 
 .main__content-post {
@@ -390,6 +419,7 @@ body {
 .main__content-react--text {
   font-size: 1.3rem;
   font-weight: 500;
+  color: var(--text-color);
 }
 
 .main__content-react .like {
@@ -419,14 +449,14 @@ body {
   height: 3rem;
   width: 3rem;
   margin: 0 1rem;
-  fill: #1a1a1a;
+  fill: var(--text-color);
 }
 
 .main__content-react--comment {
   height: 3rem;
   width: 3rem;
   margin: 0 1rem;
-  fill: #1a1a1a;
+  fill: var(--text-color);
 }
 
 .login__container {
