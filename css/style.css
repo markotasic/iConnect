@@ -227,8 +227,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: -webkit-calc(100vh - (170px + 60px));
-  height: calc(100vh - (170px + 60px));
+  height: 70rem;
   background-color: var(--color-sec);
   border-right: 0.4em solid var(--color-primary);
 }
