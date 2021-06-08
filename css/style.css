@@ -213,6 +213,7 @@ body {
   padding-top: 0.5rem;
   font-weight: 500;
   color: var(--text-color);
+  background-color: var(--color-sec);
 }
 
 .users {
@@ -732,7 +733,10 @@ strong {
 
 @media only screen and (max-width: 56.25em) {
   .sidebar {
-    display: none;
+    top: 0;
+    left: -18rem;
+    padding-right: 2rem;
+    position: fixed;
   }
   .nav__custom {
     display: none;

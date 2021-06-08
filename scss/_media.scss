@@ -38,7 +38,10 @@
 
 @media only screen and (max-width: $bp-medium) {
   .sidebar {
-    display: none;
+    top: 0;
+    left: -18rem;
+    padding-right: 2rem;
+    position: fixed;
   }
 
   .nav__custom {
