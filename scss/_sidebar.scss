@@ -37,7 +37,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: calc(100vh - (170px + 60px));
+  height: 70rem;
   background-color: var(--color-sec);
   border-right: 0.4em solid var(--color-primary);
   &__profile {
@@ -64,4 +64,15 @@
   border-radius: 100%;
   margin-left: 3.2em;
   margin-bottom: 5em;
+}
+
+.line {
+  position: fixed;
+  height: 10vh;
+  width: 0.3rem;
+  margin-left: 18.9rem;
+  margin-top: 45vh;
+  background-color: var(--text-color);
+  border-radius: $border-raius;
+  display: none;
 }
