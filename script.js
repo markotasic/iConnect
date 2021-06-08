@@ -20,3 +20,4 @@ const darkMode = document.querySelector('.nav__custom-color');
 darkMode.addEventListener('click', () => {
   body.classList.toggle('darkmode');
 });
+// _____________SWIPE RIGHT FOR SIDEBAR__________________________
