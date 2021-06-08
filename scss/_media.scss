@@ -19,6 +19,13 @@
   .btn-submit {
     width: 25rem;
   }
+
+  .nav__search {
+    display: none;
+  }
+  .nav__icons-search {
+    display: inline-block;
+  }
 }
 
 @media only screen and (max-width: $bp-largest) {
@@ -48,14 +55,6 @@
     display: none;
   }
 
-  .nav__custom-small {
-    display: block;
-  }
-
-  .nav__search {
-    display: none;
-  }
-
   .main__content {
     width: 95%;
     align-items: center;
@@ -75,8 +74,12 @@
       min-width: none;
     }
   }
+  .nav__icons-settings {
+    display: inline-block;
+  }
 }
-
+@media only screen and (max-width: $bp-large) {
+}
 @media only screen and (max-width: $bp-huge) {
   .profile,
   .nav {

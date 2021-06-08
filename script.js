@@ -57,3 +57,10 @@ function handleTouchMove(evt) {
   left = null;
   yDown = null;
 }
+
+$(document).ready(function () {
+  $('#search-button').click(function () {
+    $('#input-2').toggleClass('hidden');
+    $('#logo').toggleClass('hidden');
+  });
+});

@@ -32,6 +32,10 @@ $bp-smallest: 31.25em; // 500px
   display: none;
 }
 
+.shown {
+  display: flex;
+}
+
 * {
   padding: 0;
   margin: 0;

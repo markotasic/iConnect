@@ -16,21 +16,36 @@
     <div class="main-page">
       <div class="container">
         <nav class="nav">
-          <img src="img/logo2.png" alt="ree" height="40px" />
-
+          <img id="logo" src="img/logo2.png" alt="ree" height="40px" />
+          <input
+            id="input-2"
+            class="nav__input-2 hidden"
+            type="text"
+            placeholder="Search feed"
+            placeholder="Search feed"
+          />
           <div class="nav__search">
             <img class="nav__search-icon" src="img/search.png" alt="search" />
 
-            <input class="nav__input" type="text" placeholder="Search feed" />
+            <input
+              class="nav__input"
+              type="text"
+              placeholder="Search feed"
+              placeholder="Search feed"
+            />
           </div>
 
-          <div class="nav__custom-small hidden">
-            <svg class="nav__search-2">
-              <use xlink:href="img/sprite.svg#icon-search"></use>
-            </svg>
-            <svg class="nav__settings">
-              <use xlink:href="img/sprite.svg#icon-settings"></use>
-            </svg>
+          <div id="nav-icons">
+            <div class="nav__icons-search hidden">
+              <svg id="search-button" class="nav__search-2">
+                <use xlink:href="img/sprite.svg#icon-search"></use>
+              </svg>
+            </div>
+            <div class="nav__icons-settings hidden">
+              <svg class="nav__settings">
+                <use xlink:href="img/sprite.svg#icon-settings"></use>
+              </svg>
+            </div>
           </div>
 
           <div class="nav__custom">
@@ -188,158 +203,6 @@
       </div>
     </div>
 
-    <!-- <div class="form">
-      <section id="background">
-        <section id="login">
-          <div class="login__left"></div>
-
-          <div class="login">
-              <div class="login__container">
-                <div class="login__container-form">
-                  <input
-                    type="email"
-                    name="email"
-                    class="login__container-mail input-login"
-                    placeholder="zlatko@gmail.com"
-                  />
-                  <input
-                    type="password"
-                    name="password"
-                    class="login__container-password input-login"
-                    placeholder="password"
-                  />
-                  <button class="btn btn-submit">Log In</button>
-                  <a href="" class="link-to-register"><p>Don't have an account yet? <strong>Sign up</strong> here!</p></a>
-                  <div class="contact">
-                    <h2 class="name">Marko Tasic</h2>
-                    <div class="contact__icons">
-                      <a target="_blank href="">
-                        <svg class="login__container-portfolio">
-                          <use
-                            xlink:href="img/sprite.svg#icon-text-document-inverted"
-                          ></use>
-                        </svg>
-                      </a>
-                      <a target="_blank" href="https://github.com/markotasic">
-                        <svg class="login__container-github">
-                          <use xlink:href="img/sprite.svg#icon-github"></use>
-                        </svg>
-                      </a>
-                      <a href="mailto:m4rko2001@gmail.com">
-                        <svg class="login__container-email">
-                          <use xlink:href="img/sprite.svg#icon-email"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div class="contact-2">
-                    <h2 class="name">Zlatko Radenkovic</h2>
-                    <div class="contact__icons">
-                      <a target="_blank href="">
-                        <svg class="login__container-portfolio">
-                          <use
-                            xlink:href="img/sprite.svg#icon-text-document-inverted"
-                          ></use>
-                        </svg>
-                      </a>
-                      <a target="_blank" href="https://github.com/yournightmare01">
-                        <svg class="login__container-github">
-                          <use xlink:href="img/sprite.svg#icon-github"></use>
-                        </svg>
-                      </a>
-                      <a href="mailto:zlatkor1001@gmail.com">
-                        <svg class="login__container-email">
-                          <use xlink:href="img/sprite.svg#icon-email"></use>
-                        </svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </div>
-
-          <div class="register hidden">
-              <div class="login__container-register">
-                <div class="login__container-register--form">
-                <input
-                  type="text"
-                  name="username"
-                  class="login__container-username input-login"
-                  placeholder="username"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  class="login__container-mail input-login"
-                  placeholder="marko@gmail.com"
-                />
-                <input
-                  type="password"
-                  name="password"
-                  class="login__container-password input-login"
-                  placeholder="password"
-                />
-                <input
-                  type="password"
-                  name="password"
-                  class="login__container-password-2 input-login"
-                  placeholder="confirm password"
-                />
-                <button class="btn btn-submit">Register</button>
-                <a href="" class="link-to-login"><p>Already have an account? <strong>Log in</strong> here!</p></a>
-                <div class="contact">
-                  <h2 class="name">Marko Tasic</h2>
-                  <div class="contact__icons">
-                    <a target="_blank href="">
-                      <svg class="login__container-portfolio">
-                        <use
-                          xlink:href="img/sprite.svg#icon-text-document-inverted"
-                        ></use>
-                      </svg>
-                    </a>
-                    <a target="_blank" href="https://github.com/markotasic">
-                      <svg class="login__container-github">
-                        <use xlink:href="img/sprite.svg#icon-github"></use>
-                      </svg>
-                    </a>
-                    <a href="mailto:m4rko2001@gmail.com">
-                      <svg class="login__container-email">
-                        <use xlink:href="img/sprite.svg#icon-email"></use>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-
-                <div class="contact-2">
-                  <h2 class="name">Zlatko Radenkovic</h2>
-                  <div class="contact__icons">
-                    <a target="_blank href="">
-                      <svg class="login__container-portfolio">
-                        <use
-                          xlink:href="img/sprite.svg#icon-text-document-inverted"
-                        ></use>
-                      </svg>
-                    </a>
-                    <a target="_blank href="https://github.com/yournightmare01">
-                      <svg class="login__container-github">
-                        <use xlink:href="img/sprite.svg#icon-github"></use>
-                      </svg>
-                    </a>
-                    <a href="mailto:zlatkor1001@gmail.com">
-                      <svg class="login__container-email">
-                        <use xlink:href="img/sprite.svg#icon-email"></use>
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-    </div> -->
-
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
 
@@ -385,5 +248,6 @@
         }
       });
     </script>
+    <script src="jq/jquery-3.6.0.min.js"></script>
   </body>
 </html>
