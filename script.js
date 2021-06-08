@@ -3,8 +3,9 @@
 // const register = document.querySelector('.register');
 // const login = document.querySelector('.login');
 const body = document.querySelector('.body');
-const darkMode = document.querySelector('.nav__custom-color');
+const darkModeToggle = document.querySelector('.nav__custom-color');
 
+//__________________________LOGIN AND REGISTER PAGE SWITCH__________________________\\
 // goToRegister.addEventListener('click', (e) => {
 //   e.preventDefault();
 //   register.classList.remove('hidden');
@@ -16,11 +17,41 @@ const darkMode = document.querySelector('.nav__custom-color');
 //   register.classList.add('hidden');
 //   login.classList.remove('hidden');
 // });
+//__________________________DARKMODE__________________________\\
+let darkMode = localStorage.getItem('darkMode');
 
-darkMode.addEventListener('click', () => {
-  body.classList.toggle('darkmode');
+const enableDarkMode = () => {
+  // 1. Add the class to the body
+  document.body.classList.add('darkmode');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode', 'enabled');
+};
+
+const disableDarkMode = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove('darkmode');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode', null);
+};
+
+if (darkMode === 'enabled') {
+  enableDarkMode();
+}
+
+// When someone clicks the button
+darkModeToggle.addEventListener('click', () => {
+  // get their darkMode setting
+  darkMode = localStorage.getItem('darkMode');
+
+  // if it not current enabled, enable it
+  if (darkMode !== 'enabled') {
+    enableDarkMode();
+    // if it has been enabled, turn it off
+  } else {
+    disableDarkMode();
+  }
 });
-// _____________SWIPE RIGHT FOR SIDEBAR__________________________
+//__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 function handleTouchStart(evt) {
   const firstTouch = getTouches(evt)[0];
   left = firstTouch.clientX;
@@ -57,3 +88,10 @@ function handleTouchMove(evt) {
   left = null;
   yDown = null;
 }
+//__________________________NAV RESPONSIVNES__________________________\\
+$(document).ready(function () {
+  $('#search-button').click(function () {
+    $('#input-2').toggleClass('hidden');
+    $('#logo').toggleClass('hidden');
+  });
+});

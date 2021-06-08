@@ -7,6 +7,7 @@
   border-bottom-right-radius: $border-raius;
 
   &__search {
+    width: 50%;
     display: flex;
     align-items: center;
     &-icon {
@@ -20,7 +21,7 @@
   }
 
   &__input {
-    width: 53rem;
+    width: 100%;
     background-color: var(--color-white);
     border: none;
     border-radius: 5rem;
@@ -31,6 +32,16 @@
     outline: none;
     font-family: 'Poppins';
     font-weight: 300;
+  }
+
+  &__input-2 {
+    font-family: 'Poppins';
+    font-weight: 300;
+    width: 65%;
+    border-radius: 5rem;
+    outline: none;
+    padding: 0.3rem;
+    border: none;
   }
 
   &__custom {
@@ -49,6 +60,22 @@
     button {
       margin-right: 2rem;
     }
+  }
+
+  .nav__search-2 {
+    height: 2.6rem;
+  }
+
+  .nav__input-2 {
+    background-color: var(--color-white);
+  }
+
+  .nav__search-2:hover {
+    cursor: pointer;
+  }
+
+  .nav__settings {
+    height: 2.6rem;
   }
 }
 
