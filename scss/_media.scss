@@ -51,12 +51,17 @@
     position: fixed;
   }
 
+  .line {
+    display: block;
+    margin-left: 19rem;
+  }
+
   .nav__custom {
     display: none;
   }
 
   .main__content {
-    width: 95%;
+    width: 100%;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -67,8 +72,8 @@
   }
 
   .main__post {
-    width: 95%;
-    min-width: 95%;
+    width: 100%;
+    min-width: 100%;
 
     &-msg {
       min-width: none;

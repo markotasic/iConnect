@@ -308,6 +308,18 @@ body {
   margin-bottom: 5em;
 }
 
+.line {
+  position: fixed;
+  height: 10vh;
+  width: 0.3rem;
+  margin-left: 18.9rem;
+  margin-top: 45vh;
+  background-color: var(--text-color);
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
+  display: none;
+}
+
 .btn {
   padding: 0.5rem 2rem;
   font-size: 1.6rem;
@@ -357,6 +369,7 @@ body {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2rem;
 }
 
 .main__post {
@@ -778,11 +791,15 @@ strong {
     padding-right: 2rem;
     position: fixed;
   }
+  .line {
+    display: block;
+    margin-left: 19rem;
+  }
   .nav__custom {
     display: none;
   }
   .main__content {
-    width: 95%;
+    width: 100%;
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
@@ -801,8 +818,8 @@ strong {
     max-width: 100%;
   }
   .main__post {
-    width: 95%;
-    min-width: 95%;
+    width: 100%;
+    min-width: 100%;
   }
   .main__post-msg {
     min-width: none;

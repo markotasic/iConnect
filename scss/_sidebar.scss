@@ -65,3 +65,14 @@
   margin-left: 3.2em;
   margin-bottom: 5em;
 }
+
+.line {
+  position: fixed;
+  height: 10vh;
+  width: 0.3rem;
+  margin-left: 18.9rem;
+  margin-top: 45vh;
+  background-color: var(--text-color);
+  border-radius: $border-raius;
+  display: none;
+}
