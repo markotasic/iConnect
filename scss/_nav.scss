@@ -5,11 +5,13 @@
   justify-content: space-between;
   padding: 0 2rem;
   border-bottom-right-radius: $border-raius;
+  user-select: none;
 
   &__search {
     width: 50%;
     display: flex;
     align-items: center;
+    user-select: text;
     &-icon {
       margin-right: -4.8rem;
       z-index: 16;
@@ -40,7 +42,7 @@
     width: 65%;
     border-radius: 5rem;
     outline: none;
-    padding: 0.3rem;
+    padding: 0.5rem;
     border: none;
   }
 
@@ -137,4 +139,9 @@
 
 #nav-icons {
   position: relative;
+}
+
+.nav__darkmode-toggle {
+  font-size: 1.6rem;
+  font-weight: 500;
 }

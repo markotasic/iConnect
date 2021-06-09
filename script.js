@@ -1,28 +1,13 @@
-// const goToRegister = document.querySelector('.link-to-register');
-// const goToLogin = document.querySelector('.link-to-login');
-// const register = document.querySelector('.register');
-// const login = document.querySelector('.login');
-const body = document.querySelector(".body");
-const darkModeToggle = document.querySelector(".nav__custom-color");
-const settingsDarkModeToggle = document.querySelector(".nav__darkmode-toggle");
-const navSettings = document.querySelector(".nav__settings");
-const navSettingsShow = document.querySelector(".custom-select-hide");
+const body = document.querySelector('.body');
+const darkModeToggle = document.querySelector('.nav__custom-color');
+const settingsDarkModeToggle = document.querySelector('.nav__darkmode-toggle');
+const navSettings = document.querySelector('.nav__settings');
+const navSettingsShow = document.querySelector('.custom-select-hide');
 
 //__________________________LOGIN AND REGISTER PAGE SWITCH__________________________\\
-// goToRegister.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   register.classList.remove('hidden');
-//   login.classList.add('hidden');
-// });
 
-// goToLogin.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   register.classList.add('hidden');
-//   login.classList.remove('hidden');
-// });
-
-navSettings.addEventListener("click", () => {
-  navSettingsShow.classList.toggle("hidden");
+navSettings.addEventListener('click', () => {
+  navSettingsShow.classList.toggle('hidden');
 });
 
 //__________________________DARKMODE TOGGLE__________________________\\
@@ -30,53 +15,53 @@ navSettings.addEventListener("click", () => {
 // When someone clicks the button
 
 //__________________________DARKMODE__________________________\\
-let darkMode = localStorage.getItem("darkMode");
+let darkMode = localStorage.getItem('darkMode');
 
 const enableDarkMode = () => {
   // 1. Add the class to the body
-  document.body.classList.add("darkmode");
+  document.body.classList.add('darkmode');
   // 2. Update darkMode in localStorage
-  localStorage.setItem("darkMode", "enabled");
+  localStorage.setItem('darkMode', 'enabled');
   // 3. Update darkMode variable
-  darkMode = "enabled";
+  darkMode = 'enabled';
 };
 
 const disableDarkMode = () => {
   // 1. Remove the class from the body
-  document.body.classList.remove("darkmode");
+  document.body.classList.remove('darkmode');
   // 2. Update darkMode in localStorage
-  localStorage.setItem("darkMode", null);
+  localStorage.setItem('darkMode', null);
   // 3. Update darkMode variable
   darkMode = null;
 };
 
-if (darkMode === "enabled") enableDarkMode();
+if (darkMode === 'enabled') enableDarkMode();
 
-settingsDarkModeToggle.addEventListener("click", () => {
-  if (darkMode !== "enabled") enableDarkMode();
+settingsDarkModeToggle.addEventListener('click', () => {
+  if (darkMode !== 'enabled') enableDarkMode();
   else disableDarkMode();
 });
 
-darkModeToggle.addEventListener("click", () => {
-  if (darkMode !== "enabled") enableDarkMode();
+darkModeToggle.addEventListener('click', () => {
+  if (darkMode !== 'enabled') enableDarkMode();
   else disableDarkMode();
 });
 //__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 
-const sidebar = document.querySelector(".sidebar");
-sidebar.style.transition = "left 0.3s";
+const sidebar = document.querySelector('.sidebar');
+sidebar.style.transition = 'left 0.3s';
 const maxLeft = sidebar.clientWidth - 20;
 let isSidebarHidden = true;
 
-sidebar.addEventListener("mousedown", () => {
+sidebar.addEventListener('mousedown', () => {
   if (isSidebarHidden) {
-    console.log("sidebar");
+    console.log('sidebar');
     sidebar.style.left = 0;
     isSidebarHidden = false;
   }
 });
 
-document.addEventListener("mousedown", (e) => {
+document.addEventListener('mousedown', (e) => {
   let pass = true;
 
   if (e.target === sidebar) pass = false;
@@ -102,8 +87,8 @@ document.addEventListener("mousedown", (e) => {
 
 //__________________________NAV RESPONSIVNES__________________________\\
 $(document).ready(function () {
-  $("#search-button").click(function () {
-    $("#input-2").toggleClass("hidden");
-    $("#logo").toggleClass("hidden");
+  $('#search-button').click(function () {
+    $('#input-2').toggleClass('hidden');
+    $('#logo').toggleClass('hidden');
   });
 });

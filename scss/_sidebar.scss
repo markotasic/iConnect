@@ -1,5 +1,6 @@
 .sidebar {
   width: 20rem;
+  user-select: none;
 }
 
 .profile {
@@ -21,6 +22,7 @@
     margin-top: 1rem;
     color: var(--text-color);
     font-weight: 500;
+    user-select: text;
   }
 }
 
@@ -31,6 +33,7 @@
   font-weight: 500;
   color: var(--text-color);
   background-color: var(--color-sec);
+  user-select: text;
 }
 
 .users {
