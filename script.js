@@ -2,11 +2,11 @@
 // const goToLogin = document.querySelector('.link-to-login');
 // const register = document.querySelector('.register');
 // const login = document.querySelector('.login');
-const body = document.querySelector('.body');
-const darkModeToggle = document.querySelector('.nav__custom-color');
-const settingsDarkModeToggle = document.querySelector('.nav__darkmode-toggle');
-const navSettings = document.querySelector('.nav__settings');
-const navSettingsShow = document.querySelector('.custom-select-hide');
+const body = document.querySelector(".body");
+const darkModeToggle = document.querySelector(".nav__custom-color");
+const settingsDarkModeToggle = document.querySelector(".nav__darkmode-toggle");
+const navSettings = document.querySelector(".nav__settings");
+const navSettingsShow = document.querySelector(".custom-select-hide");
 
 //__________________________LOGIN AND REGISTER PAGE SWITCH__________________________\\
 // goToRegister.addEventListener('click', (e) => {
@@ -21,38 +21,38 @@ const navSettingsShow = document.querySelector('.custom-select-hide');
 //   login.classList.remove('hidden');
 // });
 
-navSettings.addEventListener('click', () => {
-  navSettingsShow.classList.toggle('hidden');
+navSettings.addEventListener("click", () => {
+  navSettingsShow.classList.toggle("hidden");
 });
 
 //__________________________DARKMODE TOGGLE__________________________\\
-let darkMode2 = localStorage.getItem('darkMode2');
+let darkMode2 = localStorage.getItem("darkMode2");
 
 const enableDarkMode2 = () => {
   // 1. Add the class to the body
-  document.body.classList.add('darkmode');
+  document.body.classList.add("darkmode");
   // 2. Update darkMode in localStorage
-  localStorage.setItem('darkMode2', 'enabled');
+  localStorage.setItem("darkMode2", "enabled");
 };
 
 const disableDarkMode2 = () => {
   // 1. Remove the class from the body
-  document.body.classList.remove('darkmode');
+  document.body.classList.remove("darkmode");
   // 2. Update darkMode in localStorage
-  localStorage.setItem('darkMode2', null);
+  localStorage.setItem("darkMode2", null);
 };
 
-if (darkMode2 === 'enabled') {
+if (darkMode2 === "enabled") {
   enableDarkMode2();
 }
 
 // When someone clicks the button
-settingsDarkModeToggle.addEventListener('click', () => {
+settingsDarkModeToggle.addEventListener("click", () => {
   // get their darkMode setting
-  darkMode2 = localStorage.getItem('darkMode2');
+  darkMode2 = localStorage.getItem("darkMode2");
 
   // if it not current enabled, enable it
-  if (darkMode2 !== 'enabled') {
+  if (darkMode2 !== "enabled") {
     enableDarkMode2();
     // if it has been enabled, turn it off
   } else {
@@ -60,33 +60,33 @@ settingsDarkModeToggle.addEventListener('click', () => {
   }
 });
 //__________________________DARKMODE__________________________\\
-let darkMode = localStorage.getItem('darkMode');
+let darkMode = localStorage.getItem("darkMode");
 
 const enableDarkMode = () => {
   // 1. Add the class to the body
-  document.body.classList.add('darkmode');
+  document.body.classList.add("darkmode");
   // 2. Update darkMode in localStorage
-  localStorage.setItem('darkMode', 'enabled');
+  localStorage.setItem("darkMode", "enabled");
 };
 
 const disableDarkMode = () => {
   // 1. Remove the class from the body
-  document.body.classList.remove('darkmode');
+  document.body.classList.remove("darkmode");
   // 2. Update darkMode in localStorage
-  localStorage.setItem('darkMode', null);
+  localStorage.setItem("darkMode", null);
 };
 
-if (darkMode === 'enabled') {
+if (darkMode === "enabled") {
   enableDarkMode();
 }
 
 // When someone clicks the button
-darkModeToggle.addEventListener('click', () => {
+darkModeToggle.addEventListener("click", () => {
   // get their darkMode setting
-  darkMode = localStorage.getItem('darkMode');
+  darkMode = localStorage.getItem("darkMode");
 
   // if it not current enabled, enable it
-  if (darkMode !== 'enabled') {
+  if (darkMode !== "enabled") {
     enableDarkMode();
     // if it has been enabled, turn it off
   } else {
@@ -95,39 +95,47 @@ darkModeToggle.addEventListener('click', () => {
 });
 //__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 
-const sidebar = document.querySelector('.sidebar');
-console.log(sidebar.clientWidth);
+const sidebar = document.querySelector(".sidebar");
+sidebar.style.transition = "left 0.3s";
 const maxLeft = sidebar.clientWidth - 20;
-let startingX = 0;
-let x = 0;
-let diffX = 0;
-let leftOffset = 0;
-let clicked = false;
-sidebar.addEventListener('mousedown', (e) => {
-  startingX = e.offsetX;
-  clicked = true;
-});
+let isSidebarHidden = true;
 
-document.addEventListener('mouseup', (e) => {
-  clicked = false;
-});
-
-sidebar.addEventListener('mousemove', (e) => {
-  if (clicked) {
-    x = e.offsetX;
-    diffX = startingX < x ? startingX - x : x - startingX;
-    console.log('diffx', diffX);
-    if (diffX < -maxLeft) leftOffset = -maxLeft;
-    else if (diffX > 0) leftOffset = 0;
-    else leftOffset = diffX;
-    console.log('leftoffset', leftOffset);
-    sidebar.style.left = `-${-maxLeft - diffX}px`;
+sidebar.addEventListener("mousedown", () => {
+  if (isSidebarHidden) {
+    console.log("sidebar");
+    sidebar.style.left = 0;
+    isSidebarHidden = false;
   }
 });
+
+document.addEventListener("mousedown", (e) => {
+  let pass = true;
+
+  if (e.target === sidebar) pass = false;
+
+  for (const child of sidebar.children) {
+    if (e.target === child) pass = false;
+    for (const secondChild of child.children) {
+      if (e.target === secondChild) pass = false;
+
+      for (const thirdChild of secondChild.children) {
+        if (e.target === thirdChild) pass = false;
+      }
+    }
+  }
+
+  if (pass) {
+    if (!isSidebarHidden) {
+      sidebar.style.left = `-${maxLeft}px`;
+      isSidebarHidden = true;
+    }
+  }
+});
+
 //__________________________NAV RESPONSIVNES__________________________\\
 $(document).ready(function () {
-  $('#search-button').click(function () {
-    $('#input-2').toggleClass('hidden');
-    $('#logo').toggleClass('hidden');
+  $("#search-button").click(function () {
+    $("#input-2").toggleClass("hidden");
+    $("#logo").toggleClass("hidden");
   });
 });
