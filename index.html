@@ -45,16 +45,18 @@
               <svg class="nav__settings">
                 <use xlink:href="img/sprite.svg#icon-settings"></use>
               </svg>
-            </div>
-            <div class="custom-select">
-              <a class="select" href="#!">English</a>
-              <a class="select" href="#!">German</a>
+              <div class="custom-select-hide hidden">
+                <div class="custom-select">
+                  <h2 class="select nav__darkmode-toggle">Dark Mode</h2>
+                  <button class="btn btn-primary-2 select">Log out</button>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="nav__custom">
             <button class="btn btn-primary">Log out</button>
-            <svg class="nav__custom-color">
+            <svg id="nav__custom-color" class="nav__custom-color">
               <use xlink:href="img/sprite.svg#icon-wb_sunny"></use>
             </svg>
           </div>

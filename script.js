@@ -4,6 +4,9 @@
 // const login = document.querySelector('.login');
 const body = document.querySelector('.body');
 const darkModeToggle = document.querySelector('.nav__custom-color');
+const settingsDarkModeToggle = document.querySelector('.nav__darkmode-toggle');
+const navSettings = document.querySelector('.nav__settings');
+const navSettingsShow = document.querySelector('.custom-select-hide');
 
 //__________________________LOGIN AND REGISTER PAGE SWITCH__________________________\\
 // goToRegister.addEventListener('click', (e) => {
@@ -17,6 +20,45 @@ const darkModeToggle = document.querySelector('.nav__custom-color');
 //   register.classList.add('hidden');
 //   login.classList.remove('hidden');
 // });
+
+navSettings.addEventListener('click', () => {
+  navSettingsShow.classList.toggle('hidden');
+});
+
+//__________________________DARKMODE TOGGLE__________________________\\
+let darkMode2 = localStorage.getItem('darkMode2');
+
+const enableDarkMode2 = () => {
+  // 1. Add the class to the body
+  document.body.classList.add('darkmode');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode2', 'enabled');
+};
+
+const disableDarkMode2 = () => {
+  // 1. Remove the class from the body
+  document.body.classList.remove('darkmode');
+  // 2. Update darkMode in localStorage
+  localStorage.setItem('darkMode2', null);
+};
+
+if (darkMode2 === 'enabled') {
+  enableDarkMode2();
+}
+
+// When someone clicks the button
+settingsDarkModeToggle.addEventListener('click', () => {
+  // get their darkMode setting
+  darkMode2 = localStorage.getItem('darkMode2');
+
+  // if it not current enabled, enable it
+  if (darkMode2 !== 'enabled') {
+    enableDarkMode2();
+    // if it has been enabled, turn it off
+  } else {
+    disableDarkMode2();
+  }
+});
 //__________________________DARKMODE__________________________\\
 let darkMode = localStorage.getItem('darkMode');
 
