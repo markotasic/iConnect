@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
-  <script src=""></script>
->>>>>>> 74a7b2997634f8d84d30f055386f5458a4b8ef3f
   <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
       rel="stylesheet"
@@ -31,7 +27,6 @@
                   placeholder="zlatko@gmail.com"
                 />
                 <input
-
                   type="password"
                   name="password"
                   class="login__container-password input-login"
@@ -61,7 +56,6 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="contact-2">
                   <h2 class="name">Zlatko Radenkovic</h2>
                   <div class="contact__icons">
@@ -190,36 +184,10 @@
       e.preventDefault();
       register.classList.add('hidden');
       login.classList.remove('hidden');
-
-          var firebaseConfig = {
-    apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
-    authDomain: 'iconnect-88fcc.firebaseapp.com',
-    projectId: 'iconnect-88fcc',
-    storageBucket: 'iconnect-88fcc.appspot.com',
-    messagingSenderId: '107244892732',
-    appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
-    measurementId: 'G-6JP6297P57',
-    };
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-const signupBtn = document.querySelector('#register-btn');
-      signupBtn.addEventListener('click', e => {
-      e.preventDefault();
-
-      const email = document.querySelector("#email").value;
-      const password = document.querySelector("#password").value;
-
-      auth.createUserWithEmailAndPassword(email, password).then(cred => {
-      console.log('User Singed Up');
-      });
-  
-  });
-
-
     });
-
   </script>
+
+  <script src="src/register.js"></script>
 
 </body>
 </html>
