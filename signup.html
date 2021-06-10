@@ -4,9 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-  <script src=""></script>
   <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
       rel="stylesheet"
@@ -116,11 +113,7 @@
                 class="register-forms register__container-password-2 input-login"
                 placeholder="confirm password"
               />
-<<<<<<< HEAD
-              <button class="btn btn-submit submit-register">Register</button>
-=======
               <button id="register-btn" class="btn btn-submit">Register</button>
->>>>>>> 7c8d4ca2ee79df0633217c01c05f16f6a767f30f
               <a href="" class="link-to-login"><p>Already have an account? <strong>Log in</strong> here!</p></a>
               <div class="contact">
                 <h2 class="name">Marko Tasic</h2>
@@ -173,127 +166,8 @@
       </section>
     </section>
   </div>
-  
 
-
-
-
-  <script>
-    var firebaseConfig = {
-    apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
-    authDomain: 'iconnect-88fcc.firebaseapp.com',
-    projectId: 'iconnect-88fcc',
-    storageBucket: 'iconnect-88fcc.appspot.com',
-    messagingSenderId: '107244892732',
-    appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
-    measurementId: 'G-6JP6297P57',
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-
-
-
-const signupBtn = document.querySelector('#register-btn');
-signupBtn.addEventListener('click', e => {
-  e.preventDefault();
-
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
-
-  auth.createUserWithEmailAndPassword(email, password).then(cred => {
-    console.log('User Singed Up');
-  });
-  
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /*function RegisterUser() {
-    let email = document.getElementById('email').nodeValue;
-    let password = document.getElementById("password").value;
-    firebase.auth().createUserWithEmailAndPassword('email, password').then(function() {
-      alert('User Registration Successfull');
-    }).catch(function(error){
-      let errorcode = error.code;
-      let errormsg = error.message;
-    });*/
-  
-  </script>
-
-<<<<<<< HEAD
-  <script src="jq/jquery-3.6.0.min.js"></script>
-
-    <script>
-      const goToRegister = document.querySelector('.link-to-register');
-      const goToLogin = document.querySelector('.link-to-login');
-      const register = document.querySelector('.register');
-      const login = document.querySelector('.login');
-      
-      goToRegister.addEventListener('click', (e) => {
-        e.preventDefault();
-        register.classList.remove('hidden');
-        login.classList.add('hidden');
-      });
-      
-      goToLogin.addEventListener('click', (e) => {
-        e.preventDefault();
-        register.classList.add('hidden');
-        login.classList.remove('hidden');
-      });
-      </script>
-
-=======
-  <script>
-    const goToRegister = document.querySelector('.link-to-register');
-    const goToLogin = document.querySelector('.link-to-login');
-    const register = document.querySelector('.register');
-    const login = document.querySelector('.login');
-
-    goToRegister.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.remove('hidden');
-      login.classList.add('hidden');
-    });
-
-    goToLogin.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.add('hidden');
-      login.classList.remove('hidden');
-    });
-
-  </script>
-  <script src="jq/jquery-3.6.0.min.js"></script>
-  <!--<script src="src/register.js"></script>-->
->>>>>>> 7c8d4ca2ee79df0633217c01c05f16f6a767f30f
+  <script src="src/register.js"></script>
   <script src="src/login.js"></script>
 </body>
 </html>
