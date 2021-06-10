@@ -9,7 +9,6 @@
       rel="stylesheet"
     />
   <link rel="stylesheet" href="css/style.min.css">
-  <script src="script.js" defer></script>
   <title>iConnect - Log In or Sign Up</title>
 </head>
 <body>
@@ -165,6 +164,14 @@
     </section>
   </div>
   
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 
   <script>
     const goToRegister = document.querySelector('.link-to-register');
@@ -183,6 +190,33 @@
       register.classList.add('hidden');
       login.classList.remove('hidden');
     });
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
+      authDomain: 'iconnect-88fcc.firebaseapp.com',
+      projectId: 'iconnect-88fcc',
+      storageBucket: 'iconnect-88fcc.appspot.com',
+      messagingSenderId: '107244892732',
+      appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
+      measurementId: 'G-6JP6297P57',
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      if (user) {
+        console.log(user);
+      } else {
+        // No user is signed in.
+      }
+    });
   </script>
+  <script src="jq/jquery-3.6.0.min.js"></script>
+
+  <script src="src/login.js"></script>
+  <script src="src/register.js"></script>
 </body>
 </html>
