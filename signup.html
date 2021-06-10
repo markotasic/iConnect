@@ -89,28 +89,28 @@
               <input
                 type="text"
                 name="username"
-                class="login__container-username input-login"
+                class="register-forms register__container-username input-login"
                 placeholder="username"
               />
               <input
                 type="email"
                 name="email"
-                class="login__container-mail input-login"
+                class="register-forms register__container-mail input-login"
                 placeholder="marko@gmail.com"
               />
               <input
                 type="password"
                 name="password"
-                class="login__container-password input-login"
+                class="register-forms register__container-password input-login"
                 placeholder="password"
               />
               <input
                 type="password"
                 name="password"
-                class="login__container-password-2 input-login"
+                class="register-forms register__container-password-2 input-login"
                 placeholder="confirm password"
               />
-              <button class="btn btn-submit">Register</button>
+              <button class="btn btn-submit submit-register">Register</button>
               <a href="" class="link-to-login"><p>Already have an account? <strong>Log in</strong> here!</p></a>
               <div class="contact">
                 <h2 class="name">Marko Tasic</h2>
@@ -173,48 +173,26 @@
 
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
 
-  <script>
-    const goToRegister = document.querySelector('.link-to-register');
-    const goToLogin = document.querySelector('.link-to-login');
-    const register = document.querySelector('.register');
-    const login = document.querySelector('.login');
-
-    goToRegister.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.remove('hidden');
-      login.classList.add('hidden');
-    });
-
-    goToLogin.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.add('hidden');
-      login.classList.remove('hidden');
-    });
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
-      authDomain: 'iconnect-88fcc.firebaseapp.com',
-      projectId: 'iconnect-88fcc',
-      storageBucket: 'iconnect-88fcc.appspot.com',
-      messagingSenderId: '107244892732',
-      appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
-      measurementId: 'G-6JP6297P57',
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-
-    firebase.auth().onAuthStateChanged(function (user) {
-      if (user) {
-        console.log(user);
-      } else {
-        // No user is signed in.
-      }
-    });
-  </script>
   <script src="jq/jquery-3.6.0.min.js"></script>
+
+    <script>
+      const goToRegister = document.querySelector('.link-to-register');
+      const goToLogin = document.querySelector('.link-to-login');
+      const register = document.querySelector('.register');
+      const login = document.querySelector('.login');
+      
+      goToRegister.addEventListener('click', (e) => {
+        e.preventDefault();
+        register.classList.remove('hidden');
+        login.classList.add('hidden');
+      });
+      
+      goToLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        register.classList.add('hidden');
+        login.classList.remove('hidden');
+      });
+      </script>
 
   <script src="src/login.js"></script>
   <script src="src/register.js"></script>

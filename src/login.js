@@ -19,7 +19,6 @@ submit.addEventListener('click', function (e) {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
-      console.log(user);
       // ...
     })
     .catch((error) => {
