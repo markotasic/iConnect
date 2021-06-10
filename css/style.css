@@ -933,8 +933,6 @@ strong {
   .nav__icons-settings {
     display: inline-block;
   }
-  display: none;
-  padding-left: 0;
 }
 
 @media only screen and (max-width: 81.25em) {

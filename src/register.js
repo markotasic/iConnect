@@ -7,9 +7,18 @@ var firebaseConfig = {
   appId: '1:107244892732:web:4e52ac34afcdbf40e6c939',
   measurementId: 'G-6JP6297P57',
 };
+
+// Initialize Cloud Firestore through Firebase
+// firebase.initializeApp({
+//   apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
+//   authDomain: 'iconnect-88fcc.firebaseapp.com',
+//   projectId: 'iconnect-88fcc',
+// });
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+const username = document.querySelector('#username');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const signupBtn = document.querySelector('#register-btn');
@@ -22,6 +31,20 @@ signupBtn.addEventListener('click', (e) => {
 
   let passwordValue = password.value;
   console.log(passwordValue);
+
+  var db = firebase.firestore();
+
+  db.collection('users')
+    .add({
+      username: username.value,
+      email: email.value,
+    })
+    .then((docRef) => {
+      console.log('Document written with ID: ', docRef.id);
+    })
+    .catch((error) => {
+      console.error('Error adding document: ', error);
+    });
 
   firebase
     .auth()

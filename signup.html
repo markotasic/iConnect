@@ -86,6 +86,7 @@
             <div class="login__container-register">
               <div class="login__container-register--form">
               <input
+                id="username"
                 type="text"
                 name="username"
                 class="register-forms register__container-username input-login"
@@ -106,6 +107,7 @@
                 placeholder="password"
               />
               <input
+                id="password-2"
                 type="password"
                 name="password"
                 class="register-forms register__container-password-2 input-login"
@@ -167,6 +169,8 @@
   
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
 
   <script>
     const goToRegister = document.querySelector('.link-to-register');
