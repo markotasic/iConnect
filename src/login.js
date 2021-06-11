@@ -1,34 +1,49 @@
-// const submit = document.querySelector('.btn-submit');
-// const emailInput = document.querySelector('.login__container-mail');
-// const passwordInput = document.querySelector('.login__container-password');
+$('#register-btn').click(function (e) {
+  e.preventDefault(e);
+  let nameValue = $('#username').val();
+  console.log(nameValue);
 
-// submit.addEventListener('click', function (e) {
-//   e.preventDefault();
+  let emailValue = $('#email').val();
+  console.log(emailValue);
 
-//   // Progres bar dok se loaduje main page
+  let passwordValue = $('#password').val();
+  console.log(passwordValue);
 
-//   let emailValue = emailInput.value;
-//   console.log(emailValue);
+  let password2Value = $('#password-2').val();
+  console.log(password2Value);
 
-//   let passwordValue = passwordInput.value;
-//   console.log(passwordValue);
+  if (passwordValue === password2Value) {
+    $('#password').css('border-color', '#48ff00');
+    $('#password-2').css('border-color', '#48ff00');
+  } else {
+    $('#password').css('border-color', 'red');
+    $('#password-2').css('border-color', 'red');
+  }
 
-//   firebase
-//     .auth()
-//     .signInWithEmailAndPassword(emailValue, passwordValue)
-//     .then((userCredential) => {
-//       // Signed in
-//       var user = userCredential.user;
-//       // ...
-//     })
-//     .catch((error) => {
-//       var errorCode = error.code;
-//       var errorMessage = error.message;
-//     });
-// });
+  if (passwordValue === '') {
+    $('#password').css('border-color', 'red');
+    $('#password-2').css('border-color', 'red');
+  }
 
-// // 1. da li su uneti podaci pravilni
-// // 2. da li je uneto svako polje || ako nije throw error
-// // 3. da li je email dobrog formata
-// // 4. submit
-// // 5. go to main page
+  if (passwordValue.length > 4 && password2Value.length > 4) {
+    $('#password').css('border-color', '#48ff00');
+    $('#password-2').css('border-color', '#48ff00');
+  } else {
+    $('#password').css('border-color', 'red');
+    $('#password-2').css('border-color', 'red');
+  }
+
+  if (nameValue.length < 6) {
+    $('#user-false-msg').removeClass('hidden');
+    $('#user-false-msg').addClass('shown');
+  } else {
+    console.log('false');
+  }
+
+  if (emailValue.length < 10) {
+    $('#email-false-msg').removeClass('hidden');
+    $('#email-false-msg').addClass('shown');
+  } else {
+    console.log('false');
+  }
+});

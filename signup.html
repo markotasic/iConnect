@@ -84,14 +84,17 @@
 
         <div class="register hidden">
             <div class="login__container-register">
-              <div class="login__container-register--form">
+              <div id="submit-container" class="login__container-register--form">
               <input
                 id="username"
                 type="text"
                 name="username"
                 class="register-forms register__container-username input-login"
                 placeholder="username"
+                
               />
+              <h3 id="user-false-msg" class="hidden">Username must be six characters or longer!</h3>
+              
               <input
                 id="email"
                 type="email"
@@ -99,6 +102,7 @@
                 class="register-forms register__container-mail input-login"
                 placeholder="marko@gmail.com"
               />
+              <h3 id="email-false-msg" class="hidden">Invalid e-mail format</h3>
               <input
                 id="password"
                 type="password"
@@ -190,7 +194,7 @@
       login.classList.remove('hidden');
     });
   </script>
-
+  <script src="jq/jquery-3.6.0.min.js"></script>
   <script src="src/register.js"></script>
   <script src="src/login.js"></script>
   

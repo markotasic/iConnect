@@ -34,10 +34,24 @@ signupBtn.addEventListener('click', (e) => {
 
   var db = firebase.firestore();
 
+  // Create a root reference
+  /*var storageRef = firebase.storage().ref();
+
+  // Create a reference to 'mountains.jpg'
+  var mountainsRef = storageRef.child('user-post.jpg');
+
+  // Create a reference to 'images/mountains.jpg'
+  var mountainImagesRef = storageRef.child('');
+
+  // While the file names are the same, the references point to different files
+  mountainsRef.name === mountainImagesRef.name; // true
+  mountainsRef.fullPath === mountainImagesRef.fullPath; // false*/
+
   db.collection('users')
     .add({
       username: username.value,
       email: email.value,
+      password: password.value,
     })
     .then((docRef) => {
       console.log('Document written with ID: ', docRef.id);
