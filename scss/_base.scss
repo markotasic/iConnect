@@ -36,6 +36,13 @@ $bp-smallest: 31.25em; // 500px
   display: flex;
 }
 
+.error-msg {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: -1.5rem;
+}
+
 * {
   padding: 0;
   margin: 0;

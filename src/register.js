@@ -8,13 +8,6 @@ var firebaseConfig = {
   measurementId: 'G-6JP6297P57',
 };
 
-// Initialize Cloud Firestore through Firebase
-// firebase.initializeApp({
-//   apiKey: 'AIzaSyBruZh1bTFMfDi_Q_fYYD73PiByXs5yax0',
-//   authDomain: 'iconnect-88fcc.firebaseapp.com',
-//   projectId: 'iconnect-88fcc',
-// });
-
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
@@ -27,10 +20,8 @@ signupBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   let emailValue = email.value;
-  console.log(emailValue);
 
   let passwordValue = password.value;
-  console.log(passwordValue);
 
   var db = firebase.firestore();
 
@@ -47,30 +38,55 @@ signupBtn.addEventListener('click', (e) => {
   mountainsRef.name === mountainImagesRef.name; // true
   mountainsRef.fullPath === mountainImagesRef.fullPath; // false*/
 
-  db.collection('users')
-    .add({
-      username: username.value,
-      email: email.value,
-      password: password.value,
-    })
-    .then((docRef) => {
-      console.log('Document written with ID: ', docRef.id);
-    })
-    .catch((error) => {
-      console.error('Error adding document: ', error);
-    });
-
   firebase
     .auth()
     .createUserWithEmailAndPassword(emailValue, passwordValue)
     .then((userCredential) => {
+      db.collection('users')
+        .doc(userCredential.user.uid)
+        .set({
+          username: username.value,
+          email: email.value,
+          password: password.value,
+        })
+        .then((docRef) => {
+          console.log('Document written with ID: ', docRef.id);
+        })
+        .catch((error) => {
+          console.error('Error adding document: ', error);
+        });
       // Signed in
-      var user = userCredential.user;
       // ...
     })
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
       // ..
+    });
+});
+
+// ______________________________________LOGIN______________________________________\\
+const loginBtn = document.getElementById('login-btn');
+const loginEmail = document.getElementById('login-email');
+const loginPassword = document.getElementById('login-password');
+
+loginBtn.addEventListener('click', function () {
+  let emailValue = loginEmail.value;
+
+  let passwordValue = loginPassword.value;
+
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(emailValue, passwordValue)
+    .then((userCredential) => {
+      // Signed in
+      var user = userCredential.user;
+      // ...
+    })
+    .catch((error) => {
+      console.log(error.code);
+      console.log(error.message);
+      var errorCode = error.code;
+      var errorMessage = error.message;
     });
 });

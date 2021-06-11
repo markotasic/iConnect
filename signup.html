@@ -21,18 +21,20 @@
             <div class="login__container">
               <div class="login__container-form">
                 <input
+                  id="login-email"
                   type="email"
                   name="email"
                   class="login__container-mail input-login"
                   placeholder="zlatko@gmail.com"
                 />
                 <input
+                  id="login-password"
                   type="password"
                   name="password"
                   class="login__container-password input-login"
                   placeholder="password"
                 />
-                <button class="btn btn-submit">Log In</button>
+                <button id="login-btn" class="btn btn-submit">Log In</button>
                 <a href="" class="link-to-register"><p>Don't have an account yet? <strong>Sign up</strong> here!</p></a>
                 <div class="contact">
                   <h2 class="name">Marko Tasic</h2>
@@ -93,7 +95,7 @@
                 placeholder="username"
                 
               />
-              <h3 id="user-false-msg" class="hidden">Username must be six characters or longer!</h3>
+              <h3 id="user-false-msg" class="hidden error-msg">Username must be three characters or longer!</h3>
               
               <input
                 id="email"
@@ -102,7 +104,7 @@
                 class="register-forms register__container-mail input-login"
                 placeholder="marko@gmail.com"
               />
-              <h3 id="email-false-msg" class="hidden">Invalid e-mail format</h3>
+              <h3 id="email-false-msg" class="hidden error-msg">Invalid e-mail format</h3>
               <input
                 id="password"
                 type="password"
