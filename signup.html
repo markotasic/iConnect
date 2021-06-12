@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
       rel="stylesheet"
     />
-  <link rel="stylesheet" href="css/style.min.css">
-  <title>iConnect - Log In or Sign Up</title>
-</head>
-<body>
-  <div class="form">
-    <section id="background">
-      <section id="login">
-        <div class="login__left"></div>
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>iConnect - Log In or Sign Up</title>
+  </head>
+  <body>
+    <div class="form">
+      <section id="background">
+        <section id="login">
+          <div class="login__left"></div>
 
-        <div class="login">
+          <div class="login">
             <div class="login__container">
               <div class="login__container-form">
                 <input
@@ -35,11 +35,17 @@
                   placeholder="password"
                 />
                 <button id="login-btn" class="btn btn-submit">Log In</button>
-                <a href="" class="link-to-register"><p>Don't have an account yet? <strong>Sign up</strong> here!</p></a>
+
+                <a href="" class="link-to-register">
+                  <p>
+                    Don't have an account yet? <strong>Sign up</strong> here!
+                  </p>
+                </a>
+
                 <div class="contact">
                   <h2 class="name">Marko Tasic</h2>
                   <div class="contact__icons">
-                    <a target="_blank href="">
+                    <a target="_blank" href="">
                       <svg class="login__container-portfolio">
                         <use
                           xlink:href="img/sprite.svg#icon-text-document-inverted"
@@ -61,14 +67,17 @@
                 <div class="contact-2">
                   <h2 class="name">Zlatko Radenkovic</h2>
                   <div class="contact__icons">
-                    <a target="_blank href="">
+                    <a target="_blank" href="">
                       <svg class="login__container-portfolio">
                         <use
                           xlink:href="img/sprite.svg#icon-text-document-inverted"
                         ></use>
                       </svg>
                     </a>
-                    <a target="_blank" href="https://github.com/yournightmare01">
+                    <a
+                      target="_blank"
+                      href="https://github.com/yournightmare01"
+                    >
                       <svg class="login__container-github">
                         <use xlink:href="img/sprite.svg#icon-github"></use>
                       </svg>
@@ -82,124 +91,147 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
 
-        <div class="register hidden">
+          <div class="register hidden">
             <div class="login__container-register">
-              <div id="submit-container" class="login__container-register--form">
-              <input
-                id="username"
-                type="text"
-                name="username"
-                class="register-forms register__container-username input-login"
-                placeholder="username"
-                
-              />
-              <h3 id="user-false-msg" class="hidden error-msg">Username must be three characters or longer!</h3>
-              
-              <input
-                id="email"
-                type="email"
-                name="email"
-                class="register-forms register__container-mail input-login"
-                placeholder="marko@gmail.com"
-              />
-              <h3 id="email-false-msg" class="hidden error-msg">Invalid e-mail format</h3>
-              <input
-                id="password"
-                type="password"
-                name="password"
-                class="register-forms register__container-password input-login"
-                placeholder="password"
-              />
-              <input
-                id="password-2"
-                type="password"
-                name="password"
-                class="register-forms register__container-password-2 input-login"
-                placeholder="confirm password"
-              />
-              <button id="register-btn" class="btn btn-submit">Register</button>
-              <a href="" class="link-to-login"><p>Already have an account? <strong>Log in</strong> here!</p></a>
-              <div class="contact">
-                <h2 class="name">Marko Tasic</h2>
-                <div class="contact__icons">
-                  <a target="_blank href="">
-                    <svg class="login__container-portfolio">
-                      <use
-                        xlink:href="img/sprite.svg#icon-text-document-inverted"
-                      ></use>
-                    </svg>
-                  </a>
-                  <a target="_blank" href="https://github.com/markotasic">
-                    <svg class="login__container-github">
-                      <use xlink:href="img/sprite.svg#icon-github"></use>
-                    </svg>
-                  </a>
-                  <a href="mailto:m4rko2001@gmail.com">
-                    <svg class="login__container-email">
-                      <use xlink:href="img/sprite.svg#icon-email"></use>
-                    </svg>
-                  </a>
-                </div>
-              </div>
+              <div
+                id="submit-container"
+                class="login__container-register--form"
+              >
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  class="
+                    register-forms register__container-username
+                    input-login
+                  "
+                  placeholder="username"
+                />
+                <h3 id="user-false-msg" class="hidden error-msg">
+                  Username must be three characters or longer!
+                </h3>
 
-              <div class="contact-2">
-                <h2 class="name">Zlatko Radenkovic</h2>
-                <div class="contact__icons">
-                  <a target="_blank href="">
-                    <svg class="login__container-portfolio">
-                      <use
-                        xlink:href="img/sprite.svg#icon-text-document-inverted"
-                      ></use>
-                    </svg>
-                  </a>
-                  <a target="_blank href="https://github.com/yournightmare01">
-                    <svg class="login__container-github">
-                      <use xlink:href="img/sprite.svg#icon-github"></use>
-                    </svg>
-                  </a>
-                  <a href="mailto:zlatkor1001@gmail.com">
-                    <svg class="login__container-email">
-                      <use xlink:href="img/sprite.svg#icon-email"></use>
-                    </svg>
-                  </a>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  class="register-forms register__container-mail input-login"
+                  placeholder="marko@gmail.com"
+                />
+                <h3 id="email-false-msg" class="hidden error-msg">
+                  Invalid e-mail format
+                </h3>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  class="
+                    register-forms register__container-password
+                    input-login
+                  "
+                  placeholder="password"
+                />
+                <input
+                  id="password-2"
+                  type="password"
+                  name="password"
+                  class="
+                    register-forms register__container-password-2
+                    input-login
+                  "
+                  placeholder="confirm password"
+                />
+                <button id="register-btn" class="btn btn-submit">
+                  Register
+                </button>
+                <a href="" class="link-to-login"
+                  ><p>
+                    Already have an account? <strong>Log in</strong> here!
+                  </p></a
+                >
+                <div class="contact">
+                  <h2 class="name">Marko Tasic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a target="_blank" href="https://github.com/markotasic">
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:m4rko2001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="contact-2">
+                  <h2 class="name">Zlatko Radenkovic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://github.com/yournightmare01"
+                    >
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:zlatkor1001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </section>
       </section>
-    </section>
-  </div>
-  
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
-  <!-- <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> -->
-  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    </div>
 
-  <script>
-    const goToRegister = document.querySelector('.link-to-register');
-    const goToLogin = document.querySelector('.link-to-login');
-    const register = document.querySelector('.register');
-    const login = document.querySelector('.login');
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
 
-    goToRegister.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.remove('hidden');
-      login.classList.add('hidden');
-    });
+    <script>
+      const goToRegister = document.querySelector('.link-to-register');
+      const goToLogin = document.querySelector('.link-to-login');
+      const register = document.querySelector('.register');
+      const login = document.querySelector('.login');
 
-    goToLogin.addEventListener('click', (e) => {
-      e.preventDefault();
-      register.classList.add('hidden');
-      login.classList.remove('hidden');
-    });
-  </script>
-  <script src="jq/jquery-3.6.0.min.js"></script>
-  <script src="src/register.js"></script>
-  <script src="src/login.js"></script>
-  
+      goToRegister.addEventListener('click', (e) => {
+        e.preventDefault();
+        register.classList.remove('hidden');
+        login.classList.add('hidden');
+      });
 
-</body>
+      goToLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        register.classList.add('hidden');
+        login.classList.remove('hidden');
+      });
+    </script>
+
+    <script src="jq/jquery-3.6.0.min.js"></script>
+    <script src="src/register.js"></script>
+    <script src="src/login.js"></script>
+  </body>
 </html>
