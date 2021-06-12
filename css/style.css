@@ -862,6 +862,20 @@ strong {
   margin-top: 3rem;
 }
 
+.mail-confirm {
+  color: red;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mail-taken {
+  color: red;
+  font-weight: 300;
+  font-size: 1.5rem;
+  margin-bottom: -1rem;
+}
+
 @media only screen and (max-width: 37.5em) {
   .login__container-email, .login__container-portfolio, .login__container-github {
     height: 2.5rem;

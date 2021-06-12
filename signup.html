@@ -20,6 +20,9 @@
           <div class="login">
             <div class="login__container">
               <div class="login__container-form">
+                <h2 class="mail-confirm hidden">
+                  An email has been sent. Confirm your email address!
+                </h2>
                 <input
                   id="login-email"
                   type="email"
@@ -99,6 +102,9 @@
                 id="submit-container"
                 class="login__container-register--form"
               >
+                <h2 class="mail-taken hidden">
+                  The email has already been registered!
+                </h2>
                 <input
                   id="username"
                   type="text"
@@ -210,6 +216,13 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
     <!-- <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.css"
+    />
 
     <script>
       const goToRegister = document.querySelector('.link-to-register');
@@ -231,7 +244,7 @@
     </script>
 
     <script src="jq/jquery-3.6.0.min.js"></script>
-    <script src="src/register.js"></script>
+    <script src="src/firebase.js"></script>
     <script src="src/login.js"></script>
   </body>
 </html>

@@ -1,16 +1,12 @@
 $('#register-btn').click(function (e) {
   e.preventDefault(e);
   let nameValue = $('#username').val();
-  console.log(nameValue);
 
   let emailValue = $('#email').val();
-  console.log(emailValue);
 
   let passwordValue = $('#password').val();
-  console.log(passwordValue);
 
   let password2Value = $('#password-2').val();
-  console.log(password2Value);
 
   if (
     passwordValue === password2Value &&
@@ -37,12 +33,10 @@ $('#register-btn').click(function (e) {
     $('#user-false-msg').addClass('hidden');
   }
 
-  // if (emailValue.length < 10) {
-  //   $('#email-false-msg').removeClass('hidden');
-  //   $('#email-false-msg').addClass('shown');
-  // } else {
-  //   console.log('false');
-  // }
+  if (emailValue.length < 10) {
+    $('#email-false-msg').removeClass('hidden');
+    $('#email-false-msg').addClass('shown');
+  }
 
   if (!emailValue.includes('@')) {
     $('#email-false-msg').removeClass('hidden');

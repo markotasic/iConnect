@@ -55,7 +55,6 @@ let isSidebarHidden = true;
 
 sidebar.addEventListener('mousedown', () => {
   if (isSidebarHidden) {
-    console.log('sidebar');
     sidebar.style.left = 0;
     isSidebarHidden = false;
   }

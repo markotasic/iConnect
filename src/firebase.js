@@ -38,6 +38,9 @@ signupBtn.addEventListener('click', (e) => {
   mountainsRef.name === mountainImagesRef.name; // true
   mountainsRef.fullPath === mountainImagesRef.fullPath; // false*/
 
+  const register = document.querySelector('.register');
+  const login = document.querySelector('.login');
+
   firebase
     .auth()
     .createUserWithEmailAndPassword(emailValue, passwordValue)
@@ -50,7 +53,13 @@ signupBtn.addEventListener('click', (e) => {
           password: password.value,
         })
         .then((docRef) => {
+          register.classList.add('hidden');
+          login.classList.remove('hidden');
           // console.log('Document written with ID: ', docRef.id);
+          firebase
+            .auth()
+            .currentUser.sendEmailVerification()
+            .then(() => {});
         })
         .catch((error) => {
           console.error('Error adding document: ', error);
@@ -61,6 +70,7 @@ signupBtn.addEventListener('click', (e) => {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
+      document.querySelector('.mail-taken').classList.remove('hidden');
       // ..
     });
 });
@@ -81,6 +91,14 @@ loginBtn.addEventListener('click', function () {
     .then((userCredential) => {
       // Signed in
       var user = userCredential.user;
+      // window.location.href = 'index.html';
+      // console.log(user.emailVerified);
+      console.log(user);
+      if (user.emailVerified) {
+        window.location.href = 'index.html';
+      } else {
+        document.querySelector('.mail-confirm').classList.remove('hidden');
+      }
       // ...
     })
     .catch((error) => {
@@ -90,3 +108,19 @@ loginBtn.addEventListener('click', function () {
       var errorMessage = error.message;
     });
 });
+
+//kako uraditi redirekciju da se ne moze vratiti na login page
+
+/// _____________________________________________ \\\
+// const user = firebase.auth().currentUser;
+
+// user.updateProfile({
+//   displayName: "Jane Q. User",
+//   photoURL: "https://example.com/jane-q-user/profile.jpg"
+// }).then(() => {
+//   // Update successful
+//   // ...
+// }).catch((error) => {
+//   // An error occurred
+//   // ...
+// });
