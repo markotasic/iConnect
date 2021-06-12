@@ -54,3 +54,21 @@ $('#register-btn').click(function (e) {
     $('#email-false-msg').addClass('hidden');
   }
 });
+
+// __________Disable back function on Chrome_________________//
+// var path = 'index.html';
+// history.pushState(null, null, path + window.location.search);
+// window.addEventListener('popstate', function (event) {
+//   history.pushState(null, null, path + window.location.search);
+// });
+
+$(document).ready(function () {
+  function disableBack() {
+    window.history.forward();
+  }
+
+  window.onload = disableBack();
+  window.onpageshow = function (evt) {
+    if (evt.persisted) disableBack();
+  };
+});
