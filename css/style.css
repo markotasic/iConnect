@@ -876,6 +876,10 @@ strong {
   margin-bottom: -1rem;
 }
 
+.mail-sent {
+  margin-bottom: 1em;
+}
+
 @media only screen and (max-width: 37.5em) {
   .login__container-email, .login__container-portfolio, .login__container-github {
     height: 2.5rem;

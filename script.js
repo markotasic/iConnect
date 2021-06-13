@@ -91,3 +91,15 @@ $(document).ready(function () {
     $('#logo').toggleClass('hidden');
   });
 });
+
+// __________Disable back function on Chrome (For Signup Page)_________________//
+$(document).ready(function () {
+  function disableBack() {
+    window.history.forward();
+  }
+
+  window.onload = disableBack();
+  window.onpageshow = function (evt) {
+    if (evt.persisted) disableBack();
+  };
+});
