@@ -168,14 +168,11 @@ body {
   height: 3rem;
   width: 3rem;
   fill: var(--text-color);
+  margin-left: 2rem;
 }
 
 .nav__custom-color:hover {
   cursor: pointer;
-}
-
-.nav__custom button {
-  margin-right: 2rem;
 }
 
 .nav .nav__search-2 {
@@ -308,13 +305,52 @@ body {
   height: 170px;
   -webkit-border-bottom-left-radius: 1rem;
           border-bottom-left-radius: 1rem;
+  position: relative;
 }
 
 .profile-image {
+  position: relative;
+}
+
+.profile-image-pic {
   width: 8rem;
   height: 8rem;
+  fill: var(--text-color);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+}
+
+.profile-image-add {
+  fill: white;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(25%, 20%);
+      -ms-transform: translate(25%, 20%);
+          transform: translate(25%, 20%);
+  opacity: 0;
+  left: 1.7rem;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.profile-image:hover .profile-image-add {
+  opacity: 1;
+  -webkit-transform: translate(25%, -50%);
+      -ms-transform: translate(25%, -50%);
+          transform: translate(25%, -50%);
+  cursor: pointer;
+}
+
+.profile-image:hover .profile-image-pic {
+  -webkit-filter: blur(3px) brightness(50%);
+          filter: blur(3px) brightness(50%);
+  cursor: pointer;
 }
 
 .profile-name {

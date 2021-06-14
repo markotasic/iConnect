@@ -55,6 +55,7 @@ signupBtn.addEventListener('click', (e) => {
         .then((docRef) => {
           register.classList.add('hidden');
           login.classList.remove('hidden');
+          document.querySelector('.mail-confirm').classList.remove('hidden');
           // console.log('Document written with ID: ', docRef.id);
           firebase
             .auth()
@@ -109,18 +110,10 @@ loginBtn.addEventListener('click', function () {
     });
 });
 
-//kako uraditi redirekciju da se ne moze vratiti na login page
+var storage = firebase.storage();
 
-/// _____________________________________________ \\\
-// const user = firebase.auth().currentUser;
+var storageRef = storage.ref();
 
-// user.updateProfile({
-//   displayName: "Jane Q. User",
-//   photoURL: "https://example.com/jane-q-user/profile.jpg"
-// }).then(() => {
-//   // Update successful
-//   // ...
-// }).catch((error) => {
-//   // An error occurred
-//   // ...
-// });
+var imagesRef = storageRef.child('../img');
+
+var spaceRef = storageRef.child('../img/user.png');

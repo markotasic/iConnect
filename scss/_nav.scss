@@ -54,13 +54,10 @@
       height: 3rem;
       width: 3rem;
       fill: var(--text-color);
+      margin-left: 2rem;
       &:hover {
         cursor: pointer;
       }
-    }
-
-    button {
-      margin-right: 2rem;
     }
   }
 
