@@ -337,6 +337,7 @@ body {
   -webkit-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+  pointer-events: none;
 }
 
 .profile-image:hover .profile-image-add {
@@ -445,7 +446,7 @@ body {
   display: none;
 }
 
-.ree {
+.profile-image-upload {
   position: absolute;
   left: 0;
   top: 0;
@@ -454,6 +455,10 @@ body {
   -webkit-border-radius: 50%;
           border-radius: 50%;
   opacity: 0;
+}
+
+.profile-image-upload:hover {
+  cursor: pointer;
 }
 
 .btn {
