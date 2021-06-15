@@ -109,11 +109,3 @@ loginBtn.addEventListener('click', function () {
       var errorMessage = error.message;
     });
 });
-
-var storage = firebase.storage();
-
-var storageRef = storage.ref();
-
-var imagesRef = storageRef.child('../img');
-
-var spaceRef = storageRef.child('../img/user.png');

@@ -73,9 +73,12 @@
               <div class="line"></div>
               <div class="profile">
                 <div class="profile-image">
-                  <svg class="profile-image-pic">
-                    <use xlink:href="img/sprite.svg#icon-person"></use>
-                  </svg>
+                  <form>
+                    <svg class="profile-image-pic">
+                      <use xlink:href="img/sprite.svg#icon-person"></use>
+                    </svg>
+                    <input class="ree" type="file" />
+                  </form>
                   <svg class="profile-image-add">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
                   </svg>
@@ -220,6 +223,13 @@
       </div>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
+
+    <script src="src/firebasemain.js"></script>
     <script src="jq/jquery-3.6.0.min.js"></script>
   </body>
 </html>

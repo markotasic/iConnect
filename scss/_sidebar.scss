@@ -107,3 +107,13 @@
   border-radius: $border-raius;
   display: none;
 }
+
+.ree {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  opacity: 0;
+}
