@@ -58,7 +58,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
 const uploadUserImg = (img, currentUser) => {
-  console.log(currentUser);
   if (currentUser) {
     const userId = currentUser.uid;
     var uploadTask = firebase
@@ -82,7 +81,6 @@ const uploadUserImg = (img, currentUser) => {
         // Get the download URL on upload success
         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
           try {
-            console.log(currentUser);
             await currentUser.updateProfile({
               photoURL: downloadURL,
             });

@@ -3,6 +3,7 @@ const darkModeToggle = document.querySelector('.nav__custom-color');
 const settingsDarkModeToggle = document.querySelector('.nav__darkmode-toggle');
 const navSettings = document.querySelector('.nav__settings');
 const navSettingsShow = document.querySelector('.custom-select-hide');
+const sidebar = document.querySelector('.sidebar');
 
 //__________________________LOGIN AND REGISTER PAGE SWITCH__________________________\\
 
@@ -10,11 +11,8 @@ navSettings.addEventListener('click', () => {
   navSettingsShow.classList.toggle('hidden');
 });
 
-//__________________________DARKMODE TOGGLE__________________________\\
-
-// When someone clicks the button
-
 //__________________________DARKMODE__________________________\\
+
 let darkMode = localStorage.getItem('darkMode');
 
 const enableDarkMode = () => {
@@ -48,7 +46,6 @@ darkModeToggle.addEventListener('click', () => {
 });
 //__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 
-const sidebar = document.querySelector('.sidebar');
 sidebar.style.transition = 'left 0.3s';
 const maxLeft = sidebar.clientWidth - 20;
 let isSidebarHidden = true;
@@ -85,6 +82,7 @@ document.addEventListener('mousedown', (e) => {
 });
 
 //__________________________NAV RESPONSIVNES__________________________\\
+
 $(document).ready(function () {
   $('#search-button').click(function () {
     $('#input-2').toggleClass('hidden');
@@ -92,7 +90,8 @@ $(document).ready(function () {
   });
 });
 
-// __________Disable back function on Chrome (For Signup Page)_________________//
+//__________________________Disable back function on Chrome (For Signup Page)__________________________\\
+
 $(document).ready(function () {
   function disableBack() {
     window.history.forward();
@@ -103,3 +102,12 @@ $(document).ready(function () {
     if (evt.persisted) disableBack();
   };
 });
+
+//__________________________API CALL__________________________\\
+
+const BASE_URL = 'https://dummyapi.io/data/api';
+const APP_ID = '60c8e11f3722f27da37a9b90';
+
+const request = new XMLHttpRequest();
+request.open('GET', 'https://dummyapi.io/data/api');
+request.send();
