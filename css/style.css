@@ -349,8 +349,8 @@ body {
 }
 
 .profile-image:hover .profile-image-pic {
-  -webkit-filter: blur(3px) brightness(50%);
-          filter: blur(3px) brightness(50%);
+  -webkit-filter: blur(2px) brightness(80%);
+          filter: blur(2px) brightness(80%);
   cursor: pointer;
 }
 

@@ -74,13 +74,11 @@
               <div class="profile">
                 <div class="profile-image">
                   <form>
-                    <svg class="profile-image-pic">
-                      <use xlink:href="img/sprite.svg#icon-person"></use>
-                    </svg>
+                    <img class="profile-image-pic" src="img/user.png" alt="" />
                     <input
+                      accept="image/x-png,image/jpeg"
                       class="profile-image-upload"
                       type="file"
-                      name="myfile"
                     />
                   </form>
                   <svg class="profile-image-add">
@@ -233,7 +231,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
 
-    <script src="src/firebasemain.js"></script>
+    <script src="firebasemain.js"></script>
     <script src="jq/jquery-3.6.0.min.js"></script>
   </body>
 </html>

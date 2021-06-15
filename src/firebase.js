@@ -25,19 +25,6 @@ signupBtn.addEventListener('click', (e) => {
 
   var db = firebase.firestore();
 
-  // Create a root reference
-  /*var storageRef = firebase.storage().ref();
-
-  // Create a reference to 'mountains.jpg'
-  var mountainsRef = storageRef.child('user-post.jpg');
-
-  // Create a reference to 'images/mountains.jpg'
-  var mountainImagesRef = storageRef.child('');
-
-  // While the file names are the same, the references point to different files
-  mountainsRef.name === mountainImagesRef.name; // true
-  mountainsRef.fullPath === mountainImagesRef.fullPath; // false*/
-
   const register = document.querySelector('.register');
   const login = document.querySelector('.login');
 
@@ -94,12 +81,11 @@ loginBtn.addEventListener('click', function () {
       var user = userCredential.user;
       // window.location.href = 'index.html';
       // console.log(user.emailVerified);
-      console.log(user);
-      if (user.emailVerified) {
-        window.location.href = 'index.html';
-      } else {
-        document.querySelector('.mail-confirm').classList.remove('hidden');
-      }
+      firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+          window.location = '/index.html';
+        }
+      });
       // ...
     })
     .catch((error) => {

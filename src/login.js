@@ -53,19 +53,6 @@ $('#register-btn').click(function (e) {
     $('#email-false-msg').removeClass('shown');
     $('#email-false-msg').addClass('hidden');
   }
-
-  /*if (
-    passwordValue === password2Value &&
-    passwordValue.length >= 4 &&
-    password2Value.length >= 4 &&
-    nameValue >= 3 &&
-    emailValue.length >= 10 &&
-    emailValue.includes('@') &&
-    emailValue.includes('.com')
-  ) {
-    $('#mail-sent').removeClass('hidden');
-    $('#mail-sent').addClass('shown');
-  }*/
 });
 
 // __________Disable back function on Chrome (For Landing Page)_________________//
