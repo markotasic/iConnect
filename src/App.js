@@ -1,24 +1,26 @@
 const BASE_URL = 'https://dummyapi.io/data/api';
 const APP_ID = '60c8e11f3722f27da37a9b90';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
-import { App } from './app';
+const input = document.querySelector('.main__post-add--msg');
+const imgAdd = document.querySelector('.main__post-add--img');
+const inputCross = document.querySelector('.main__post-btns--cross');
+const btnAdd = document.getElementById('post');
 
-const GQL_URI = 'https://dummyapi.io/data/graphql';
-
-const client = new ApolloClient({
-  uri: GQL_URI,
-  cache: new InMemoryCache(),
-  headers: {
-    'app-id': '60c8e11f3722f27da37a9b90',
-  },
+input.addEventListener('keydown', function () {
+  if (input.value !== '') {
+    imgAdd.classList.remove('hidden');
+    inputCross.classList.remove('hidden');
+    btnAdd.style.marginTop = '3rem';
+  } else {
+    imgAdd.classList.add('hidden');
+    inputCross.classList.add('hidden');
+    btnAdd.style.marginTop = '0';
+  }
 });
 
-ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
-  document.getElementById('root')
-);
+inputCross.addEventListener('click', function () {
+  input.value = '';
+  imgAdd.classList.add('hidden');
+  inputCross.classList.add('hidden');
+  btnAdd.style.marginTop = '0';
+});

@@ -156,14 +156,26 @@
                     type="text"
                     placeholder="What's Happening?"
                   />
-                  <img
-                    class="main__post-add--image"
-                    src="img/imgs.png"
-                    alt="add images"
-                  />
+                  <form>
+                    <img
+                      class="main__post-add--img hidden"
+                      src="img/imgs.png"
+                      alt="add images"
+                    />
+                    <input
+                      accept="image/x-png,image/jpeg"
+                      class="main__post-add--upload"
+                      type="file"
+                    />
+                  </form>
                 </div>
 
-                <button class="btn btn-sec">Post</button>
+                <div class="main__post-btns">
+                  <svg class="main__post-btns--cross hidden">
+                    <use xlink:href="img/sprite.svg#icon-clear"></use>
+                  </svg>
+                  <button id="post" class="btn btn-sec">Post</button>
+                </div>
               </div>
               <div class="main__content">
                 <div class="main__content-poster">

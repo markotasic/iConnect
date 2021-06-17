@@ -551,7 +551,12 @@ body {
   margin-top: 5rem;
 }
 
-.main__post-msg {
+.main__post-add {
+  width: 100%;
+  position: relative;
+}
+
+.main__post-add--msg {
   width: 100%;
   background-color: var(--color-tertiary);
   border: none;
@@ -562,6 +567,59 @@ body {
   outline: none;
   font-family: 'Poppins';
   font-weight: 500;
+}
+
+.main__post-add--img {
+  width: 5rem;
+  height: 5rem;
+  margin-top: 3rem;
+}
+
+.main__post-add--img:hover {
+  cursor: pointer;
+}
+
+.main__post-add--upload {
+  position: absolute;
+  left: 0;
+  top: 6.5rem;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0;
+  z-index: -1;
+}
+
+.main__post-add--upload:hover {
+  cursor: pointer;
+}
+
+.main__post-btns {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main__post-btns--cross {
+  height: 3rem;
+  width: 3rem;
+}
+
+.main__post-btns--cross:hover {
+  cursor: pointer;
 }
 
 .main__content {

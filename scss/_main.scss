@@ -16,17 +16,58 @@
     border-radius: $border-raius;
     padding: 3rem;
     margin-top: 5rem;
-
-    &-msg {
+    &-add {
       width: 100%;
-      background-color: var(--color-tertiary);
-      border: none;
-      border-radius: 5rem;
-      padding: 0.5rem;
-      font-size: 1.6rem;
-      outline: none;
-      font-family: 'Poppins';
-      font-weight: 500;
+      position: relative;
+      &--msg {
+        width: 100%;
+        background-color: var(--color-tertiary);
+        border: none;
+        border-radius: 5rem;
+        padding: 0.5rem;
+        font-size: 1.6rem;
+        outline: none;
+        font-family: 'Poppins';
+        font-weight: 500;
+      }
+
+      &--img {
+        width: 5rem;
+        height: 5rem;
+        margin-top: 3rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &--upload {
+        position: absolute;
+        left: 0;
+        top: 6.5rem;
+        width: 5rem;
+        height: 5rem;
+        opacity: 0;
+        z-index: -1;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &-btns {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &--cross {
+        height: 3rem;
+        width: 3rem;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
   }
   &__content {
@@ -100,9 +141,4 @@
       }
     }
   }
-}
-
-#add-image {
-  display: flex;
-  flex-direction: column;
 }
