@@ -15,6 +15,22 @@ const img = document.querySelector('.profile-image-upload');
 const profileImg = document.querySelector('.profile-image-pic');
 
 firebase.auth().onAuthStateChanged(function (user) {
+  firebase
+    .firestore()
+    .doc(`users/${user.uid}`)
+    .get()
+    .then((qs) => {
+      if (qs.empty) {
+        console.log(`user doesn't exist`);
+        return;
+      }
+      const userData = qs.data();
+      const name = userData.username;
+
+      const userNameHtml = document.getElementById('h2');
+      userNameHtml.innerHTML = name;
+    });
+
   if (!user) return;
   const photoURL = user.photoURL;
   if (photoURL) profileImg.src = photoURL;

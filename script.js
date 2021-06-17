@@ -104,10 +104,3 @@ $(document).ready(function () {
 });
 
 //__________________________API CALL__________________________\\
-
-const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '60c8e11f3722f27da37a9b90';
-
-const request = new XMLHttpRequest();
-request.open('GET', 'https://dummyapi.io/data/api');
-request.send();
