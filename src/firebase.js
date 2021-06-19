@@ -16,6 +16,22 @@ const email = document.querySelector('#email');
 const password = document.querySelector('#password');
 const signupBtn = document.querySelector('#register-btn');
 
+const register = document.querySelector('.register');
+const login = document.querySelector('.login');
+
+const linkToRegister = document.querySelector('.link-to-register');
+const linkToLogin = document.querySelector('.link-to-login');
+
+linkToRegister.addEventListener('click', function () {
+  login.classList.add('hidden');
+  register.classList.remove('hidden');
+});
+
+linkToLogin.addEventListener('click', function () {
+  login.classList.remove('hidden');
+  register.classList.add('hidden');
+});
+
 signupBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
@@ -24,9 +40,6 @@ signupBtn.addEventListener('click', (e) => {
   let passwordValue = password.value;
 
   var db = firebase.firestore();
-
-  const register = document.querySelector('.register');
-  const login = document.querySelector('.login');
 
   firebase
     .auth()

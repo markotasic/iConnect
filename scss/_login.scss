@@ -60,6 +60,13 @@
   }
 }
 
+.link-to-login,
+.link-to-register {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 #background {
   align-items: center;
   display: flex;
@@ -67,6 +74,7 @@
   background-color: #0c4e63;
   width: 100vw;
   height: 100vh;
+  min-height: 70rem;
 }
 
 #login {

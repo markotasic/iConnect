@@ -887,6 +887,11 @@ body {
   margin-top: 3rem;
 }
 
+.link-to-login:hover,
+.link-to-register:hover {
+  cursor: pointer;
+}
+
 #background {
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -900,6 +905,7 @@ body {
   background-color: #0c4e63;
   width: 100vw;
   height: 100vh;
+  min-height: 70rem;
 }
 
 #login {
@@ -907,7 +913,7 @@ body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  background-image: url("/img/forest.jpg");
+  background-image: url("../img/forest.jpg");
   background-repeat: no-repeat;
   -webkit-background-size: cover;
           background-size: cover;
