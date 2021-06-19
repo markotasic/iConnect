@@ -10,6 +10,7 @@ async function getData() {
   const jsonObject = await response.json();
   for (var i = 0; i < jsonObject.data.length; i++) {
     console.log('Picture: ' + jsonObject.data[i].picture);
+    jsonObject.data[i].picture.map;
   }
 }
 getData();
