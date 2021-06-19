@@ -567,12 +567,12 @@ body {
   outline: none;
   font-family: 'Poppins';
   font-weight: 500;
+  margin-bottom: 3rem;
 }
 
 .main__post-add--img {
   width: 5rem;
   height: 5rem;
-  margin-top: 3rem;
 }
 
 .main__post-add--img:hover {
@@ -586,7 +586,6 @@ body {
   width: 5rem;
   height: 5rem;
   opacity: 0;
-  z-index: -1;
 }
 
 .main__post-add--upload:hover {

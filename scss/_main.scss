@@ -29,12 +29,12 @@
         outline: none;
         font-family: 'Poppins';
         font-weight: 500;
+        margin-bottom: 3rem;
       }
 
       &--img {
         width: 5rem;
         height: 5rem;
-        margin-top: 3rem;
         &:hover {
           cursor: pointer;
         }
@@ -47,7 +47,6 @@
         width: 5rem;
         height: 5rem;
         opacity: 0;
-        z-index: -1;
         &:hover {
           cursor: pointer;
         }

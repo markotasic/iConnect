@@ -1,31 +1,83 @@
-const BASE_URL = 'https://dummyapi.io/data/api';
 const APP_ID = '60c8e11f3722f27da37a9b90';
+// const parent = querySelector('.main__content-poster');
 
-async function getData() {
-  const response = await fetch('https://dummyapi.io/data/api/user?limit=10', {
-    headers: {
-      'app-id': APP_ID,
-    },
-  });
-  const jsonObject = await response.json();
-  for (var i = 0; i < jsonObject.data.length; i++) {
-    console.log('Picture: ' + jsonObject.data[i].picture);
-  }
-}
-getData();
-
-// .then((response) => {
-//   console.log(response);
-//   return response.blob();
+// fetch(`${BASE_URL}/post?limit=3`, {
+//   headers: {
+//     'app-id': APP_ID,
+//   },
 // })
-// .then((blob) => {
-//   console.log(blob);
-//   document.getElementById('profile-img').src = URL.createObjectURL(blob);
-// });
+//   .then((res) => res.json())
+//   .then((data) => console.log(data.data))
+//   .catch((err) => console.error(err));
 
-// .then((res) => res.blob())
-// .then((data) => console.log(data))
-// .catch((err) => console.error(err));
+function createNode(element) {
+  return document.createElement(element);
+}
+
+function append(parent, el) {
+  return parent.appendChild(el);
+}
+const ul = document.getElementById('authors');
+const BASE_URL = 'https://dummyapi.io/data/api/user?limit=10';
+
+fetch(`${BASE_URL}/post?limit=3`, {
+  headers: {
+    'app-id': APP_ID,
+  },
+})
+  .then((resp) => resp.json())
+  .then((data) => console.log(data))
+  .then(function (data) {
+    let authors = data.results;
+
+    return authors.map(function (author) {
+      let li = createNode('li');
+      let img = createNode('img');
+      let span = createNode('span');
+      img.src = 'https://randomuser.me/api/portraits/men/66.jpg';
+      span.innerHTML = `${author.name.first} ${author.name.last}`;
+      append(li, img);
+      append(li, span);
+      append(ul, li);
+    });
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+// $(document).ready(function () {
+//   $('#post-2').before(`
+//   <div class="main__content">
+//     <div class="main__content-poster">
+//       <img
+//         class="main__content-poster--img"
+//         src="img/user.png"
+//         alt="Profile-pic"
+//       />
+//       <div class="main__content-poster--name">Marko Tasic</div>
+//     </div>
+
+//     <img
+//       class="main__content-post"
+//       src="img/user-post.jpg"
+//       alt="post"
+//     />
+//     <div class="main__content-react">
+//       <div class="like">
+//         <svg class="main__content-react--like">
+//           <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
+//         </svg>
+//         <p class="main__content-react--text">Like</p>
+//       </div>
+//       <div class="comment">
+//         <svg class="main__content-react--comment">
+//           <use xlink:href="img/sprite.svg#icon-forum"></use>
+//         </svg>
+//         <p class="main__content-react--text">Comment</p>
+//       </div>
+//     </div>
+//   </div>`);
+// });
 
 // ///////////////////////////////////////////////
 // ///////////////////////////////////////////////
