@@ -1,8 +1,9 @@
 const BASE_URL = 'https://dummyapi.io/data/api';
 const APP_ID = '60ce35fae66f5177d6a55ce1';
+// const APP_ID = '60c8e11f3722f27da37a9b90';
 
 async function getData() {
-  const response = await fetch('https://dummyapi.io/data/api/user?limit=7', {
+  const response = await fetch('https://dummyapi.io/data/api/user?limit=6', {
     headers: {
       'app-id': APP_ID,
     },
@@ -52,7 +53,6 @@ async function getPosts() {
         `
         <div class="main__content">
           <div class="main__content-poster">
-            <ul id="authors"></ul>
             <img
               id="profile-img"
               class="main__content-poster--img"

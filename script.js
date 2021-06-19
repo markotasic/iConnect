@@ -46,40 +46,40 @@ darkModeToggle.addEventListener('click', () => {
 });
 //__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 
-sidebar.style.transition = 'left 0.3s';
-const maxLeft = sidebar.clientWidth - 20;
-let isSidebarHidden = true;
+// sidebar.style.transition = 'left 0.3s';
+// const maxLeft = sidebar.clientWidth - 20;
+// let isSidebarHidden = true;
 
-sidebar.addEventListener('mousedown', () => {
-  if (isSidebarHidden) {
-    sidebar.style.left = 0;
-    isSidebarHidden = false;
-  }
-});
+// sidebar.addEventListener('mousedown', () => {
+//   if (isSidebarHidden) {
+//     sidebar.style.left = 0;
+//     isSidebarHidden = false;
+//   }
+// });
 
-document.addEventListener('mousedown', (e) => {
-  let pass = true;
+// document.addEventListener('mousedown', (e) => {
+//   let pass = true;
 
-  if (e.target === sidebar) pass = false;
+//   if (e.target === sidebar) pass = false;
 
-  for (const child of sidebar.children) {
-    if (e.target === child) pass = false;
-    for (const secondChild of child.children) {
-      if (e.target === secondChild) pass = false;
+//   for (const child of sidebar.children) {
+//     if (e.target === child) pass = false;
+//     for (const secondChild of child.children) {
+//       if (e.target === secondChild) pass = false;
 
-      for (const thirdChild of secondChild.children) {
-        if (e.target === thirdChild) pass = false;
-      }
-    }
-  }
+//       for (const thirdChild of secondChild.children) {
+//         if (e.target === thirdChild) pass = false;
+//       }
+//     }
+//   }
 
-  if (pass) {
-    if (!isSidebarHidden) {
-      sidebar.style.left = `-${maxLeft}px`;
-      isSidebarHidden = true;
-    }
-  }
-});
+//   if (pass) {
+//     if (!isSidebarHidden) {
+//       sidebar.style.left = `-${maxLeft}px`;
+//       isSidebarHidden = true;
+//     }
+//   }
+// });
 
 //__________________________NAV RESPONSIVNES__________________________\\
 

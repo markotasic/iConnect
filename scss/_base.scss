@@ -73,10 +73,12 @@ body {
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: 6rem;
+  position: relative;
 }
 
 .content {
   display: flex;
   max-width: 130rem;
   margin: 0 auto;
+  position: relative;
 }

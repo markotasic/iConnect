@@ -1,131 +1,19 @@
-const APP_ID = '60c8e11f3722f27da37a9b90';
-// const parent = querySelector('.main__content-poster');
+da napravimo javascript media query da rade ---- sidebar
+da napravimo custom scroll bar za users ---- sidebar
 
-// fetch(`${BASE_URL}/post?limit=3`, {
-//   headers: {
-//     'app-id': APP_ID,
-//   },
-// })
-//   .then((res) => res.json())
-//   .then((data) => console.log(data.data))
-//   .catch((err) => console.error(err));
+--da radi scroll na sidebar--
+position fixed
+overfolwY scroll
+height 100vh
 
-function createNode(element) {
-  return document.createElement(element);
-}
+////////////////////////////////////
 
-function append(parent, el) {
-  return parent.appendChild(el);
-}
-const ul = document.getElementById('authors');
-const BASE_URL = 'https://dummyapi.io/data/api/user?limit=10';
+da na keydown se pojavi modal window ---- main post
+da ima da se ukuca #tag ---- main post
+da ima preview slike ---- main post
 
-fetch(`${BASE_URL}/post?limit=3`, {
-  headers: {
-    'app-id': APP_ID,
-  },
-})
-  .then((resp) => resp.json())
-  .then((data) => console.log(data))
-  .then(function (data) {
-    let authors = data.results;
+////////////////////////////////////
 
-    return authors.map(function (author) {
-      let li = createNode('li');
-      let img = createNode('img');
-      let span = createNode('span');
-      img.src = 'https://randomuser.me/api/portraits/men/66.jpg';
-      span.innerHTML = `${author.name.first} ${author.name.last}`;
-      append(li, img);
-      append(li, span);
-      append(ul, li);
-    });
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
-
-// $(document).ready(function () {
-//   $('#post-2').before(`
-//   <div class="main__content">
-//     <div class="main__content-poster">
-//       <img
-//         class="main__content-poster--img"
-//         src="img/user.png"
-//         alt="Profile-pic"
-//       />
-//       <div class="main__content-poster--name">Marko Tasic</div>
-//     </div>
-
-//     <img
-//       class="main__content-post"
-//       src="img/user-post.jpg"
-//       alt="post"
-//     />
-//     <div class="main__content-react">
-//       <div class="like">
-//         <svg class="main__content-react--like">
-//           <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-//         </svg>
-//         <p class="main__content-react--text">Like</p>
-//       </div>
-//       <div class="comment">
-//         <svg class="main__content-react--comment">
-//           <use xlink:href="img/sprite.svg#icon-forum"></use>
-//         </svg>
-//         <p class="main__content-react--text">Comment</p>
-//       </div>
-//     </div>
-//   </div>`);
-// });
-
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-// ///////////////////////////////////////////////
-const input = document.querySelector('.main__post-add--msg');
-const imgAdd = document.querySelector('.main__post-add--img');
-const inputCross = document.querySelector('.main__post-btns--cross');
-const btnAdd = document.getElementById('post');
-
-input.addEventListener('keydown', function () {
-  if (input.value !== '') {
-    imgAdd.classList.remove('hidden');
-    inputCross.classList.remove('hidden');
-    btnAdd.style.marginTop = '3rem';
-  } else {
-    imgAdd.classList.add('hidden');
-    inputCross.classList.add('hidden');
-    btnAdd.style.marginTop = '0';
-  }
-});
-
-inputCross.addEventListener('click', function () {
-  input.value = '';
-  imgAdd.classList.add('hidden');
-  inputCross.classList.add('hidden');
-  btnAdd.style.marginTop = '0';
-});
+kad kliknemo post dugme doda se novi innerHTML pre ---- main postsvi ostali postovi
+da uzmemo input i sliku i da je store u  innerHTML ---- main post
+da se store u firebase ---- main post
