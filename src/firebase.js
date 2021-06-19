@@ -83,7 +83,7 @@ loginBtn.addEventListener('click', function () {
       // console.log(user.emailVerified);
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
-          window.location = '/index.html';
+          window.location = '/main.html';
         }
       });
       // ...

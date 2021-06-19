@@ -4,133 +4,214 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>iConnect</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.min.css" />
-    <script src="script.js" defer></script>
+    <title>iConnect - Log In or Sign Up</title>
   </head>
-  <body class="body">
-    <div class="main-page">
-      <div class="container">
-        <nav class="nav">
-          <img id="logo" src="img/logo2.png" alt="ree" height="40px" />
-          <input
-            id="input-2"
-            class="nav__input-2 hidden"
-            type="text"
-            placeholder="Search feed"
-            placeholder="Search feed"
-          />
-          <div class="nav__search">
-            <img class="nav__search-icon" src="img/search.png" alt="search" />
+  <body>
+    <div class="form">
+      <section id="background">
+        <section id="login">
+          <div class="login__left"></div>
+          <div class="login">
+            <div class="login__container">
+              <div class="login__container-form">
+                <h2 id="mail-sent" class="mail-sent hidden">
+                  Email confirmation link has been sent to your email adress!
+                </h2>
+                <h2 class="mail-confirm hidden">
+                  An email has been sent. Confirm your email address!
+                </h2>
+                <input
+                  id="login-email"
+                  type="email"
+                  name="email"
+                  class="login__container-mail input-login"
+                  placeholder="zlatko@gmail.com"
+                />
+                <input
+                  id="login-password"
+                  type="password"
+                  name="password"
+                  class="login__container-password input-login"
+                  placeholder="password"
+                />
+                <button id="login-btn" class="btn btn-submit">Log In</button>
 
-            <input
-              class="nav__input"
-              type="text"
-              placeholder="Search feed"
-              placeholder="Search feed"
-            />
-          </div>
+                <a href="" class="link-to-register">
+                  <p>
+                    Don't have an account yet? <strong>Sign up</strong> here!
+                  </p>
+                </a>
 
-          <div id="nav-icons">
-            <div class="nav__icons-search hidden">
-              <svg id="search-button" class="nav__search-2">
-                <use xlink:href="img/sprite.svg#icon-search"></use>
-              </svg>
-            </div>
-            <div class="nav__icons-settings hidden">
-              <svg class="nav__settings">
-                <use xlink:href="img/sprite.svg#icon-settings"></use>
-              </svg>
-              <div class="custom-select-hide hidden">
-                <div class="custom-select">
-                  <h2 class="select nav__darkmode-toggle">Dark Mode</h2>
-                  <a href="signup.html"
-                    ><button class="btn btn-primary-2 select">
-                      Log out
-                    </button></a
-                  >
+                <div class="contact">
+                  <h2 class="name">Marko Tasic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a target="_blank" href="https://github.com/markotasic">
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:m4rko2001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+                <div class="contact-2">
+                  <h2 class="name">Zlatko Radenkovic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://github.com/yournightmare01"
+                    >
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:zlatkor1001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="nav__custom">
-            <a href="signup.html"
-              ><button class="btn btn-primary">Log out</button></a
-            >
-            <svg id="nav__custom-color" class="nav__custom-color">
-              <use xlink:href="img/sprite.svg#icon-wb_sunny"></use>
-            </svg>
-          </div>
-        </nav>
-        <section id="sidebar-section">
-          <div class="content">
-            <div class="sidebar">
-              <div class="line"></div>
-              <div class="profile">
-                <div class="profile-image">
-                  <form>
-                    <img class="profile-image-pic" src="img/user2.png" alt="" />
+          <div class="register hidden">
+            <div class="login__container-register">
+              <div
+                id="submit-container"
+                class="login__container-register--form"
+              >
+                <h2 class="mail-taken hidden">
+                  The email has already been registered!
+                </h2>
+                <input
+                  id="username"
+                  type="text"
+                  name="username"
+                  class="
+                    register-forms register__container-username
+                    input-login
+                  "
+                  placeholder="username"
+                />
+                <h3 id="user-false-msg" class="hidden error-msg">
+                  Username must be three characters or longer!
+                </h3>
 
-                    <label class="profile-image-upload">
-                      <input
-                        accept="image/x-png,image/jpeg"
-                        class="profile-image-upload-input"
-                        type="file"
-                      />
-                    </label>
-                  </form>
-                  <svg class="profile-image-add">
-                    <use xlink:href="img/sprite.svg#icon-plus"></use>
-                  </svg>
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  class="register-forms register__container-mail input-login"
+                  placeholder="marko@gmail.com"
+                />
+                <h3 id="email-false-msg" class="hidden error-msg">
+                  Invalid e-mail format
+                </h3>
+                <input
+                  id="password"
+                  type="password"
+                  name="password"
+                  class="
+                    register-forms register__container-password
+                    input-login
+                  "
+                  placeholder="password"
+                />
+                <input
+                  id="password-2"
+                  type="password"
+                  name="password"
+                  class="
+                    register-forms register__container-password-2
+                    input-login
+                  "
+                  placeholder="confirm password"
+                />
+                <button id="register-btn" class="btn btn-submit">
+                  Register
+                </button>
+                <a href="" class="link-to-login"
+                  ><p>
+                    Already have an account? <strong>Log in</strong> here!
+                  </p></a
+                >
+                <div class="contact">
+                  <h2 class="name">Marko Tasic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a target="_blank" href="https://github.com/markotasic">
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:m4rko2001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
-                <h2 id="h2" class="profile-name"></h2>
+
+                <div class="contact-2">
+                  <h2 class="name">Zlatko Radenkovic</h2>
+                  <div class="contact__icons">
+                    <a target="_blank" href="">
+                      <svg class="login__container-portfolio">
+                        <use
+                          xlink:href="img/sprite.svg#icon-text-document-inverted"
+                        ></use>
+                      </svg>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://github.com/yournightmare01"
+                    >
+                      <svg class="login__container-github">
+                        <use xlink:href="img/sprite.svg#icon-github"></use>
+                      </svg>
+                    </a>
+                    <a href="mailto:zlatkor1001@gmail.com">
+                      <svg class="login__container-email">
+                        <use xlink:href="img/sprite.svg#icon-email"></use>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <h2 class="contacts">Contacts</h2>
-              <div id="users-list" class="users"></div>
             </div>
-
-            <main class="main">
-              <div class="main__post">
-                <div class="main__post-add">
-                  <input
-                    class="main__post-add--msg"
-                    type="text"
-                    placeholder="What's Happening?"
-                  />
-                  <form>
-                    <img
-                      class="main__post-add--img hidden"
-                      src="img/imgs.png"
-                      alt="add images"
-                    />
-                    <label class="custom-file-upload">
-                      <input
-                        accept="image/x-png,image/jpeg"
-                        class="main__post-add--upload"
-                        type="file"
-                      />
-                    </label>
-                  </form>
-                </div>
-
-                <div class="main__post-btns">
-                  <svg class="main__post-btns--cross hidden">
-                    <use xlink:href="img/sprite.svg#icon-clear"></use>
-                  </svg>
-                  <button id="post" class="btn btn-sec">Post</button>
-                </div>
-              </div>
-
-              <div id="main-posts" class="main-posts"></div>
-            </main>
           </div>
         </section>
-      </div>
+      </section>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
@@ -139,8 +220,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.0/firebase-ui-auth.js"></script>
 
-    <script type="module" src="src/app.js"></script>
-    <script src="firebasemain.js"></script>
     <script src="jq/jquery-3.6.0.min.js"></script>
+    <script src="src/firebase.js"></script>
+    <script src="src/login.js"></script>
   </body>
 </html>
