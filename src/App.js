@@ -1,5 +1,5 @@
 const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '60c8e11f3722f27da37a9b90';
+const APP_ID = '60ce35fae66f5177d6a55ce1';
 
 async function getData() {
   const response = await fetch('https://dummyapi.io/data/api/user?limit=7', {
@@ -10,6 +10,8 @@ async function getData() {
   const jsonObject = await response.json();
   for (var i = 0; i < jsonObject.data.length; i++) {
     const usersImage = jsonObject.data[i].picture;
+    const firstName = jsonObject.data[i].firstName;
+    const lastName = jsonObject.data[i].lastName;
 
     $(document).ready(function () {
       $('#users-list').append(
@@ -21,7 +23,8 @@ async function getData() {
             src="${usersImage}"
             alt="img"
           />
-        </div>
+          <p class="ree">${firstName + ' ' + lastName}</p>
+          </div>
         `
       );
     });
@@ -30,7 +33,7 @@ async function getData() {
 getData();
 
 async function getPosts() {
-  const response = await fetch('https://dummyapi.io/data/api/post?limit=1', {
+  const response = await fetch('https://dummyapi.io/data/api/post?limit=5', {
     headers: {
       'app-id': APP_ID,
     },
@@ -68,7 +71,7 @@ async function getPosts() {
           />
 
           <div class="textish">
-            <a class="main__content-tags">${tags}</a>
+            <a class="main__content-tags">#${tags}</a>
             <p class="main__content-text">${postText}</p>
           </div>
           <div class="main__content-react">
