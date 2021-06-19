@@ -75,11 +75,14 @@
                 <div class="profile-image">
                   <form>
                     <img class="profile-image-pic" src="img/user2.png" alt="" />
-                    <input
-                      accept="image/x-png,image/jpeg"
-                      class="profile-image-upload"
-                      type="file"
-                    />
+
+                    <label class="profile-image-upload">
+                      <input
+                        accept="image/x-png,image/jpeg"
+                        class="profile-image-upload-input"
+                        type="file"
+                      />
+                    </label>
                   </form>
                   <svg class="profile-image-add">
                     <use xlink:href="img/sprite.svg#icon-plus"></use>
@@ -88,64 +91,7 @@
                 <h2 id="h2" class="profile-name"></h2>
               </div>
               <h2 class="contacts">Contacts</h2>
-              <div id="users-list" class="users">
-                <div class="users__profile" id="1">
-                  <div class="users-status" id="stat-1"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="2">
-                  <div class="users-status" id="stat-2"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="3">
-                  <div class="users-status" id="stat-3"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="3">
-                  <div class="users-status" id="stat-4"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="3">
-                  <div class="users-status" id="stat-5"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="3">
-                  <div class="users-status" id="stat-6"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-                <div class="users__profile" id="3">
-                  <div class="users-status" id="stat-7"></div>
-                  <img
-                    class="users__profile-img"
-                    src="img/Screenshot_4.png"
-                    alt="zlatkoR"
-                  />
-                </div>
-              </div>
+              <div id="users-list" class="users"></div>
             </div>
 
             <main class="main">
@@ -162,11 +108,13 @@
                       src="img/imgs.png"
                       alt="add images"
                     />
-                    <input
-                      accept="image/x-png,image/jpeg"
-                      class="main__post-add--upload"
-                      type="file"
-                    />
+                    <label class="custom-file-upload">
+                      <input
+                        accept="image/x-png,image/jpeg"
+                        class="main__post-add--upload"
+                        type="file"
+                      />
+                    </label>
                   </form>
                 </div>
 
@@ -177,70 +125,8 @@
                   <button id="post" class="btn btn-sec">Post</button>
                 </div>
               </div>
-              <div class="main__content">
-                <div class="main__content-poster">
-                  <ul id="authors"></ul>
-                  <img
-                    id="profile-img"
-                    class="main__content-poster--img"
-                    src="img/user.png"
-                    alt="Profile-pic"
-                  />
-                  <div class="main__content-poster--name">Marko Tasic</div>
-                </div>
 
-                <img
-                  class="main__content-post"
-                  src="img/user-post.jpg"
-                  alt="post"
-                />
-                <div class="main__content-react">
-                  <div class="like">
-                    <svg class="main__content-react--like">
-                      <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-                    </svg>
-                    <p class="main__content-react--text">Like</p>
-                  </div>
-                  <div class="comment">
-                    <svg class="main__content-react--comment">
-                      <use xlink:href="img/sprite.svg#icon-forum"></use>
-                    </svg>
-                    <p class="main__content-react--text">Comment</p>
-                  </div>
-                </div>
-              </div>
-
-              <div id="post-2" class="main__content">
-                <div class="main__content-poster">
-                  <img
-                    class="main__content-poster--img"
-                    src="img/Screenshot_4.png"
-                    alt="Profile-pic"
-                  />
-                  <div class="main__content-poster--name">
-                    Zlatko Radenkovic
-                  </div>
-                </div>
-                <img
-                  class="main__content-post"
-                  src="img/post2.jpg"
-                  alt="post"
-                />
-                <div class="main__content-react">
-                  <div class="like">
-                    <svg class="main__content-react--like">
-                      <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-                    </svg>
-                    <p class="main__content-react--text">Like</p>
-                  </div>
-                  <div class="comment">
-                    <svg class="main__content-react--comment">
-                      <use xlink:href="img/sprite.svg#icon-forum"></use>
-                    </svg>
-                    <p class="main__content-react--text">Comment</p>
-                  </div>
-                </div>
-              </div>
+              <div id="main-posts" class="main-posts"></div>
             </main>
           </div>
         </section>

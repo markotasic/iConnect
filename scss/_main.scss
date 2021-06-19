@@ -6,6 +6,12 @@
   padding: 2rem;
   user-select: none;
 
+  &-posts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   &__post {
     display: flex;
     align-items: center;
@@ -19,6 +25,8 @@
     &-add {
       width: 100%;
       position: relative;
+      display: flex;
+      flex-direction: column;
 
       &--msg {
         width: 100%;
@@ -30,10 +38,10 @@
         outline: none;
         font-family: 'Poppins';
         font-weight: 500;
-        margin-bottom: 3rem;
       }
 
       &--img {
+        margin-top: 3rem;
         width: 5rem;
         height: 5rem;
         &:hover {
@@ -41,14 +49,20 @@
         }
       }
 
-      &--upload {
+      .custom-file-upload {
         position: absolute;
         left: 0;
         top: 6.5rem;
         width: 5rem;
         height: 5rem;
-        content: 'Select some files';
         opacity: 0;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &--upload {
+        display: none;
 
         &:hover {
           cursor: pointer;
@@ -78,6 +92,26 @@
     width: fit-content;
     margin-top: 5rem;
     border-radius: $border-raius;
+
+    .textish {
+      margin-top: 1rem;
+    }
+    &-text {
+      color: var(--text-color);
+      font-size: 1.5rem;
+      margin: 1rem 0.5rem;
+      user-select: text;
+    }
+
+    &-tags {
+      color: rgb(0, 104, 201);
+      font-size: 1.4rem;
+      margin: 1rem 0.5rem;
+      text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
     &-poster {
       display: flex;

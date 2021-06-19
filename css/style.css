@@ -236,6 +236,7 @@ body {
   margin-left: -10.8rem;
   border: 1px solid var(--text-color);
   white-space: nowrap;
+  z-index: 1;
 }
 
 .custom-select .select {
@@ -280,6 +281,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  z-index: 600;
 }
 
 .profile {
@@ -450,15 +452,19 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 8rem;
-  height: 8rem;
   -webkit-border-radius: 50%;
           border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
   opacity: 0;
 }
 
 .profile-image-upload:hover {
   cursor: pointer;
+}
+
+.profile-image-upload-input {
+  display: none;
 }
 
 .btn {
@@ -529,6 +535,22 @@ body {
           user-select: none;
 }
 
+.main-posts {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .main__post {
   display: -webkit-box;
   display: -webkit-flex;
@@ -554,6 +576,15 @@ body {
 .main__post-add {
   width: 100%;
   position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .main__post-add--msg {
@@ -567,10 +598,10 @@ body {
   outline: none;
   font-family: 'Poppins';
   font-weight: 500;
-  margin-bottom: 3rem;
 }
 
 .main__post-add--img {
+  margin-top: 3rem;
   width: 5rem;
   height: 5rem;
 }
@@ -579,14 +610,21 @@ body {
   cursor: pointer;
 }
 
-.main__post-add--upload {
+.main__post-add .custom-file-upload {
   position: absolute;
   left: 0;
   top: 6.5rem;
   width: 5rem;
   height: 5rem;
-  content: 'Select some files';
   opacity: 0;
+}
+
+.main__post-add .custom-file-upload:hover {
+  cursor: pointer;
+}
+
+.main__post-add--upload {
+  display: none;
 }
 
 .main__post-add--upload:hover {
@@ -631,6 +669,31 @@ body {
   margin-top: 5rem;
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
+}
+
+.main__content .textish {
+  margin-top: 1rem;
+}
+
+.main__content-text {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 1rem 0.5rem;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+}
+
+.main__content-tags {
+  color: #0068c9;
+  font-size: 1.4rem;
+  margin: 1rem 0.5rem;
+  text-transform: uppercase;
+}
+
+.main__content-tags:hover {
+  cursor: pointer;
 }
 
 .main__content-poster {
@@ -1040,11 +1103,9 @@ strong {
     display: none;
   }
   .main__content {
-    width: 100%;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;

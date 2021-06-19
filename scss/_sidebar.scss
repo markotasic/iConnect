@@ -1,6 +1,7 @@
 .sidebar {
   width: 20rem;
   user-select: none;
+  z-index: 600;
 }
 
 .profile {
@@ -113,11 +114,15 @@
   position: absolute;
   left: 0;
   top: 0;
+  border-radius: 50%;
   width: 8rem;
   height: 8rem;
-  border-radius: 50%;
   opacity: 0;
   &:hover {
     cursor: pointer;
+  }
+
+  &-input {
+    display: none;
   }
 }

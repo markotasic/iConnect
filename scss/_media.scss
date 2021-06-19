@@ -61,11 +61,9 @@
   }
 
   .main__content {
-    width: 100%;
-    align-items: center;
+    width: fit-content;
     display: flex;
     flex-direction: column;
-
     &-post {
       max-width: 100%;
     }
