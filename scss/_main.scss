@@ -19,6 +19,7 @@
     &-add {
       width: 100%;
       position: relative;
+
       &--msg {
         width: 100%;
         background-color: var(--color-tertiary);
@@ -46,7 +47,10 @@
         top: 6.5rem;
         width: 5rem;
         height: 5rem;
+        content: 'Select some files';
         opacity: 0;
+        visibility: none;
+
         &:hover {
           cursor: pointer;
         }
