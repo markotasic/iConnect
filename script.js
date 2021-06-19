@@ -90,7 +90,7 @@ $(document).ready(function () {
   });
 });
 
-//__________________________Disable back function on Chrome (For Signup Page)__________________________\\
+//__________________________Disable back function (For Signup Page)__________________________\\
 
 $(document).ready(function () {
   function disableBack() {
@@ -102,5 +102,3 @@ $(document).ready(function () {
     if (evt.persisted) disableBack();
   };
 });
-
-//__________________________API CALL__________________________\\
