@@ -1,3 +1,5 @@
+'use strict';
+
 const body = document.querySelector('.body');
 const darkModeToggle = document.querySelector('.nav__custom-color');
 const settingsDarkModeToggle = document.querySelector('.nav__darkmode-toggle');
@@ -46,40 +48,62 @@ darkModeToggle.addEventListener('click', () => {
 });
 //__________________________SWIPE RIGHT FOR SIDEBAR__________________________\\
 
-// sidebar.style.transition = 'left 0.3s';
-// const maxLeft = sidebar.clientWidth - 20;
-// let isSidebarHidden = true;
+function myFunction(x) {
+  if (x.matches) {
+    // If media query matches
+    sidebar.style.left = `-${180}px`;
+    sidebar.style.transition = 'left 0.3s';
+    const maxLeft = sidebar.clientWidth - 20;
+    let isSidebarHidden = true;
 
-// sidebar.addEventListener('mousedown', () => {
-//   if (isSidebarHidden) {
-//     sidebar.style.left = 0;
-//     isSidebarHidden = false;
-//   }
-// });
+    const func = () => {
+      if (isSidebarHidden) {
+        sidebar.style.left = 0;
+        isSidebarHidden = false;
+      }
+    };
 
-// document.addEventListener('mousedown', (e) => {
-//   let pass = true;
+    sidebar.addEventListener('mousedown', () => {
+      func();
+    });
 
-//   if (e.target === sidebar) pass = false;
+    const func2 = (e) => {
+      let pass = true;
 
-//   for (const child of sidebar.children) {
-//     if (e.target === child) pass = false;
-//     for (const secondChild of child.children) {
-//       if (e.target === secondChild) pass = false;
+      if (e.target === sidebar) pass = false;
 
-//       for (const thirdChild of secondChild.children) {
-//         if (e.target === thirdChild) pass = false;
-//       }
-//     }
-//   }
+      for (const child of sidebar.children) {
+        if (e.target === child) pass = false;
+        for (const secondChild of child.children) {
+          if (e.target === secondChild) pass = false;
 
-//   if (pass) {
-//     if (!isSidebarHidden) {
-//       sidebar.style.left = `-${maxLeft}px`;
-//       isSidebarHidden = true;
-//     }
-//   }
-// });
+          for (const thirdChild of secondChild.children) {
+            if (e.target === thirdChild) pass = false;
+          }
+        }
+      }
+
+      if (pass) {
+        if (!isSidebarHidden) {
+          sidebar.style.left = `-${maxLeft}px`;
+          isSidebarHidden = true;
+        }
+      }
+    };
+
+    document.addEventListener('mousedown', (e) => {
+      func2(e);
+    });
+  } else {
+    sidebar.style.left = 'auto';
+    // sidebar.removeEventListener('mousedown', func());
+    // sidebar.removeEventListener('mousedown', func2());
+  }
+}
+
+var x = window.matchMedia('(max-width: 900px)');
+myFunction(x); // Call listener function at run time
+x.addListener(myFunction); // Attach listener function on state changes
 
 //__________________________NAV RESPONSIVNES__________________________\\
 

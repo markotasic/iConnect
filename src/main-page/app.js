@@ -1,9 +1,10 @@
 const BASE_URL = 'https://dummyapi.io/data/api';
-const APP_ID = '60ce35fae66f5177d6a55ce1';
+// const APP_ID = '60ce35fae66f5177d6a55ce1';
+const APP_ID = '60cf05bb8eb6a1677681ff56';
 // const APP_ID = '60c8e11f3722f27da37a9b90';
 
 async function getData() {
-  const response = await fetch('https://dummyapi.io/data/api/user?limit=6', {
+  const response = await fetch('https://dummyapi.io/data/api/user?limit=1', {
     headers: {
       'app-id': APP_ID,
     },
@@ -34,7 +35,7 @@ async function getData() {
 getData();
 
 async function getPosts() {
-  const response = await fetch('https://dummyapi.io/data/api/post?limit=5', {
+  const response = await fetch('https://dummyapi.io/data/api/post?limit=1', {
     headers: {
       'app-id': APP_ID,
     },
