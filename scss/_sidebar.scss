@@ -69,6 +69,7 @@
 
 .users {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
   height: calc(100vh - 23rem);
