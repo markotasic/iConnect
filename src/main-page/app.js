@@ -4,7 +4,7 @@ const APP_ID = '60cf05bb8eb6a1677681ff56';
 // const APP_ID = '60c8e11f3722f27da37a9b90';
 
 async function getData() {
-  const response = await fetch('https://dummyapi.io/data/api/user?limit=15', {
+  const response = await fetch('https://dummyapi.io/data/api/user?limit=5', {
     headers: {
       'app-id': APP_ID,
     },

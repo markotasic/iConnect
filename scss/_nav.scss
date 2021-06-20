@@ -12,7 +12,7 @@
   top: 0%;
   width: 130rem;
   transform: translateX(-50%);
-  z-index: 10000;
+  z-index: 10;
   height: 6rem;
 
   &__search {
@@ -22,7 +22,6 @@
     user-select: text;
     &-icon {
       margin-right: -4.8rem;
-      z-index: 16;
       padding: 1.1rem 1.5rem;
       &:hover {
         cursor: pointer;
@@ -118,7 +117,6 @@
   margin-left: -10.8rem;
   border: 1px solid var(--text-color);
   white-space: nowrap;
-  z-index: 1;
   .select {
     color: var(--text-color);
     text-decoration: none;
@@ -138,7 +136,6 @@
       border-left: 1px solid var(--text-color);
       background-color: var(--color-primary);
       transform: translateX(-50%) rotate(45deg);
-      z-index: 2;
     }
   }
 }

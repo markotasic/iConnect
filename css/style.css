@@ -93,6 +93,32 @@ body::-webkit-scrollbar-thumb {
   position: relative;
 }
 
+.overlay {
+  position: fixed;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  height: 100vh;
+  width: 100vw;
+  margin-top: -6rem;
+  z-index: 20;
+}
+
+.inpued {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
 .nav {
   background-color: var(--color-primary);
   display: -webkit-box;
@@ -122,7 +148,7 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  z-index: 10000;
+  z-index: 10;
   height: 6rem;
 }
 
@@ -144,7 +170,6 @@ body::-webkit-scrollbar-thumb {
 
 .nav__search-icon {
   margin-right: -4.8rem;
-  z-index: 16;
   padding: 1.1rem 1.5rem;
 }
 
@@ -261,7 +286,6 @@ body::-webkit-scrollbar-thumb {
   margin-left: -10.8rem;
   border: 1px solid var(--text-color);
   white-space: nowrap;
-  z-index: 1;
 }
 
 .custom-select .select {
@@ -288,7 +312,6 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: translateX(-50%) rotate(45deg);
       -ms-transform: translateX(-50%) rotate(45deg);
           transform: translateX(-50%) rotate(45deg);
-  z-index: 2;
 }
 
 #nav-icons {
@@ -306,7 +329,6 @@ body::-webkit-scrollbar-thumb {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  z-index: 600;
   position: fixed;
   margin-top: 6rem;
 }
@@ -410,6 +432,7 @@ body::-webkit-scrollbar-thumb {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -778,6 +801,18 @@ body::-webkit-scrollbar-thumb {
           user-select: text;
 }
 
+.main__content-poster--clear {
+  fill: var(--text-color);
+  height: 4rem;
+  width: 4rem;
+  right: 2rem;
+  position: absolute;
+}
+
+.main__content-poster--clear:hover {
+  cursor: pointer;
+}
+
 .main__content-post {
   max-height: 500px;
   -webkit-border-radius: 1rem;
@@ -842,15 +877,70 @@ body::-webkit-scrollbar-thumb {
 }
 
 .post__content {
-  position: absolute;
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: var(--color-primary);
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
+  z-index: 1000;
+  padding: 2rem;
+  max-width: 64rem;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  min-height: 50rem;
+  top: 20rem;
 }
 
-.overlay {
-  position: absolute;
-  background-color: white;
-  z-index: 2000000;
-  height: 100vh;
-  width: 100vw;
+.main__content-imgAdd:hover {
+  cursor: pointer;
+}
+
+.text__input {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.text__input-tag, .text__input-msg {
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  color: var(--text-color);
+  -webkit-border-radius: 5rem;
+          border-radius: 5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border: none;
+  outline: none;
+  white-space: pre-line;
+}
+
+.text__input-tag {
+  color: #0068c9;
 }
 
 .login__container {

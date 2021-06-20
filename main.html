@@ -13,150 +13,162 @@
     <script src="script.js" defer></script>
   </head>
   <body class="body">
-    <div class="main-page">
-      <div class="container">
-        <nav class="nav">
-          <img id="logo" src="img/logo2.png" alt="ree" height="40px" />
+    <div class="container">
+      <nav class="nav">
+        <img id="logo" src="img/logo2.png" alt="ree" height="40px" />
+        <input
+          id="input-2"
+          class="nav__input-2 hidden"
+          type="text"
+          placeholder="Search feed"
+          placeholder="Search feed"
+        />
+        <div class="nav__search">
+          <img class="nav__search-icon" src="img/search.png" alt="search" />
+
           <input
-            id="input-2"
-            class="nav__input-2 hidden"
+            class="nav__input"
             type="text"
             placeholder="Search feed"
             placeholder="Search feed"
           />
-          <div class="nav__search">
-            <img class="nav__search-icon" src="img/search.png" alt="search" />
+        </div>
 
-            <input
-              class="nav__input"
-              type="text"
-              placeholder="Search feed"
-              placeholder="Search feed"
-            />
-          </div>
-
-          <div id="nav-icons">
-            <div class="nav__icons-search hidden">
-              <svg id="search-button" class="nav__search-2">
-                <use xlink:href="img/sprite.svg#icon-search"></use>
-              </svg>
-            </div>
-            <div class="nav__icons-settings hidden">
-              <svg class="nav__settings">
-                <use xlink:href="img/sprite.svg#icon-settings"></use>
-              </svg>
-              <div class="custom-select-hide hidden">
-                <div class="custom-select">
-                  <h2 class="select nav__darkmode-toggle">Dark Mode</h2>
-                  <a href="index.html"
-                    ><button class="btn btn-primary-2 select">
-                      Log out
-                    </button></a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="nav__custom">
-            <a href="index.html"
-              ><button class="btn btn-primary">Log out</button></a
-            >
-            <svg id="nav__custom-color" class="nav__custom-color">
-              <use xlink:href="img/sprite.svg#icon-wb_sunny"></use>
+        <div id="nav-icons">
+          <div class="nav__icons-search hidden">
+            <svg id="search-button" class="nav__search-2">
+              <use xlink:href="img/sprite.svg#icon-search"></use>
             </svg>
           </div>
-        </nav>
-        <section id="sidebar-section">
-          <div class="content">
-            <div class="sidebar">
-              <div class="line"></div>
-              <div class="profile">
-                <div class="profile-image">
-                  <form>
-                    <img class="profile-image-pic" src="img/user2.png" alt="" />
-
-                    <label class="profile-image-upload">
-                      <input
-                        accept="image/x-png,image/jpeg"
-                        class="profile-image-upload-input"
-                        type="file"
-                      />
-                    </label>
-                  </form>
-                  <svg class="profile-image-add">
-                    <use xlink:href="img/sprite.svg#icon-plus"></use>
-                  </svg>
-                </div>
-                <h2 id="h2" class="profile-name"></h2>
+          <div class="nav__icons-settings hidden">
+            <svg class="nav__settings">
+              <use xlink:href="img/sprite.svg#icon-settings"></use>
+            </svg>
+            <div class="custom-select-hide hidden">
+              <div class="custom-select">
+                <h2 class="select nav__darkmode-toggle">Dark Mode</h2>
+                <a href="index.html"
+                  ><button class="btn btn-primary-2 select">Log out</button></a
+                >
               </div>
-              <div id="users-list" class="users">
-                <h2 class="contacts">Contacts</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="nav__custom">
+          <a href="index.html"
+            ><button class="btn btn-primary">Log out</button></a
+          >
+          <svg id="nav__custom-color" class="nav__custom-color">
+            <use xlink:href="img/sprite.svg#icon-wb_sunny"></use>
+          </svg>
+        </div>
+      </nav>
+      <section id="sidebar-section">
+        <div class="content">
+          <div class="sidebar">
+            <div class="line"></div>
+            <div class="profile">
+              <div class="profile-image">
+                <form>
+                  <img class="profile-image-pic" src="img/user2.png" alt="" />
+
+                  <label class="profile-image-upload">
+                    <input
+                      accept="image/x-png,image/jpeg"
+                      class="profile-image-upload-input"
+                      type="file"
+                    />
+                  </label>
+                </form>
+                <svg class="profile-image-add">
+                  <use xlink:href="img/sprite.svg#icon-plus"></use>
+                </svg>
+              </div>
+              <h2 id="h2" class="profile-name"></h2>
+            </div>
+            <div id="users-list" class="users">
+              <h2 class="contacts">Contacts</h2>
+            </div>
+          </div>
+
+          <main class="main">
+            <div class="main__post">
+              <div class="main__post-add">
+                <input
+                  class="main__post-add--msg"
+                  type="text"
+                  placeholder="What's Happening?"
+                />
+                <form>
+                  <img
+                    class="main__post-add--img hidden"
+                    src="img/imgs.png"
+                    alt="add images"
+                  />
+                  <label class="custom-file-upload">
+                    <input
+                      accept="image/x-png,image/jpeg"
+                      class="main__post-add--upload"
+                      type="file"
+                    />
+                  </label>
+                </form>
+              </div>
+
+              <div class="main__post-btns">
+                <svg class="main__post-btns--cross hidden">
+                  <use xlink:href="img/sprite.svg#icon-clear"></use>
+                </svg>
               </div>
             </div>
 
-            <main class="main">
-              <div class="main__post">
-                <div class="main__post-add">
-                  <input
-                    class="main__post-add--msg"
-                    type="text"
-                    placeholder="What's Happening?"
+            <div class="needhide hidden">
+              <div class="post__content">
+                <div class="main__content-poster">
+                  <img
+                    id="profile-img"
+                    class="main__content-poster--img"
+                    src="img/user.png"
+                    alt="Profile-pic"
                   />
-                  <form>
-                    <img
-                      class="main__post-add--img hidden"
-                      src="img/imgs.png"
-                      alt="add images"
-                    />
-                    <label class="custom-file-upload">
-                      <input
-                        accept="image/x-png,image/jpeg"
-                        class="main__post-add--upload"
-                        type="file"
-                      />
-                    </label>
-                  </form>
-                </div>
-
-                <div class="main__post-btns">
-                  <svg class="main__post-btns--cross hidden">
+                  <div class="main__content-poster--name">Marko Tasic</div>
+                  <svg class="main__content-poster--clear">
                     <use xlink:href="img/sprite.svg#icon-clear"></use>
                   </svg>
+                </div>
+
+                <!-- <img class="main__content-imgAdd" src="img/imgs.png" alt="" /> -->
+
+                <img
+                  class="main__content-post"
+                  src="img/forest.jpg"
+                  alt="post"
+                />
+
+                <div class="inpued">
+                  <div class="text__input">
+                    <input
+                      class="text__input-tag"
+                      type="text"
+                      placeholder="#yourtag"
+                    />
+                    <input
+                      class="text__input-msg"
+                      type="text"
+                      placeholder="yourmessage"
+                    />
+                  </div>
                   <button id="post" class="btn btn-sec">Post</button>
                 </div>
               </div>
-
-              <div id="main-posts" class="main-posts">
-                <!-- <div class="post__content">
-                  <div class="main__content-poster">
-                    <img
-                      id="profile-img"
-                      class="main__content-poster--img"
-                      src="img/user.png"
-                      alt="Profile-pic"
-                    />
-                    <div class="main__content-poster--name"></div>
-                  </div>
-
-                  <img
-                    class="main__content-post"
-                    src="img/forest.jpg"
-                    alt="post"
-                  />
-
-                  <div class="textish">
-                    <a class="main__content-tags">2</a>
-                    <p class="main__content-text">3</p>
-                  </div>
-                  <div class="main__content-react"></div>
-                </div> -->
-              </div>
-            </main>
-          </div>
-        </section>
-      </div>
+            </div>
+            <div id="main-posts" class="main-posts"></div>
+          </main>
+        </div>
+      </section>
     </div>
+    <div class="overlay hidden"></div>
 
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
