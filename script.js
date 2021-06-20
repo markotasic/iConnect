@@ -102,9 +102,3 @@ $(document).ready(function () {
     if (evt.persisted) disableBack();
   };
 });
-//__________________________Log out__________________________\\
-const logOut = document.getElementById('log-out');
-const mainPage = document.querySelector('.main-page');
-logOut.addEventListener('click', function () {
-  mainPage.classList.add('hidden');
-});

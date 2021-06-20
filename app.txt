@@ -1,5 +1,6 @@
 da napravimo javascript media query da rade ---- sidebar
 da napravimo custom scroll bar za users ---- sidebar
+da kad hover usera u side bar da izadje user info
 
 --da radi scroll na sidebar--
 position fixed
@@ -12,8 +13,8 @@ da na keydown se pojavi modal window ---- main post
 da ima da se ukuca #tag ---- main post
 da ima preview slike ---- main post
 
-////////////////////////////////////
-
 kad kliknemo post dugme doda se novi innerHTML pre ---- main postsvi ostali postovi
 da uzmemo input i sliku i da je store u  innerHTML ---- main post
 da se store u firebase ---- main post
+
+da kad dodjemo do kraj loadovanih postova da se load jos 5

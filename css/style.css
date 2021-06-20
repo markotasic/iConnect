@@ -101,6 +101,16 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  position: fixed;
+  padding: 1rem 2rem;
+  left: 50%;
+  top: 0%;
+  width: 130rem;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 10000;
+  height: 6rem;
 }
 
 .nav__search {
@@ -285,6 +295,7 @@ body {
           user-select: none;
   z-index: 600;
   position: fixed;
+  margin-top: 6rem;
 }
 
 .profile {
@@ -543,6 +554,8 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  margin-left: 20rem;
+  margin-top: 4rem;
 }
 
 .main-posts {
@@ -1118,6 +1131,29 @@ strong {
 }
 
 @media only screen and (max-width: 56.25em) {
+  .main {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 2rem;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    margin-left: 0;
+    margin-top: 4rem;
+  }
   .sidebar {
     top: 0;
     left: -18rem;
@@ -1165,5 +1201,6 @@ strong {
   .nav {
     -webkit-border-radius: 0;
             border-radius: 0;
+    width: 100%;
   }
 }
