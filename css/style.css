@@ -1,7 +1,7 @@
 :root {
   --color-primary: #e7cbb4;
   --color-sec: #f0f2f5;
-  --color-tertiary: #d5b69d;
+  --color-tertiary: #c7a283;
   --text-color: #1a1a1a;
   --color-white: #eeeeee;
 }
@@ -55,6 +55,19 @@ html {
 
 body {
   background-color: var(--color-sec);
+  /* Handle */
+}
+
+body::-webkit-scrollbar {
+  width: 1.5rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--color-tertiary);
 }
 
 .container {
@@ -381,9 +394,7 @@ body {
 }
 
 .contacts {
-  border-right: 0.3em solid var(--color-primary);
-  padding: 0 5rem;
-  padding-top: 0.5rem;
+  margin: 0 auto;
   font-weight: 500;
   color: var(--text-color);
   background-color: var(--color-sec);
@@ -391,6 +402,7 @@ body {
      -moz-user-select: text;
       -ms-user-select: text;
           user-select: text;
+  height: 3rem;
 }
 
 .users {
@@ -404,9 +416,25 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 100%;
-  height: 70rem;
+  height: -webkit-calc(100vh - 23rem);
+  height: calc(100vh - 23rem);
+  overflow-y: scroll;
   background-color: var(--color-sec);
-  border-right: 0.4em solid var(--color-primary);
+  /* Handle */
+}
+
+.users::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.users::-webkit-scrollbar-track {
+  background: var(--color-primary);
+}
+
+.users::-webkit-scrollbar-thumb {
+  background: var(--color-tertiary);
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
 }
 
 .users__profile {
@@ -453,10 +481,10 @@ body {
 .line {
   position: fixed;
   height: 10vh;
-  width: 0.3rem;
+  width: 0.5rem;
   margin-left: 18.9rem;
   margin-top: 45vh;
-  background-color: var(--text-color);
+  background-color: var(--color-tertiary);
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
   display: none;

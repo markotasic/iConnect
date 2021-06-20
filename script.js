@@ -67,10 +67,12 @@ function myFunction(x) {
       func();
     });
 
+    const uploadImg = document.querySelector('.profile-image-upload');
+
     const func2 = (e) => {
       let pass = true;
 
-      if (e.target === sidebar) pass = false;
+      if (e.target === sidebar || e.target === uploadImg) pass = false;
 
       for (const child of sidebar.children) {
         if (e.target === child) pass = false;
@@ -96,8 +98,9 @@ function myFunction(x) {
     });
   } else {
     sidebar.style.left = 'auto';
-    // sidebar.removeEventListener('mousedown', func());
-    // sidebar.removeEventListener('mousedown', func2());
+    sidebar.addEventListener('mousedown', () => {
+      sidebar.style.left = 'auto';
+    });
   }
 }
 

@@ -7,7 +7,7 @@
 :root {
   --color-primary: #e7cbb4;
   --color-sec: #f0f2f5;
-  --color-tertiary: #d5b69d;
+  --color-tertiary: #c7a283;
   --text-color: #1a1a1a;
   --color-white: #eeeeee;
 }
@@ -64,6 +64,18 @@ html {
 
 body {
   background-color: var(--color-sec);
+  &::-webkit-scrollbar {
+    width: 1.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--color-primary);
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-tertiary);
+  }
 }
 
 .container {
