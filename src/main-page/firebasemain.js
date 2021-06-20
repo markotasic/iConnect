@@ -73,6 +73,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   });
 });
 
+//______________USER IMAGE UPLOAD________________\\
 const uploadUserImg = (img, currentUser) => {
   if (currentUser) {
     const userId = currentUser.uid;

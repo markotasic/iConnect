@@ -93,73 +93,47 @@
           </div>
 
           <main class="main">
-            <div class="main__post">
-              <div class="main__post-add">
-                <input
-                  class="main__post-add--msg"
-                  type="text"
-                  placeholder="What's Happening?"
-                />
-                <form>
-                  <img
-                    class="main__post-add--img hidden"
-                    src="img/imgs.png"
-                    alt="add images"
-                  />
-                  <label class="custom-file-upload">
-                    <input
-                      accept="image/x-png,image/jpeg"
-                      class="main__post-add--upload"
-                      type="file"
+            <button class="main__addPost">What's Happening?</button>
+
+            <div class="dunno-how-it-works-but-i-need-3-divs-for-it hidden">
+              <div class="posted">
+                <div class="post">
+                  <div class="post__user">
+                    <img
+                      id="profile-img"
+                      class="post__user-img"
+                      src="img/user.png"
+                      alt="Profile-pic"
                     />
-                  </label>
-                </form>
-              </div>
-
-              <div class="main__post-btns">
-                <svg class="main__post-btns--cross hidden">
-                  <use xlink:href="img/sprite.svg#icon-clear"></use>
-                </svg>
-              </div>
-            </div>
-
-            <div class="needhide hidden">
-              <div class="post__content">
-                <div class="main__content-poster">
-                  <img
-                    id="profile-img"
-                    class="main__content-poster--img"
-                    src="img/user.png"
-                    alt="Profile-pic"
-                  />
-                  <div class="main__content-poster--name">Marko Tasic</div>
-                  <svg class="main__content-poster--clear">
-                    <use xlink:href="img/sprite.svg#icon-clear"></use>
-                  </svg>
-                </div>
-
-                <!-- <img class="main__content-imgAdd" src="img/imgs.png" alt="" /> -->
-
-                <img
-                  class="main__content-post"
-                  src="img/forest.jpg"
-                  alt="post"
-                />
-
-                <div class="inpued">
-                  <div class="text__input">
-                    <input
-                      class="text__input-tag"
-                      type="text"
-                      placeholder="#yourtag"
-                    />
-                    <input
-                      class="text__input-msg"
-                      type="text"
-                      placeholder="yourmessage"
-                    />
+                    <div class="post__user-name">Marko Tasic</div>
+                    <svg class="post__user-clear">
+                      <use xlink:href="img/sprite.svg#icon-clear"></use>
+                    </svg>
                   </div>
-                  <button id="post" class="btn btn-sec">Post</button>
+
+                  <div class="post__upload">
+                    <img class="post__upload-img" src="img/imgs.png" alt="" />
+
+                    <label class="post__upload-label">
+                      <input accept="image/x-png,image/jpeg" type="file" />
+                    </label>
+                  </div>
+
+                  <div class="post__inputs">
+                    <div class="post__inputs-text">
+                      <input
+                        class="post__inputs-text--tag"
+                        type="text"
+                        placeholder="#yourtag"
+                      />
+                      <input
+                        class="post__inputs-text--msg"
+                        type="text"
+                        placeholder="yourmessage"
+                      />
+                    </div>
+                    <button id="post" class="btn btn-sec">Post</button>
+                  </div>
                 </div>
               </div>
             </div>

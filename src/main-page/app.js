@@ -1,8 +1,10 @@
 const BASE_URL = 'https://dummyapi.io/data/api';
 // const APP_ID = '60ce35fae66f5177d6a55ce1';
-const APP_ID = '60cf05bb8eb6a1677681ff56';
+// const APP_ID = '60cf05bb8eb6a1677681ff56';
 // const APP_ID = '60c8e11f3722f27da37a9b90';
+const APP_ID = '60cf64d0355adb3d7ec32341';
 
+//______________GET USERS FROM API________________\\
 async function getData() {
   const response = await fetch('https://dummyapi.io/data/api/user?limit=5', {
     headers: {
@@ -34,6 +36,7 @@ async function getData() {
 }
 getData();
 
+//______________GET POSTS FROM API________________\\
 async function getPosts() {
   const response = await fetch('https://dummyapi.io/data/api/post?limit=1', {
     headers: {
@@ -97,26 +100,22 @@ async function getPosts() {
 }
 getPosts();
 
-const input = document.querySelector('.main__post-add--msg');
-const imgAdd = document.querySelector('.main__post-add--img');
-const inputCross = document.querySelector('.main__post-btns--cross');
-const btnAdd = document.getElementById('post');
+//______________CUSTOM USER POST ________________\\
+const addPost = document.querySelector('.main__addPost');
+const showPost = document.querySelector(
+  '.dunno-how-it-works-but-i-need-3-divs-for-it'
+);
+const closePost = document.querySelector('.post__user-clear');
+const overlay = document.querySelector('.overlay');
 
-input.addEventListener('keydown', function () {
-  if (input.value !== '') {
-    imgAdd.classList.remove('hidden');
-    inputCross.classList.remove('hidden');
-    btnAdd.style.marginTop = '5rem';
-  } else {
-    imgAdd.classList.add('hidden');
-    inputCross.classList.add('hidden');
-    btnAdd.style.marginTop = '0';
-  }
+//______________SHOW UPLOAD POST ________________\\
+addPost.addEventListener('click', () => {
+  showPost.classList.remove('hidden');
+  overlay.classList.remove('hidden');
 });
 
-inputCross.addEventListener('click', function () {
-  input.value = '';
-  imgAdd.classList.add('hidden');
-  inputCross.classList.add('hidden');
-  btnAdd.style.marginTop = '0';
+//______________HIDE UPLOAD POST ________________\\
+closePost.addEventListener('click', () => {
+  showPost.classList.add('hidden');
+  overlay.classList.add('hidden');
 });

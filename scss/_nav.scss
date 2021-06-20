@@ -12,7 +12,7 @@
   top: 0%;
   width: 130rem;
   transform: translateX(-50%);
-  z-index: 10;
+  z-index: 2;
   height: 6rem;
 
   &__search {
@@ -21,6 +21,7 @@
     align-items: center;
     user-select: text;
     &-icon {
+      z-index: 5;
       margin-right: -4.8rem;
       padding: 1.1rem 1.5rem;
       &:hover {
@@ -83,6 +84,14 @@
 
   .nav__settings {
     height: 2.6rem;
+    position: relative;
+    z-index: 1500;
+    height: 3rem;
+    width: 3rem;
+    fill: var(--text-color);
+    &:hover {
+      cursor: pointer;
+    }
   }
 }
 
@@ -91,15 +100,6 @@
   width: 3rem;
   fill: var(--text-color);
   margin-right: 2rem;
-  &:hover {
-    cursor: pointer;
-  }
-}
-
-.nav__settings {
-  height: 3rem;
-  width: 3rem;
-  fill: var(--text-color);
   &:hover {
     cursor: pointer;
   }
