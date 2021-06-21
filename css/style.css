@@ -733,7 +733,7 @@ body::-webkit-scrollbar-thumb {
   max-height: 500px;
   -webkit-border-radius: 1rem;
           border-radius: 1rem;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 .main__content-react {
@@ -833,10 +833,11 @@ body::-webkit-scrollbar-thumb {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 90%;
-  height: 60%;
-  min-height: 30rem;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   top: 20rem;
+  margin: 2rem;
 }
 
 .post__user {
@@ -882,24 +883,27 @@ body::-webkit-scrollbar-thumb {
 }
 
 .post__upload {
+  background-color: var(--color-primary);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 64rem;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
   position: relative;
 }
 
 .post__upload-img {
-  width: 8rem;
-  height: 8rem;
-  fill: var(--text-color);
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-border-radius: 50%;
-          border-radius: 50%;
+  max-height: 500px;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
+  max-width: 100%;
 }
 
 .post__upload-label {
   position: absolute;
-  left: -1rem;
-  top: -1rem;
+  left: 0;
+  top: 0;
   -webkit-border-radius: 50%;
           border-radius: 50%;
   width: 10rem;
