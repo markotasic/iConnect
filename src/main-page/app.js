@@ -123,3 +123,45 @@ overlay.addEventListener('click', () => {
   showPost.classList.add('hidden');
   overlay.classList.add('hidden');
 });
+//______________IMG POST UPLOAD ________________\\
+// const uploadPostImg = (postImg, currentUser) => {
+//   if (currentUser) {
+//     const userId = currentUser.uid;
+//     var uploadTask = firebase
+//       .storage()
+//       .ref()
+//       .child(`userAvatars/${userId}`)
+//       .putString(postImg, 'data_url');
+
+//     uploadTask.on(
+//       firebase.storage.TaskEvent.STATE_CHANGED,
+//       (snapshot) => {
+//         var progress = Math.round(
+//           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+//         );
+//       },
+//       (err) => {
+//         console.error(err);
+//         return;
+//       },
+//       () => {
+//         // Get the download URL on upload success
+//         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+//           try {
+//             await currentUser.updateProfile({
+//               photoURL: downloadURL,
+//             });
+
+//             await firebase
+//               .firestore()
+//               .doc(`userPosts/${userId}`)
+//               .update({ postImg: downloadURL });
+//           } catch (err) {
+//             console.error(err);
+//             return;
+//           }
+//         });
+//       }
+//     );
+//   }
+// };

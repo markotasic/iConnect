@@ -252,3 +252,31 @@
     }
   }
 }
+
+.profile__info {
+  display: flex;
+  padding: 2rem 5rem 2rem 2rem;
+  border-radius: $border-raius;
+  background-color: var(--color-primary);
+  width: fit-content;
+  position: absolute;
+  &-img {
+    height: 20rem;
+    width: 20rem;
+    border-radius: $border-raius;
+  }
+
+  &-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: 5rem;
+    color: var(--text-color);
+    font-size: 1.4rem;
+
+    &--name {
+      font-weight: 500;
+      font-size: 2rem;
+    }
+  }
+}

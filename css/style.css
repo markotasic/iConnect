@@ -190,6 +190,7 @@ body::-webkit-scrollbar-thumb {
   outline: none;
   font-family: 'Poppins';
   font-weight: 300;
+  margin-right: 2rem;
 }
 
 .nav__custom {
@@ -964,6 +965,51 @@ body::-webkit-scrollbar-thumb {
 
 .post__inputs-text--tag {
   color: #0068c9;
+}
+
+.profile__info {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 5rem 2rem 2rem;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
+  background-color: var(--color-primary);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+}
+
+.profile__info-img {
+  height: 20rem;
+  width: 20rem;
+  -webkit-border-radius: 1rem;
+          border-radius: 1rem;
+}
+
+.profile__info-details {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  margin-left: 5rem;
+  color: var(--text-color);
+  font-size: 1.4rem;
+}
+
+.profile__info-details--name {
+  font-weight: 500;
+  font-size: 2rem;
 }
 
 .login__container {
