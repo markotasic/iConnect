@@ -101,3 +101,13 @@
     width: 100%;
   }
 }
+
+@media only screen and (min-width: $bp-small) {
+  .nav__input-2 {
+    display: none;
+  }
+
+  #logo {
+    display: block;
+  }
+}
