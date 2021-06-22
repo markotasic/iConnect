@@ -32,14 +32,14 @@ linkToLogin.addEventListener('click', function () {
   register.classList.add('hidden');
 });
 
+const db = firebase.firestore();
+
 signupBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   let emailValue = email.value;
 
   let passwordValue = password.value;
-
-  var db = firebase.firestore();
 
   firebase
     .auth()

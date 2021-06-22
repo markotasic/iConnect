@@ -11,6 +11,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 //______________firebase storage ________________\\
 
+const db = firebase.firestore();
+
+// const btnidk = document.querySelector('.main__addPost');
+// btnidk.addEventListener('click', function () {});
+
 const img = document.querySelector('.profile-image-upload');
 const profileImg = document.querySelector('.profile-image-pic');
 
@@ -38,6 +43,22 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       const userNameHtml = document.getElementById('h2');
       userNameHtml.innerHTML = name;
+
+      // CREATE A NEW FIRESTORE COLLECTION CALLED "POSTS"
+
+      // TO DO:
+      let postDocument = db.collection('posts').doc(user.uid);
+
+      postDocument
+        .set({
+          username: userNameHtml.innerHTML,
+        })
+        .then(function () {
+          console.log('document sucssesfully created');
+        })
+        .catch(function (err) {
+          console.error(err);
+        });
     });
 
   if (!user) return;
