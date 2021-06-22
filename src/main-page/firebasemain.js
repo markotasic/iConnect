@@ -15,6 +15,15 @@ const img = document.querySelector('.profile-image-upload');
 const profileImg = document.querySelector('.profile-image-pic');
 
 firebase.auth().onAuthStateChanged(function (user) {
+  var myUserId = firebase.auth().currentUser.uid;
+  var myReviews = firebase
+    .firestore()
+    .collectionGroup('reviews')
+    .where('author', '==', myUserId);
+  myReviews.get().then(function (querySnapshot) {
+    // Do something with these reviews!
+  });
+
   firebase
     .firestore()
     .doc(`users/${user.uid}`)
@@ -34,7 +43,8 @@ firebase.auth().onAuthStateChanged(function (user) {
   if (!user) return;
   const photoURL = user.photoURL;
   if (photoURL) profileImg.src = photoURL;
-  img.addEventListener('change', function (e) {
+
+  const imgPost = function (e) {
     if (e.target.files && e.target.files.length > 0) {
       const allowedFileTypes = ['image/x-png', 'image/jpeg', 'image/png'];
       const file = e.target.files[0];
@@ -70,7 +80,9 @@ firebase.auth().onAuthStateChanged(function (user) {
         };
       }
     }
-  });
+  };
+
+  img.addEventListener('change', imgPost);
 });
 
 //______________USER IMAGE UPLOAD________________\\
