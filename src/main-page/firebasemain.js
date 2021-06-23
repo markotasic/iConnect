@@ -18,6 +18,10 @@ const db = firebase.firestore();
 
 const img = document.querySelector('.profile-image-upload');
 const profileImg = document.querySelector('.profile-image-pic');
+const postlabel = document.querySelector('.post__upload-label');
+const postImg = document.querySelector('.post__upload-img');
+
+const nameProfile = document.getElementById('h2').innerHTML;
 
 firebase.auth().onAuthStateChanged(function (user) {
   var myUserId = firebase.auth().currentUser.uid;
@@ -43,6 +47,9 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       const userNameHtml = document.getElementById('h2');
       userNameHtml.innerHTML = name;
+
+      document.getElementById('profile-img').src = user.photoURL;
+      document.querySelector('.post__user-name').innerHTML = userData.username;
 
       // CREATE A NEW FIRESTORE COLLECTION CALLED "POSTS"
 
@@ -103,6 +110,51 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
   };
 
+  const postURL = user.postURL;
+  if (postURL) postImg.src = postURL;
+
+  const postedImage = function (e) {
+    if (e.target.files && e.target.files.length > 0) {
+      const allowedFileTypes = ['image/x-png', 'image/jpeg', 'image/png'];
+      const file = e.target.files[0];
+      if (allowedFileTypes.includes(file.type)) {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (e) => {
+          const postElement = document.createElement('img');
+          if (e.target) {
+            postElement.src = e.target.result;
+          }
+
+          postElement.onload = (e) => {
+            if (e.target) {
+              const postlabel = e.target;
+              const canvas = document.createElement('canvas');
+              const maxWidth = 400;
+
+              const scaleSize = maxWidth / postlabel.width;
+              canvas.width = maxWidth;
+              canvas.height = postlabel.height * scaleSize;
+
+              const ctx = canvas.getContext('2d');
+              if (ctx) {
+                ctx.drawImage(postlabel, 0, 0, canvas.width, canvas.height);
+
+                const srcEncoded = ctx.canvas.toDataURL(
+                  postlabel.src,
+                  'image/jpeg'
+                );
+                postImg.src = srcEncoded;
+                uploadUserPost(srcEncoded, user);
+              }
+            }
+          };
+        };
+      }
+    }
+  };
+
+  postlabel.addEventListener('change', postedImage);
   img.addEventListener('change', imgPost);
 });
 
@@ -139,6 +191,48 @@ const uploadUserImg = (img, currentUser) => {
               .firestore()
               .doc(`users/${userId}`)
               .update({ img: downloadURL });
+          } catch (err) {
+            console.error(err);
+            return;
+          }
+        });
+      }
+    );
+  }
+};
+
+const uploadUserPost = (postlabel, currentUser) => {
+  if (currentUser) {
+    const userId = currentUser.uid;
+    var uploadTask = firebase
+      .storage()
+      .ref()
+      .child(`userPosts/${userId}`)
+      .putString(postlabel, 'data_url');
+
+    uploadTask.on(
+      firebase.storage.TaskEvent.STATE_CHANGED,
+      (snapshot) => {
+        var progress = Math.round(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+      },
+      (err) => {
+        console.error(err);
+        return;
+      },
+      () => {
+        // Get the download URL on upload success
+        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+          try {
+            await currentUser.updateProfile({
+              postURL: downloadURL,
+            });
+
+            await firebase
+              .firestore()
+              .doc(`posts/${userId}`)
+              .update({ postlabel: downloadURL });
           } catch (err) {
             console.error(err);
             return;

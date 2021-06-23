@@ -37,68 +37,68 @@ async function getData() {
 getData();
 
 //______________GET POSTS FROM API________________\\
-// async function getPosts() {
-//   const response = await fetch('https://dummyapi.io/data/api/post?limit=1', {
-//     headers: {
-//       'app-id': APP_ID,
-//     },
-//   });
-//   const postObject = await response.json();
-//   for (var i = 0; i < postObject.data.length; i++) {
-//     const postImg = postObject.data[i].image;
-//     const firstName = postObject.data[i].owner.firstName;
-//     const lastName = postObject.data[i].owner.lastName;
-//     const userImg = postObject.data[i].owner.picture;
-//     const postText = postObject.data[i].text;
-//     const tags = postObject.data[i].tags;
+async function getPosts() {
+  const response = await fetch('https://dummyapi.io/data/api/post?limit=1', {
+    headers: {
+      'app-id': APP_ID,
+    },
+  });
+  const postObject = await response.json();
+  for (var i = 0; i < postObject.data.length; i++) {
+    const postImg = postObject.data[i].image;
+    const firstName = postObject.data[i].owner.firstName;
+    const lastName = postObject.data[i].owner.lastName;
+    const userImg = postObject.data[i].owner.picture;
+    const postText = postObject.data[i].text;
+    const tags = postObject.data[i].tags;
 
-//     $(document).ready(function () {
-//       $('#main-posts').append(
-//         `
-//         <div class="main__content">
-//           <div class="main__content-poster">
-//             <img
-//               id="profile-img"
-//               class="main__content-poster--img"
-//               src="${userImg}"
-//               alt="Profile-pic"
-//             />
-//             <div class="main__content-poster--name">${
-//               firstName + ' ' + lastName
-//             }</div>
-//           </div>
+    $(document).ready(function () {
+      $('#main-posts').append(
+        `
+        <div class="main__content">
+          <div class="main__content-poster">
+            <img
+              id="profile-img"
+              class="main__content-poster--img"
+              src="${userImg}"
+              alt="Profile-pic"
+            />
+            <div class="main__content-poster--name">${
+              firstName + ' ' + lastName
+            }</div>
+          </div>
 
-//           <img
-//             class="main__content-post"
-//             src="${postImg}"
-//             alt="post"
-//           />
+          <img
+            class="main__content-post"
+            src="${postImg}"
+            alt="post"
+          />
 
-//           <div class="textish">
-//             <a class="main__content-tags">#${tags}</a>
-//             <p class="main__content-text">${postText}</p>
-//           </div>
-//           <div class="main__content-react">
-//             <div class="like">
-//               <svg class="main__content-react--like">
-//                 <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-//               </svg>
-//               <p class="main__content-react--text">Like</p>
-//             </div>
-//             <div class="comment">
-//               <svg class="main__content-react--comment">
-//                 <use xlink:href="img/sprite.svg#icon-forum"></use>
-//               </svg>
-//               <p class="main__content-react--text">Comment</p>
-//             </div>
-//           </div>
-//         </div>
-//         `
-//       );
-//     });
-//   }
-// }
-// getPosts();
+          <div class="textish">
+            <a class="main__content-tags">#${tags}</a>
+            <p class="main__content-text">${postText}</p>
+          </div>
+          <div class="main__content-react">
+            <div class="like">
+              <svg class="main__content-react--like">
+                <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
+              </svg>
+              <p class="main__content-react--text">Like</p>
+            </div>
+            <div class="comment">
+              <svg class="main__content-react--comment">
+                <use xlink:href="img/sprite.svg#icon-forum"></use>
+              </svg>
+              <p class="main__content-react--text">Comment</p>
+            </div>
+          </div>
+        </div>
+        `
+      );
+    });
+  }
+}
+getPosts();
 
 //______________CUSTOM USER POST ________________\\
 const addPost = document.querySelector('.main__addPost');
@@ -123,45 +123,3 @@ overlay.addEventListener('click', () => {
   showPost.classList.add('hidden');
   overlay.classList.add('hidden');
 });
-//______________IMG POST UPLOAD ________________\\
-// const uploadPostImg = (postImg, currentUser) => {
-//   if (currentUser) {
-//     const userId = currentUser.uid;
-//     var uploadTask = firebase
-//       .storage()
-//       .ref()
-//       .child(`userAvatars/${userId}`)
-//       .putString(postImg, 'data_url');
-
-//     uploadTask.on(
-//       firebase.storage.TaskEvent.STATE_CHANGED,
-//       (snapshot) => {
-//         var progress = Math.round(
-//           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-//         );
-//       },
-//       (err) => {
-//         console.error(err);
-//         return;
-//       },
-//       () => {
-//         // Get the download URL on upload success
-//         uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
-//           try {
-//             await currentUser.updateProfile({
-//               photoURL: downloadURL,
-//             });
-
-//             await firebase
-//               .firestore()
-//               .doc(`userPosts/${userId}`)
-//               .update({ postImg: downloadURL });
-//           } catch (err) {
-//             console.error(err);
-//             return;
-//           }
-//         });
-//       }
-//     );
-//   }
-// };
