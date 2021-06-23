@@ -50,11 +50,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       document.getElementById('profile-img').src = user.photoURL;
       document.querySelector('.post__user-name').innerHTML = userData.username;
-      //ADD IMG
 
       // CREATE A NEW FIRESTORE COLLECTION CALLED "POSTS"
-
-      // TO DO:
       let postDocument = db.collection('posts').doc(user.uid);
 
       postDocument
