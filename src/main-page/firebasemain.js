@@ -220,50 +220,50 @@ const uploadUserPost = (postlabel, currentUser) => {
         return;
       }
     });
-  let postTags = document.querySelector('.post__inputs-text--tag').value;
-  let postText = document.querySelector('.post__inputs-text--msg').value;
+  let postTags = document.querySelector('.post__inputs-text--tag');
+  let postText = document.querySelector('.post__inputs-text--msg');
 
+  postTags = postTags.value;
+  postText = postText.value;
   const HTMLinner = `
-  <div class="main__content">
-    <div class="main__content-poster">
-      <img
-        id="profile-img"
-        class="main__content-poster--img"
-        src="${profileImage}"
-        alt="Profile-pic"
-      />
-      <div class="main__content-poster--name">${username}</div>
-    </div>
-
-    <img
-      class="main__content-post"
-      src="${postlabel}"
-      alt="post"
-    />
-
-    <div class="textish">
-      <a class="main__content-tags">${postTags}</a>
-      <p class="main__content-text">${postText}</p>
-    </div>
-    <div class="main__content-react">
-      <div class="like">
-        <svg class="main__content-react--like">
-          <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-        </svg>
-        <p class="main__content-react--text">Like</p>
+      <div class="main__content">
+        <div class="main__content-poster">
+          <img
+            id="profile-img"
+            class="main__content-poster--img"
+            src="${profileImage}"
+            alt="Profile-pic"
+          />
+          <div class="main__content-poster--name">${username}</div>
+        </div>
+    
+        <img
+          class="main__content-post"
+          src="${postlabel}"
+          alt="post"
+        />
+    
+        <div class="textish">
+          <a class="main__content-tags">${postTags}</a>
+          <p class="main__content-text">${postText}</p>
+        </div>
+        <div class="main__content-react">
+          <div class="like">
+            <svg class="main__content-react--like">
+              <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
+            </svg>
+            <p class="main__content-react--text">Like</p>
+          </div>
+          <div class="comment">
+            <svg class="main__content-react--comment">
+              <use xlink:href="img/sprite.svg#icon-forum"></use>
+            </svg>
+            <p class="main__content-react--text">Comment</p>
+          </div>
+        </div>
       </div>
-      <div class="comment">
-        <svg class="main__content-react--comment">
-          <use xlink:href="img/sprite.svg#icon-forum"></use>
-        </svg>
-        <p class="main__content-react--text">Comment</p>
-      </div>
-    </div>
-  </div>
-  `;
+      `;
   postBtn.addEventListener('click', function () {
-    postTags = postTags.value;
-    postText = postText.value;
     console.log(postText);
     const html = mainPosts.innerHTML;
     mainPosts.innerHTML = HTMLinner + html;
@@ -277,7 +277,6 @@ const uploadUserPost = (postlabel, currentUser) => {
       .child(`posts/${userId}`)
       .putString(postlabel, 'data_url');
 
-    console.log(userId);
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
