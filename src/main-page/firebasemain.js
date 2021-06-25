@@ -20,8 +20,17 @@ const img = document.querySelector('.profile-image-upload');
 const profileImg = document.querySelector('.profile-image-pic');
 const postlabel = document.querySelector('.post__upload-label');
 const postImg = document.querySelector('.post__upload-img');
+const postBtn = document.getElementById('post');
+const mainPosts = document.getElementById('main-posts');
+
+let postTags = $('.post__inputs-text--tag').val();
+let postText = $('.post__inputs-text--msg').val();
 
 const nameProfile = document.getElementById('h2').innerHTML;
+
+let uid;
+let username;
+let profileImage;
 
 firebase.auth().onAuthStateChanged(function (user) {
   var myUserId = firebase.auth().currentUser.uid;
@@ -44,6 +53,9 @@ firebase.auth().onAuthStateChanged(function (user) {
       }
       const userData = qs.data();
       const name = userData.username;
+      uid = user.uid;
+      username = name;
+      profileImage = user.photoURL;
 
       const userNameHtml = document.getElementById('h2');
       userNameHtml.innerHTML = name;
@@ -128,7 +140,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             if (e.target) {
               const postlabel = e.target;
               const canvas = document.createElement('canvas');
-              const maxWidth = 400;
+              const maxWidth = 600;
 
               const scaleSize = maxWidth / postlabel.width;
               canvas.width = maxWidth;
@@ -200,6 +212,60 @@ const uploadUserImg = (img, currentUser) => {
 };
 
 const uploadUserPost = (postlabel, currentUser) => {
+  firebase
+    .firestore()
+    .doc(`users/${uid}`)
+    .get()
+    .then((qs) => {
+      if (qs.empty) {
+        console.log(`user doesn't exist`);
+        return;
+      }
+    });
+
+  const HTMLinner = `
+  <div class="main__content">
+    <div class="main__content-poster">
+      <img
+        id="profile-img"
+        class="main__content-poster--img"
+        src="${profileImage}"
+        alt="Profile-pic"
+      />
+      <div class="main__content-poster--name">${username}</div>
+    </div>
+
+    <img
+      class="main__content-post"
+      src="${postlabel}"
+      alt="post"
+    />
+
+    <div class="textish">
+      <a class="main__content-tags"></a>
+      <p class="main__content-text"></p>
+    </div>
+    <div class="main__content-react">
+      <div class="like">
+        <svg class="main__content-react--like">
+          <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
+        </svg>
+        <p class="main__content-react--text">Like</p>
+      </div>
+      <div class="comment">
+        <svg class="main__content-react--comment">
+          <use xlink:href="img/sprite.svg#icon-forum"></use>
+        </svg>
+        <p class="main__content-react--text">Comment</p>
+      </div>
+    </div>
+  </div>
+  `;
+  postBtn.addEventListener('click', function () {
+    const html = mainPosts.innerHTML;
+    mainPosts.innerHTML = HTMLinner + html;
+  });
+
   if (currentUser) {
     const userId = currentUser.uid;
     var uploadTask = firebase
