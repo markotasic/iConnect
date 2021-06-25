@@ -23,9 +23,6 @@ const postImg = document.querySelector('.post__upload-img');
 const postBtn = document.getElementById('post');
 const mainPosts = document.getElementById('main-posts');
 
-let postTags = $('.post__inputs-text--tag').val();
-let postText = $('.post__inputs-text--msg').val();
-
 const nameProfile = document.getElementById('h2').innerHTML;
 
 let uid;
@@ -33,8 +30,8 @@ let username;
 let profileImage;
 
 firebase.auth().onAuthStateChanged(function (user) {
-  var myUserId = firebase.auth().currentUser.uid;
-  var myReviews = firebase
+  const myUserId = firebase.auth().currentUser.uid;
+  const myReviews = firebase
     .firestore()
     .collectionGroup('reviews')
     .where('author', '==', myUserId);
@@ -62,6 +59,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 
       document.getElementById('profile-img').src = user.photoURL;
       document.querySelector('.post__user-name').innerHTML = userData.username;
+      document.getElementById('main__content-post').src = user.postURL;
 
       // CREATE A NEW FIRESTORE COLLECTION CALLED "POSTS"
       let postDocument = db.collection('posts').doc(user.uid);
@@ -172,7 +170,7 @@ firebase.auth().onAuthStateChanged(function (user) {
 const uploadUserImg = (img, currentUser) => {
   if (currentUser) {
     const userId = currentUser.uid;
-    var uploadTask = firebase
+    const uploadTask = firebase
       .storage()
       .ref()
       .child(`userAvatars/${userId}`)
@@ -181,7 +179,7 @@ const uploadUserImg = (img, currentUser) => {
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
-        var progress = Math.round(
+        const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
       },
@@ -222,6 +220,8 @@ const uploadUserPost = (postlabel, currentUser) => {
         return;
       }
     });
+  let postTags = document.querySelector('.post__inputs-text--tag').value;
+  let postText = document.querySelector('.post__inputs-text--msg').value;
 
   const HTMLinner = `
   <div class="main__content">
@@ -242,8 +242,8 @@ const uploadUserPost = (postlabel, currentUser) => {
     />
 
     <div class="textish">
-      <a class="main__content-tags"></a>
-      <p class="main__content-text"></p>
+      <a class="main__content-tags">${postTags}</a>
+      <p class="main__content-text">${postText}</p>
     </div>
     <div class="main__content-react">
       <div class="like">
@@ -262,22 +262,26 @@ const uploadUserPost = (postlabel, currentUser) => {
   </div>
   `;
   postBtn.addEventListener('click', function () {
+    postTags = postTags.value;
+    postText = postText.value;
+    console.log(postText);
     const html = mainPosts.innerHTML;
     mainPosts.innerHTML = HTMLinner + html;
   });
 
   if (currentUser) {
     const userId = currentUser.uid;
-    var uploadTask = firebase
+    const uploadTask = firebase
       .storage()
       .ref()
-      .child(`userPosts/${userId}`)
+      .child(`posts/${userId}`)
       .putString(postlabel, 'data_url');
 
+    console.log(userId);
     uploadTask.on(
       firebase.storage.TaskEvent.STATE_CHANGED,
       (snapshot) => {
-        var progress = Math.round(
+        const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
       },
