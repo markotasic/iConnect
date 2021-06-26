@@ -45,6 +45,7 @@ signupBtn.addEventListener('click', (e) => {
     .auth()
     .createUserWithEmailAndPassword(emailValue, passwordValue)
     .then((userCredential) => {
+      // CREATE USERS FIRESTORE DATABASE COLLECTION
       db.collection('users')
         .doc(userCredential.user.uid)
         .set({
@@ -65,8 +66,15 @@ signupBtn.addEventListener('click', (e) => {
         .catch((error) => {
           console.error('Error adding document: ', error);
         });
-      // Signed in
-      // ...
+
+      // CREATE POSTS FIRESTORE DATABASE COLLECTION
+      firebase
+        .firestore()
+        .collection('posts')
+        .doc(userCredential.user.uid)
+        .set({
+          username: username.value,
+        });
     })
     .catch((error) => {
       var errorCode = error.code;
@@ -83,7 +91,6 @@ const loginPassword = document.getElementById('login-password');
 
 loginBtn.addEventListener('click', function () {
   let emailValue = loginEmail.value;
-
   let passwordValue = loginPassword.value;
 
   firebase

@@ -31,13 +31,6 @@ let profileImage;
 
 firebase.auth().onAuthStateChanged(function (user) {
   const myUserId = firebase.auth().currentUser.uid;
-  const myReviews = firebase
-    .firestore()
-    .collectionGroup('reviews')
-    .where('author', '==', myUserId);
-  myReviews.get().then(function (querySnapshot) {
-    // Do something with these reviews!
-  });
 
   firebase
     .firestore()
@@ -220,12 +213,15 @@ const uploadUserPost = (postlabel, currentUser) => {
         return;
       }
     });
-  let postTags = document.querySelector('.post__inputs-text--tag');
-  let postText = document.querySelector('.post__inputs-text--msg');
 
-  postTags = postTags.value;
-  postText = postText.value;
-  const HTMLinner = `
+  let postTags;
+  let postText;
+
+  postBtn.addEventListener('click', function () {
+    postTags = document.querySelector('.post__inputs-text--tag').value;
+    postText = document.querySelector('.post__inputs-text--msg').value;
+
+    const HTMLinner = `
       <div class="main__content">
         <div class="main__content-poster">
           <img
@@ -262,12 +258,13 @@ const uploadUserPost = (postlabel, currentUser) => {
           </div>
         </div>
       </div>
-      `;
-  postBtn.addEventListener('click', function () {
-    console.log(postText);
+    `;
+
     const html = mainPosts.innerHTML;
     mainPosts.innerHTML = HTMLinner + html;
   });
+
+  // da zamenim value posle kucanja sa innerhtml
 
   if (currentUser) {
     const userId = currentUser.uid;
