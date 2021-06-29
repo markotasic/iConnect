@@ -205,52 +205,38 @@ const uploadUserImg = (img, currentUser) => {
   }
 };
 
-const uploadUserPost = (postlabel, currentUser) => {
-  firebase
-    .firestore()
-    .doc(`users/${uid}`)
-    .get()
-    .then((qs) => {
-      if (qs.empty) {
-        console.log(`user doesn't exist`);
-        return;
-      }
-    });
+firebase
+  .firestore()
+  .collection('posts')
+  .get()
+  .then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(doc.id, ' => ', doc.data());
 
-  let postTags;
-  let postText;
-
-  postBtn.addEventListener('click', function () {
-    postTags = document.querySelector('.post__inputs-text--tag').value;
-    postText = document.querySelector('.post__inputs-text--msg').value;
-
-    // CREATE POSTS FIRESTORE DATABASE COLLECTION
-    firebase.firestore().collection('posts').doc(currentUser.uid).set({
-      postTags,
-      postText,
-    });
-
-    const HTMLinner = `
+      const HTMLinner = `
       <div class="main__content">
         <div class="main__content-poster">
           <img
             id="profile-img"
             class="main__content-poster--img"
-            src="${profileImage}"
+            src="${doc.data().user.image}"
             alt="Profile-pic"
           />
-          <div class="main__content-poster--name">${username}</div>
+          <div class="main__content-poster--name">${
+            doc.data().user.username
+          }</div>
         </div>
-    
+
         <img
           class="main__content-post"
-          src="${postlabel}"
+          src="${doc.data().postlabel}"
           alt="post"
         />
-    
+
         <div class="textish">
-          <a class="main__content-tags">${postTags}</a>
-          <p class="main__content-text">${postText}</p>
+          <a class="main__content-tags">#${doc.data().postTags}</a>
+          <p class="main__content-text">${doc.data().postText}</p>
         </div>
         <div class="main__content-react">
           <div class="like">
@@ -269,47 +255,91 @@ const uploadUserPost = (postlabel, currentUser) => {
       </div>
     `;
 
-    const html = mainPosts.innerHTML;
-    mainPosts.innerHTML = HTMLinner + html;
+      const html = mainPosts.innerHTML;
+      mainPosts.innerHTML = HTMLinner + html;
+    });
+  })
+  .catch((error) => {
+    console.log('Error getting documents: ', error);
   });
 
-  if (currentUser) {
-    const userId = currentUser.uid;
-    const uploadTask = firebase
-      .storage()
-      .ref()
-      .child(`posts/${userId}`)
-      .putString(postlabel, 'data_url');
-
-    uploadTask.on(
-      firebase.storage.TaskEvent.STATE_CHANGED,
-      (snapshot) => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-      },
-      (err) => {
-        console.error(err);
+const uploadUserPost = (postlabel, currentUser) => {
+  firebase
+    .firestore()
+    .doc(`users/${uid}`)
+    .get()
+    .then((qs) => {
+      if (qs.empty) {
+        console.log(`user doesn't exist`);
         return;
-      },
-      () => {
-        // Get the download URL on upload success
-        uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
-          try {
-            await currentUser.updateProfile({
-              postURL: downloadURL,
-            });
-
-            await firebase
-              .firestore()
-              .doc(`posts/${userId}`)
-              .update({ postlabel: downloadURL });
-          } catch (err) {
-            console.error(err);
-            return;
-          }
-        });
       }
-    );
-  }
+    });
+
+  let postTags;
+  let postText;
+  let ref;
+  let id;
+
+  postBtn.addEventListener('click', function () {
+    postTags = document.querySelector('.post__inputs-text--tag').value;
+    postText = document.querySelector('.post__inputs-text--msg').value;
+
+    ref = firebase.firestore().collection('posts').doc();
+    id = ref.id;
+
+    if (currentUser) {
+      const uploadTask = firebase
+        .storage()
+        .ref()
+        .child(`posts/${id}`)
+        .putString(postlabel, 'data_url');
+
+      uploadTask.on(
+        firebase.storage.TaskEvent.STATE_CHANGED,
+        (snapshot) => {
+          const progress = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+        },
+        (err) => {
+          console.error(err);
+          closePostCreateDialog();
+          return;
+        },
+        () => {
+          // Get the download URL on upload success
+          uploadTask.snapshot.ref.getDownloadURL().then(async (downloadURL) => {
+            try {
+              await currentUser.updateProfile({
+                postURL: downloadURL,
+              });
+
+              // CREATE POSTS FIRESTORE DATABASE COLLECTION
+              firebase
+                .firestore()
+                .collection('posts')
+                .doc(id)
+                .set({
+                  postTags: postTags,
+                  postText: postText,
+                  user: {
+                    username: username,
+                    image: profileImage,
+                  },
+                  postlabel: downloadURL,
+                })
+                .then(() => {
+                  closePostCreateDialog();
+                  window.location.reload();
+                });
+            } catch (err) {
+              closePostCreateDialog();
+              console.error(err);
+              return;
+            }
+          });
+        }
+      );
+    }
+  });
 };
