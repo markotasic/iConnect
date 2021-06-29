@@ -240,7 +240,7 @@ const uploadUserPost = (postlabel, currentUser) => {
         />
     
         <div class="textish">
-          <a class="main__content-tags">${postTags}</a>
+          <a class="main__content-tags">#${postTags}</a>
           <p class="main__content-text">${postText}</p>
         </div>
         <div class="main__content-react">

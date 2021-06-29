@@ -836,7 +836,10 @@ body::-webkit-scrollbar-thumb {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  top: 20rem;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
   margin: 2rem;
 }
 

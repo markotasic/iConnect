@@ -156,7 +156,8 @@
   align-items: center;
   justify-content: space-between;
   height: fit-content;
-  top: 20rem;
+  top: 50%;
+  transform: translateY(-50%);
   margin: 2rem;
 
   &__user {
