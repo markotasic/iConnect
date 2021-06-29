@@ -25,6 +25,7 @@ const mainPosts = document.getElementById('main-posts');
 
 const nameProfile = document.getElementById('h2').innerHTML;
 
+let randomUid;
 let uid;
 let username;
 let profileImage;
@@ -43,6 +44,8 @@ firebase.auth().onAuthStateChanged(function (user) {
       }
       const userData = qs.data();
       const name = userData.username;
+
+      randomUid = uid;
       uid = user.uid;
       username = name;
       profileImage = user.photoURL;
@@ -221,6 +224,12 @@ const uploadUserPost = (postlabel, currentUser) => {
     postTags = document.querySelector('.post__inputs-text--tag').value;
     postText = document.querySelector('.post__inputs-text--msg').value;
 
+    // CREATE POSTS FIRESTORE DATABASE COLLECTION
+    firebase.firestore().collection('posts').doc(currentUser.uid).set({
+      postTags,
+      postText,
+    });
+
     const HTMLinner = `
       <div class="main__content">
         <div class="main__content-poster">
@@ -240,7 +249,7 @@ const uploadUserPost = (postlabel, currentUser) => {
         />
     
         <div class="textish">
-          <a class="main__content-tags">#${postTags}</a>
+          <a class="main__content-tags">${postTags}</a>
           <p class="main__content-text">${postText}</p>
         </div>
         <div class="main__content-react">
@@ -263,8 +272,6 @@ const uploadUserPost = (postlabel, currentUser) => {
     const html = mainPosts.innerHTML;
     mainPosts.innerHTML = HTMLinner + html;
   });
-
-  // da zamenim value posle kucanja sa innerhtml
 
   if (currentUser) {
     const userId = currentUser.uid;

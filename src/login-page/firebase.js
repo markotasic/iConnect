@@ -38,6 +38,7 @@ signupBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   let emailValue = email.value;
+
   let passwordValue = password.value;
 
   firebase
@@ -50,6 +51,7 @@ signupBtn.addEventListener('click', (e) => {
         .set({
           username: username.value,
           email: email.value,
+          password: password.value,
         })
         .then((docRef) => {
           register.classList.add('hidden');
@@ -63,17 +65,6 @@ signupBtn.addEventListener('click', (e) => {
         })
         .catch((error) => {
           console.error('Error adding document: ', error);
-        });
-
-      // CREATE POSTS FIRESTORE DATABASE COLLECTION
-      firebase
-        .firestore()
-        .collection('posts')
-        .doc(userCredential.user.uid)
-        .set({
-          username: username.value,
-          postTags: document.querySelector('.post__inputs-text--tag').value,
-          postText: document.querySelector('.post__inputs-text--msg').value,
         });
     })
     .catch((error) => {

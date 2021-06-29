@@ -702,6 +702,7 @@ body::-webkit-scrollbar-thumb {
 
 .main__content-poster--img {
   height: 4.5rem;
+  width: 4.5rem;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }
@@ -858,6 +859,7 @@ body::-webkit-scrollbar-thumb {
 
 .post__user-img {
   height: 4.5rem;
+  width: 4.5rem;
   -webkit-border-radius: 50%;
           border-radius: 50%;
 }
