@@ -8,6 +8,8 @@
   user-select: none;
   &:hover {
     cursor: pointer;
+    transition: all 0.4s;
+    transform: scale(1.02);
   }
 
   &-primary {
@@ -35,4 +37,9 @@
     border-radius: 5rem;
     padding: 1.2rem 1rem;
   }
+}
+
+.svg:hover {
+  transform: scale(1.1);
+  transition: all 0.2s;
 }

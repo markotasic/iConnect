@@ -550,6 +550,12 @@ body::-webkit-scrollbar-thumb {
 
 .btn:hover {
   cursor: pointer;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .btn-primary {
@@ -579,6 +585,15 @@ body::-webkit-scrollbar-thumb {
   -webkit-border-radius: 5rem;
           border-radius: 5rem;
   padding: 1.2rem 1rem;
+}
+
+.svg:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .main {
