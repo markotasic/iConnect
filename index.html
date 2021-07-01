@@ -19,11 +19,8 @@
           <div class="login">
             <div class="login__container">
               <div class="login__container-form">
-                <h2 id="mail-sent" class="mail-sent hidden">
-                  Email confirmation link has been sent to your email adress!
-                </h2>
                 <h2 class="mail-confirm hidden">
-                  An email has been sent. Confirm your email address!
+                  Email confirmation link has been sent to your email adress!
                 </h2>
                 <input
                   id="login-email"
@@ -131,6 +128,9 @@
                   placeholder="marko@gmail.com"
                 />
                 <h3 id="email-false-msg" class="hidden error-msg">
+                  Email must be 10 characters or longer!
+                </h3>
+                <h3 id="email-input-msg" class="hidden error-msg">
                   Invalid e-mail format
                 </h3>
                 <input
@@ -153,6 +153,10 @@
                   "
                   placeholder="confirm password"
                 />
+                <h3 id="password-input-msg" class="hidden error-msg">
+                  Password must be 6 characters or longer!
+                </h3>
+
                 <button id="register-btn" class="btn btn-submit">
                   Register
                 </button>

@@ -9,65 +9,47 @@ $('#register-btn').click(function (e) {
   let password2Value = $('#password-2').val();
 
   switch (true) {
-    case nameValue === '':
-      $('#user-input-empty').removeClass('hidden');
-      $('#user-input-empty').addClass('shown');
-      break;
-    case nameValue !== '':
-      $('#user-input-empty').removeClass('shown');
-      $('#user-input-empty').addClass('hidden');
-    case nameValue.length <= 2:
+    case nameValue.length < 3 && nameValue.length > 0:
       $('#user-false-msg').removeClass('hidden');
-      $('#user-false-msg').addClass('shown');
+      $('#user-input-empty').addClass('hidden');
       break;
-    case nameValue.length > 2:
-      $('#user-false-msg').removeClass('shown');
+    case nameValue.length >= 3 && nameValue.length > 0:
       $('#user-false-msg').addClass('hidden');
+      $('#user-input-empty').addClass('hidden');
+      break;
+    default:
+      $('#user-input-empty').removeClass('hidden');
   }
 
-  //   if (
-  //     passwordValue === password2Value &&
-  //     passwordValue.length >= 4 &&
-  //     password2Value.length >= 4
-  //   ) {
-  //     $('#password').css('border-color', '#48ff00');
-  //     $('#password-2').css('border-color', '#48ff00');
-  //   } else {
-  //     $('#password').css('border-color', 'red');
-  //     $('#password-2').css('border-color', 'red');
-  //   }
+  switch (true) {
+    case !emailValue.includes('@') &&
+      !emailValue.includes('.com') &&
+      emailValue.length > 9:
+      $('#email-input-msg').removeClass('hidden');
+      $('#email-false-msg').addClass('hidden');
+      break;
 
-  //   if (passwordValue === '') {
-  //     $('#password').css('border-color', 'red');
-  //     $('#password-2').css('border-color', 'red');
-  //   }
+    case emailValue.includes('@') &&
+      emailValue.includes('.com') &&
+      emailValue.length >= 10:
+      $('#email-input-msg').addClass('hidden');
+      $('#email-false-msg').addClass('hidden');
+      break;
 
-  //   if (nameValue.length <= 3) {
-  //   } else {
-  //     $('#user-false-msg').removeClass('shown');
-  //     $('#user-false-msg').addClass('hidden');
-  //   }
+    default:
+      $('#email-false-msg').removeClass('hidden');
+  }
 
-  //   if (emailValue.length < 10) {
-  //     $('#email-false-msg').removeClass('hidden');
-  //     $('#email-false-msg').addClass('shown');
-  //   }
-
-  //   if (!emailValue.includes('@')) {
-  //     $('#email-false-msg').removeClass('hidden');
-  //     $('#email-false-msg').addClass('shown');
-  //   } else {
-  //     $('#email-false-msg').removeClass('shown');
-  //     $('#email-false-msg').addClass('hidden');
-  //   }
-
-  //   if (!emailValue.includes('.com')) {
-  //     $('#email-false-msg').removeClass('hidden');
-  //     $('#email-false-msg').addClass('shown');
-  //   } else {
-  //     $('#email-false-msg').removeClass('shown');
-  //     $('#email-false-msg').addClass('hidden');
-  //   }
+  if (passwordValue !== password2Value) {
+    $('#password').css('border-color', 'red');
+    $('#password-2').css('border-color', 'red');
+  } else if (passwordValue.length <= 5) {
+    $('#password-input-msg').removeClass('hidden');
+  } else {
+    $('#password-input-msg').addClass('hidden');
+    $('#password').css('border-color', '#48ff00');
+    $('#password-2').css('border-color', '#48ff00');
+  }
 });
 
 // __________Disable back function on Chrome (For Landing Page)_________________//

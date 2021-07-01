@@ -14,6 +14,7 @@ firebase.initializeApp(firebaseConfig);
 const username = document.querySelector('#username');
 const email = document.querySelector('#email');
 const password = document.querySelector('#password');
+const confirmPassword = document.querySelector('#password-2');
 const signupBtn = document.querySelector('#register-btn');
 
 const register = document.querySelector('.register');
@@ -38,8 +39,11 @@ signupBtn.addEventListener('click', (e) => {
   e.preventDefault();
 
   let emailValue = email.value;
+  let passwordValue;
 
-  let passwordValue = password.value;
+  if (password.value === confirmPassword.value) {
+    passwordValue = password.value;
+  }
 
   firebase
     .auth()
