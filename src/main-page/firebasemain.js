@@ -211,49 +211,59 @@ firebase
   .get()
   .then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      const HTMLinner = `
-      <div class="main__content">
-        <div class="main__content-poster">
+      firebase
+        .storage()
+        .ref()
+        .child(`userAvatars/${doc.data().user.id}`)
+        .getDownloadURL()
+        .then((url) => {
+          const HTMLinner = `
+        <div class="main__content">
+          <div class="main__content-poster">
+            <img
+              id="profile-img"
+              class="main__content-poster--img"
+              src="${url}"
+              alt="Profile-pic"
+            />
+            <div class="main__content-poster--name">${
+              doc.data().user.username
+            }</div>
+          </div>
+  
           <img
-            id="profile-img"
-            class="main__content-poster--img"
-            src="${doc.data().user.image}"
-            alt="Profile-pic"
+            class="main__content-post"
+            src="${doc.data().postlabel}"
+            alt="post"
           />
-          <div class="main__content-poster--name">${
-            doc.data().user.username
-          }</div>
-        </div>
-
-        <img
-          class="main__content-post"
-          src="${doc.data().postlabel}"
-          alt="post"
-        />
-
-        <div class="textish">
-          <a class="main__content-tags">#${doc.data().postTags}</a>
-          <p class="main__content-text">${doc.data().postText}</p>
-        </div>
-        <div class="main__content-react">
-          <div class="like">
-            <svg class="main__content-react--like">
-              <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
-            </svg>
-            <p class="main__content-react--text">Like</p>
+  
+          <div class="textish">
+            <a class="main__content-tags">${doc.data().postTags}</a>
+            <p class="main__content-text">${doc.data().postText}</p>
           </div>
-          <div class="comment">
-            <svg class="main__content-react--comment">
-              <use xlink:href="img/sprite.svg#icon-forum"></use>
-            </svg>
-            <p class="main__content-react--text">Comment</p>
+          <div class="main__content-react">
+            <div class="like">
+              <svg class="main__content-react--like">
+                <use xlink:href="img/sprite.svg#icon-thumb_up"></use>
+              </svg>
+              <p class="main__content-react--text">Like</p>
+            </div>
+            <div class="comment">
+              <svg class="main__content-react--comment">
+                <use xlink:href="img/sprite.svg#icon-forum"></use>
+              </svg>
+              <p class="main__content-react--text">Comment</p>
+            </div>
           </div>
         </div>
-      </div>
-    `;
+      `;
 
-      const html = mainPosts.innerHTML;
-      mainPosts.innerHTML = HTMLinner + html;
+          const html = mainPosts.innerHTML;
+          mainPosts.innerHTML = HTMLinner + html;
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     });
   })
   .catch((error) => {
@@ -283,6 +293,7 @@ const uploadUserPost = (postlabel, currentUser) => {
 
     ref = firebase.firestore().collection('posts').doc();
     id = ref.id;
+    const userId = firebase.auth().currentUser.uid;
 
     if (currentUser) {
       const uploadTask = firebase
@@ -321,13 +332,14 @@ const uploadUserPost = (postlabel, currentUser) => {
                   postText: postText,
                   user: {
                     username: username,
+                    id: userId,
                     image: profileImage,
                   },
                   postlabel: downloadURL,
                 })
                 .then(() => {
                   closePostCreateDialog();
-                  window.location.reload();
+                  // window.location.reload();
                 });
             } catch (err) {
               closePostCreateDialog();

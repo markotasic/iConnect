@@ -122,7 +122,13 @@ addPost.addEventListener('click', () => {
 });
 
 //______________HIDE UPLOAD POST ________________\\
+const postUploadImg = document.querySelector('.post__upload-img');
+const postTag = document.querySelector('.post__inputs-text--tag');
+const postMsg = document.querySelector('.post__inputs-text--msg');
 closePost.addEventListener('click', () => {
+  postUploadImg.src = 'img/imgs.png';
+  postTag.value = '';
+  postMsg.value = '';
   showPost.classList.add('hidden');
   overlay.classList.add('hidden');
 });

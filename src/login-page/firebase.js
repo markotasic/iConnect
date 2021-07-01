@@ -51,7 +51,6 @@ signupBtn.addEventListener('click', (e) => {
         .set({
           username: username.value,
           email: email.value,
-          password: password.value,
         })
         .then((docRef) => {
           register.classList.add('hidden');
