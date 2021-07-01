@@ -82,8 +82,7 @@ signupBtn.addEventListener('click', (e) => {
 const loginBtn = document.getElementById('login-btn');
 const loginEmail = document.getElementById('login-email');
 const loginPassword = document.getElementById('login-password');
-
-loginBtn.addEventListener('click', function () {
+const cssError = loginBtn.addEventListener('click', function () {
   let emailValue = loginEmail.value;
   let passwordValue = loginPassword.value;
 
@@ -100,12 +99,15 @@ loginBtn.addEventListener('click', function () {
           window.location = '/main.html';
         }
       });
-      // ...
     })
     .catch((error) => {
       console.log(error.code);
       console.log(error.message);
       var errorCode = error.code;
       var errorMessage = error.message;
+
+      $('#login-message-red')
+        .append('Error: ' + error.code)
+        .css('color', '#ff4d4d');
     });
 });
