@@ -339,7 +339,7 @@ const uploadUserPost = (postlabel, currentUser) => {
                 })
                 .then(() => {
                   closePostCreateDialog();
-                  // window.location.reload();
+                  window.location.reload();
                 });
             } catch (err) {
               closePostCreateDialog();

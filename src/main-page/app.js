@@ -6,7 +6,7 @@ const APP_ID = '60ce35fae66f5177d6a55ce1';
 
 //______________GET USERS FROM API________________\\
 async function getData() {
-  const response = await fetch('https://dummyapi.io/data/api/user?limit=5', {
+  const response = await fetch('https://dummyapi.io/data/api/user?limit=10', {
     headers: {
       'app-id': APP_ID,
     },

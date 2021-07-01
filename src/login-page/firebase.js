@@ -69,7 +69,7 @@ signupBtn.addEventListener('click', (e) => {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      document.querySelector('.mail-taken').classList.remove('hidden');
+      // document.querySelector('.mail-taken').classList.remove('hidden');
       // ..
     });
 });
