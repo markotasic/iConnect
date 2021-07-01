@@ -31,6 +31,9 @@ linkToRegister.addEventListener('click', function () {
 linkToLogin.addEventListener('click', function () {
   login.classList.remove('hidden');
   register.classList.add('hidden');
+  document.getElementById('password').value = '';
+  document.getElementById('password-2').value = '';
+  window.location.reload();
 });
 
 const db = firebase.firestore();
@@ -60,7 +63,6 @@ signupBtn.addEventListener('click', (e) => {
           register.classList.add('hidden');
           login.classList.remove('hidden');
           document.querySelector('.mail-confirm').classList.remove('hidden');
-          // console.log('Document written with ID: ', docRef.id);
           firebase
             .auth()
             .currentUser.sendEmailVerification()
@@ -73,8 +75,6 @@ signupBtn.addEventListener('click', (e) => {
     .catch((error) => {
       var errorCode = error.code;
       var errorMessage = error.message;
-      // document.querySelector('.mail-taken').classList.remove('hidden');
-      // ..
     });
 });
 
@@ -82,7 +82,8 @@ signupBtn.addEventListener('click', (e) => {
 const loginBtn = document.getElementById('login-btn');
 const loginEmail = document.getElementById('login-email');
 const loginPassword = document.getElementById('login-password');
-const cssError = loginBtn.addEventListener('click', function () {
+
+loginBtn.addEventListener('click', function () {
   let emailValue = loginEmail.value;
   let passwordValue = loginPassword.value;
 
@@ -90,10 +91,7 @@ const cssError = loginBtn.addEventListener('click', function () {
     .auth()
     .signInWithEmailAndPassword(emailValue, passwordValue)
     .then((userCredential) => {
-      // Signed in
       var user = userCredential.user;
-      // window.location.href = 'index.html';
-      // console.log(user.emailVerified);
       firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
           window.location = '/main.html';
@@ -101,13 +99,9 @@ const cssError = loginBtn.addEventListener('click', function () {
       });
     })
     .catch((error) => {
-      console.log(error.code);
-      console.log(error.message);
       var errorCode = error.code;
       var errorMessage = error.message;
 
-      $('#login-message-red')
-        .append('Error: ' + error.code)
-        .css('color', '#ff4d4d');
+      $('#login-message-red').text(errorMessage);
     });
 });
