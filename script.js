@@ -90,13 +90,11 @@ const showSidebar = () => {
 //__________________________IS SIDEBAR HIDDEN__________________________\\
 function screenTest(e) {
   if (e.matches) {
-    console.log('smaller');
     sidebar.style.left = `-${180}px`;
     sidebar.style.transition = 'left 0.3s';
     sidebar.addEventListener('mousedown', showSidebar);
     document.addEventListener('mousedown', hideSidebar);
   } else {
-    console.log('larger');
     sidebar.removeEventListener('mousedown', showSidebar);
     document.removeEventListener('mousedown', hideSidebar);
     sidebar.style.left = 'auto';
