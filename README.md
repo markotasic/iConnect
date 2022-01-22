@@ -1,4 +1,6 @@
-### Hi, I'm Marko[website] 👋
+### Hi, I'm [Marko][website] 👋
+
+[![Website](https://img.shields.io/website?label=codeSTACKr.com&style=for-the-badge&url=https%3A%2F%2Fcodestackr.com)](https://portfolio-marko-t.netlify.app/)
 
 ## I'm a Front-End Web Developer!
 
@@ -27,7 +29,7 @@
 <details>
   <summary>:zap: GitHub Stats</summary>
 
-  <img align="left" alt="codeSTACKr's GitHub Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=codeSTACKr&show_icons=true&hide_border=true" />
+  <img align="left" alt="codeSTACKr's GitHub Stats" src="https://github-readme-stats.codestackr.vercel.app/api?username=markotasic&show_icons=true&hide_border=true" />
 
 </details>
 
