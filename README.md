@@ -1,8 +1,4 @@
-### Hi, I'm [Marko][website] 👋
-
-## I'm a Front-End Web Developer!
-
-- 🌱 I’m currently learning NodeJS and MongoDB
+### Hi, I'm [Marko][website], a Front-End Web Developer!
 
 ### Connect with me:
 
