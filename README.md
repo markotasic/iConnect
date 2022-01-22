@@ -1,4 +1,4 @@
-### Hi, I'm [Marko][website], a Front-End Web Developer!
+#### Hi, I'm [Marko][website], a Front-End Web Developer!
 
 ### Connect with me:
 
