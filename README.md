@@ -1,4 +1,4 @@
-# Hi, I'm [Marko][website], a Front-End Web Developer!
+## Hi, I'm [Marko][website], a Front-End Web Developer!
 
 ### Languages and Tools used:
 
@@ -12,8 +12,8 @@
 
 ### Connect with me:
 
-[<img align="left" alt="codeSTACKr.com" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
-[<img align="left" alt="codeSTACKr | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
+[<img align="left" alt="https://portfolio-marko-t.netlify.app" width="22px" src="https://raw.githubusercontent.com/iconic/open-iconic/master/svg/globe.svg" />][website]
+[<img align="left" alt="https://www.linkedin.com/in/markotasicc" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
 
 <br />
 <br />
@@ -23,7 +23,7 @@
 <details>
   <summary>:zap: GitHub Stats</summary>
 
-  <img align="left" alt="codeSTACKr's GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=markotasic&show_icons=true&hide_border=true&hide=stars,prs,issues,contribs&theme=dark" />
+  <img align="left" alt="markotasic's GitHub Stats" src="https://github-readme-stats.vercel.app/api?username=markotasic&show_icons=true&hide_border=true&hide=stars,prs,issues,contribs&theme=dark" />
 
 </details>
 
